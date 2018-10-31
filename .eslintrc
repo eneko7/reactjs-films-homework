@@ -1,0 +1,25 @@
+{
+    "env": {
+        "es6": true
+    },
+    "parser": "babel-eslint",
+    "plugins": [
+        "react"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        }
+    },
+    "rules": {   
+        "react/jsx-uses-react": "error",   
+        "react/jsx-uses-vars": "error",
+        "semi": [ 2, "always" ],
+        "quotes": [ 2, "single" ],
+        "indent": [ 2, 4 ],
+        "no-unused-vars": "error"
+    }
+}

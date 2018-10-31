@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App renders correctly 1`] = `
+<div
+  className="main_container"
+>
+  <footer
+    className="main_container_footer"
+  >
+    <span
+      className="main_container_footer_films"
+    >
+      FILMS
+    </span>
+    <span
+      className="main_container_footer_copyright"
+    >
+      Copyright © 
+      2018
+       FILMS. 
+      <span
+        className="main_container_footer_copyright_signature"
+      >
+        IHAR KARPUK
+      </span>
+    </span>
+  </footer>
+</div>
+`;

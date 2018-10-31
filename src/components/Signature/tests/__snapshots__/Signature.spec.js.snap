@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signature Signature renders correctly 1`] = `
+<span
+  className="main_container_footer_copyright_signature"
+>
+  IHAR KARPUK
+</span>
+`;

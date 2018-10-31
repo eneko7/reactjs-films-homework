@@ -1,21 +1,22 @@
-.main_container_footer{
-    width:100%;
+.main_container_footer {
+  width: 100%;
 
-    .main_container_footer_films{
-        font-size: 38px;
-        color: #0aaee4;
-        font-family: "Helvetica Neue Roman";
-        font-weight: 800;
-        text-align: center;
-        display: block;
-        margin: 40px auto 40px auto;
-    }
-    .main_container_footer_copyright{
-        font-size: 20px;
-        color: #969797;
-        font-family: "Helvetica Neue Roman";
-        text-align: center;
-        display: block;
-        margin: 0px auto 40px auto;
-    }
+  .main_container_footer_films {
+    font-size: 38px;
+    color: #0aaee4;
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-weight: 800;
+    text-align: center;
+    display: block;
+    margin: 40px auto 40px auto;
+  }
+
+  .main_container_footer_copyright {
+    font-size: 20px;
+    color: #969797;
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    text-align: center;
+    display: block;
+    margin: 0 auto 40px auto;
+  }
 }

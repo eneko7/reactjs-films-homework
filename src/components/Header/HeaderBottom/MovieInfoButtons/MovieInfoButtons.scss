@@ -1,0 +1,65 @@
+.app_header_bottom_right {
+  width: 370px;
+  margin-top: 122px;
+
+  .app_header_bottom_right_text_descr {
+    width: 350px;
+    font-size: 20px;
+    line-height: 32px;
+    color: #fff;
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    position: relative;
+    top: -50px;
+    left: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2px 0 2px 25px;
+    margin-left: 25px;
+    display: none;
+  }
+
+  .bottom_right_text_descr.active {
+    display: block;
+  }
+
+  .bottom_right_buttons_box {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+    position: relative;
+    top: 200px;
+
+    .bottom_right_buttons_box_button {
+      font-size: 18px;
+      letter-spacing: 1px;
+      line-height: 30px;
+      color: #fff;
+      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+      text-align: center;
+      width: 150px;
+      height: 40px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .bottom_right_buttons_box_button:focus {
+      outline: none;
+    }
+
+    .bottom_right_buttons_box_button_watch {
+      background-color: #3bb3df;
+    }
+
+    .bottom_right_buttons_box_button_view {
+      background: none;
+    }
+
+    .bottom_right_buttons_box_button_view:hover {
+      background: #3bb3df;
+    }
+  }
+
+  .bottom_right_buttons_box.active {
+    position: relative;
+    top: -4px;
+  }
+}

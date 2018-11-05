@@ -1,10 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles.scss';
-import App from './App.jsx';
+import Root from './components/Root.jsx';
 
-ReactDOM.render(<App />, document.querySelector('#app'));
-
-if (module.hot) {
-    module.hot.accept();
-}
+ReactDOM.render(<Root />, document.querySelector('#app'));

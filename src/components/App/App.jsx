@@ -1,5 +1,6 @@
 import React from 'react';
-import Footer from './components/Footer/Footer.jsx';
+import './App.scss';
+import Footer from '../Footer/Footer.jsx';
 
 
 class App extends React.Component {

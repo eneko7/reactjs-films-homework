@@ -1,0 +1,74 @@
+.moviesGrid_categories_item_button:focus{
+  outline:none;
+}
+.moviesGrid_categories_item_button {
+  cursor: pointer;
+  font-size: 25px;
+  line-height: 30px;
+  color: #0aaee4;
+  font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  margin-right: 30px;
+  padding-bottom: 5px;
+  text-align: center;
+  display: block;
+  border: none;
+  background: none;
+
+  .moviesGrid_categories_item_span_arrow {
+    background-image: url(../../../images/angle-arrow-down.png);
+    background-repeat: no-repeat;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    margin-left: 10px;
+  }
+
+  .moviesGrid_categories_item_span_arrow.active {
+    background-image: url(../../../images/up-arrow.png);
+  }
+}
+
+.moviesGrid_categories_item_block {
+  list-style-type: none;
+  display: none;
+
+  .moviesGrid_categories_item_block_button {
+    width: 100%;
+    background: none;
+    color: #0aaee4;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .moviesGrid_categories_item_block_button:hover {
+    background: #0aaee4;
+    color: #fff;
+  }
+
+  .moviesGrid_categories_item_block_button:focus {
+    outline: none;
+  }
+}
+
+.moviesGrid_categories_item_block.active {
+  display: block;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 25px;
+  color: #0aaee4;
+  font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  text-align: left;
+  margin-left: 15px;
+  margin-top: 10px;
+  padding-left: 0;
+  position: absolute;
+  z-index: 6;
+  background: #f5f5f5;
+  height: 200px;
+  width: 200px;
+  overflow-y: scroll;
+}

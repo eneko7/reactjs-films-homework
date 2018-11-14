@@ -1,0 +1,48 @@
+.ModalWindowFilm {
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  position: fixed;
+  z-index: 8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, .5);
+
+  .ModalWindowFilm_close {
+    font-size: 70px;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    color: white;
+    position: absolute;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .ModalWindowFilm_close_button{
+    font-size: 70px;
+    z-index: 9;
+    color: white;
+    position: absolute;
+    border: none;
+    background: none;
+    cursor: pointer;
+    right: 50px;
+    top: 40px;
+  }
+
+  .ModalWindowFilm_close:focus,
+  .ModalWindowFilm_close_button:focus {
+    outline: none;
+  }
+
+  .ModalWindowFilm_film_iframe {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    z-index: 10;
+  }
+}

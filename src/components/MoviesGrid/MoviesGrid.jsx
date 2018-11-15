@@ -6,6 +6,11 @@ import MovieElement from './MovieElement/MovieElement';
 import MoviesCategoriesContainer from './MoviesCategories/MoviesCategoriesContainer';
 
 class MoviesGrid extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onScrollHandler = this.onScrollHandler.bind(this);
+  }
+
   componentDidMount() {
     const { fetchFilmsPopular } = this.props;
     fetchFilmsPopular();

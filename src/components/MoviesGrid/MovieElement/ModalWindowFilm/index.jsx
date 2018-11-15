@@ -1,1 +1,3 @@
-export {default} from './ModalWindowFilm';
+import ModalWindowFilm from './ModalWindowFilmContainer';
+
+export default ModalWindowFilm;

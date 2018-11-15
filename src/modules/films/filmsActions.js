@@ -3,7 +3,6 @@ import axios from 'axios';
 export const FETCH_FILMS_REQUEST = 'FETCH_FILMS_REQUEST';
 export const FETCH_FILMS_SUCCESS = 'FETCH_FILMS_SUCCESS';
 export const FETCH_FILMS_ERROR = 'FETCH_FILMS_ERROR';
-export const CLEAN_FILMS = 'CLEAN_FILMS';
 
 export const urlPopularFilms = 'https://api.themoviedb.org/3/movie/popular?language=en-US&api_key=6a08c0def237c5910708279c9ee78cc5';
 export const urlTopRatedFilms = 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&api_key=6a08c0def237c5910708279c9ee78cc5';
@@ -23,10 +22,6 @@ export const receiveFilmsRequest = () => ({
 export const receiveFilmsError = payload => ({
   type: FETCH_FILMS_ERROR,
   payload,
-});
-
-export const cleanFilms = () => ({
-  type: CLEAN_FILMS,
 });
 
 export function fetchFilms(url, page = 1) {

@@ -45,4 +45,14 @@
     position: absolute;
     z-index: 10;
   }
+  .ModalWindowFilm_film_error{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    z-index: 10;
+    background-image: url(../../../../images/error_video.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }

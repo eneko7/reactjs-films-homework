@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ModalWindowFilm from './ModalWindowFilm/ModalWindowFilm';
 import style from './MovieElement.scss';
+import ModalWindowFilmContainer from './ModalWindowFilm/ModalWindowFilmContainer';
+import errorImg from '../../../images/error_video.jpg';
 
 class MovieElement extends React.Component {
   constructor(props) {
@@ -41,9 +42,8 @@ class MovieElement extends React.Component {
     } else {
       title = `${film.title}`;
     }
-    const topPicture = {
-      backgroundImage: `url(https://image.tmdb.org/t/p/w500${film.backdrop_path})`,
-    };
+
+    const topPicture = film.backdrop_path ? { backgroundImage: `url(https://image.tmdb.org/t/p/w500${film.backdrop_path})` } : { backgroundImage: `url(${errorImg})` };
     const genres = [];
     film.genre_ids.forEach((elem) => {
       genresList.forEach((el) => {
@@ -61,9 +61,7 @@ class MovieElement extends React.Component {
       </span>
     ));
     const active = isShownInfo ? `${style.active}` : '';
-    const descriptionFilmLayerInfo = {
-      backgroundImage: `url(https://image.tmdb.org/t/p/w500${film.poster_path})`,
-    };
+    const descriptionFilmLayerInfo = film.poster_path ? { backgroundImage: `url(https://image.tmdb.org/t/p/w500${film.poster_path})` } : { backgroundImage: `url(${errorImg})` };
     return (
       <div className={`${style.moviesGrid_wrapper_MovieElement_ul_item_wrap}`}>
         <div style={topPicture} className={style.moviesGrid_wrapper_MovieElement_top_picture} />
@@ -131,7 +129,7 @@ class MovieElement extends React.Component {
             </div>
           </div>
         </div>
-        {isShownFilm ? <ModalWindowFilm onChange={this.watchFilm} filmId={film.id} /> : ''}
+        {isShownFilm ? <ModalWindowFilmContainer onChange={this.watchFilm} filmId={film.id} /> : ''}
       </div>
     );
   }

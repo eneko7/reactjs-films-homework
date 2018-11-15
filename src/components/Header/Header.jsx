@@ -1,11 +1,11 @@
 import React from 'react';
 import style from './Header.scss';
-import HeaderTop from './HeaderTop/HeaderTop';
 import HeaderBottom from './HeaderBottom/HeaderBottom';
+import HeaderTopContainer from './HeaderTop/HeaderTopContainer';
 
 const Header = () => (
   <header className={style.app_header}>
-    <HeaderTop />
+    <HeaderTopContainer />
     <HeaderBottom />
   </header>
 );

@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/eneko7/reactjs-films-homework#readme",
   "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "eslint-plugin-react": "^7.11.1",
     "stylelint": "^9.6.0",
     "stylelint-config-standard": "^18.2.0",

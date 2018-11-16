@@ -7,7 +7,7 @@ const MovieRate = (props) => {
     rate,
   } = props;
   const rateStyle = {
-    width: `${(rate - 0.1) / 5 * 100}%`,
+    width: `${(parseFloat(rate) + 0.1) / 10 * 100}%`,
   };
   return (
     <div className={style.bottom_left_filmRate}>
@@ -22,7 +22,7 @@ const MovieRate = (props) => {
 };
 
 MovieRate.propTypes = {
-  rate: PropTypes.string.isRequired,
+  rate: PropTypes.number.isRequired,
 };
 
 export default MovieRate;

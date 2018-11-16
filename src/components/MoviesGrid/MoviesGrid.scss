@@ -71,3 +71,25 @@
     }
   }
 }
+
+.error_search {
+  width:100%;
+  text-align: center;
+  color: #0aaee4;
+  font-size: 30px;
+  margin-bottom:50px;
+}
+
+@media (max-width: 766px) {
+  .moviesGrid {
+    .moviesGrid_wrapper {
+      .moviesGrid_wrapper_MovieElement_ul {
+        justify-content: space-between;
+
+        .moviesGrid_wrapper_MovieElement_ul_item {
+          width: 48%;
+        }
+      }
+    }
+  }
+}

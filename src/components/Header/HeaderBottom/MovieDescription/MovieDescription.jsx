@@ -5,10 +5,9 @@ import style from './MovieDescription.scss';
 const MovieDescription = (props) => {
   const {
     filmName,
-    filmDescr,
+    filmGenres,
   } = props;
-  const filmDescrArr = filmDescr.split(',');
-  const descrItems = filmDescrArr.map(item => (
+  const descrItems = filmGenres.map(item => (
     <span key={item} className={style.full_description_filmDescr_item}>
       {item}
     </span>
@@ -25,7 +24,7 @@ const MovieDescription = (props) => {
 
 MovieDescription.propTypes = {
   filmName: PropTypes.string.isRequired,
-  filmDescr: PropTypes.string.isRequired,
+  filmGenres: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default MovieDescription;

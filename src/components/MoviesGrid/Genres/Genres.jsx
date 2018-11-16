@@ -30,8 +30,9 @@ class Genres extends React.Component {
       headerTitle: el,
       isOpen: false,
     }));
-    const { fetchFilmsByGenre } = this.props;
+    const { fetchFilmsByGenre, fetchChange } = this.props;
     fetchFilmsByGenre(id);
+    fetchChange('Genres');
   }
 
   render() {
@@ -43,9 +44,11 @@ class Genres extends React.Component {
     ));
     const { isOpen, headerTitle } = this.state;
     const active = isOpen ? `${style.active}` : '';
+    const { activeClass } = this.props;
+    const genresActive = activeClass !== 'undefined' ? { borderBottom: '4px solid' } : {};
     return (
       <div>
-        <button type="button" className={style.moviesGrid_categories_item_button} onClick={this.openGenresClick}>
+        <button type="button" style={genresActive} className={`${style.moviesGrid_categories_item_button}`} onClick={this.openGenresClick}>
           <span>{headerTitle}</span>
           <span className={`${active} ${style.moviesGrid_categories_item_span_arrow}`} />
         </button>
@@ -59,9 +62,11 @@ class Genres extends React.Component {
 
 Genres.propTypes = {
   fetchGenres: PropTypes.func.isRequired,
+  fetchChange: PropTypes.func.isRequired,
   fetchFilmsByGenre: PropTypes.func.isRequired,
   genres: PropTypes.arrayOf(PropTypes.object).isRequired,
   title: PropTypes.string.isRequired,
+  activeClass: PropTypes.string.isRequired,
 };
 
 export default Genres;

@@ -43,7 +43,7 @@ class MovieElement extends React.Component {
       title = `${film.title}`;
     }
 
-    const topPicture = film.backdrop_path ? { backgroundImage: `url(https://image.tmdb.org/t/p/w500${film.backdrop_path})` } : { backgroundImage: `url(${errorImg})` };
+    const topPicture = film.backdrop_path ? { backgroundImage: `url(http://image.tmdb.org/t/p/w1280${film.backdrop_path})` } : { backgroundImage: `url(${errorImg})` };
     const genres = [];
     film.genre_ids.forEach((elem) => {
       genresList.forEach((el) => {
@@ -61,7 +61,7 @@ class MovieElement extends React.Component {
       </span>
     ));
     const active = isShownInfo ? `${style.active}` : '';
-    const descriptionFilmLayerInfo = film.poster_path ? { backgroundImage: `url(https://image.tmdb.org/t/p/w500${film.poster_path})` } : { backgroundImage: `url(${errorImg})` };
+    const descriptionFilmLayerInfo = film.poster_path ? { backgroundImage: `url(http://image.tmdb.org/t/p/w500${film.poster_path})` } : { backgroundImage: `url(${errorImg})` };
     return (
       <div className={`${style.moviesGrid_wrapper_MovieElement_ul_item_wrap}`}>
         <div style={topPicture} className={style.moviesGrid_wrapper_MovieElement_top_picture} />

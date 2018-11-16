@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from './MovieInfoButtons.scss';
+import ModalWindowFilmContainer from '../../../MoviesGrid/MovieElement/ModalWindowFilm/ModalWindowFilmContainer';
 
 class MovieInfoButtons extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false,
+      isShownFilm: false,
     };
     this.openInfoClick = this.openInfoClick.bind(this);
+    this.watchNow = this.watchNow.bind(this);
   }
 
   openInfoClick() {
@@ -17,21 +20,38 @@ class MovieInfoButtons extends React.Component {
     }));
   }
 
+  watchNow() {
+    this.setState(prevState => ({
+      isShownFilm: !prevState.isShownFilm,
+    }));
+    const { isShownFilm } = this.state;
+    if (isShownFilm) {
+      document.getElementsByTagName('body')[0].style.overflow = 'auto';
+      document.getElementById('app_header').style.height = '70vh';
+    } else {
+      document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+      document.getElementById('app_header').style.height = '100vh';
+    }
+  }
+
   render() {
-    const { annotation } = this.props;
-    const { isOpen } = this.state;
+    const { annotation, filmId } = this.props;
+    const { isOpen, isShownFilm } = this.state;
     const active = isOpen ? `${style.active}` : '';
     return (
-      <div className={style.bottom_right}>
-        <div className={`${active} ${style.bottom_right_text_descr}`}>
-          <p className={style.bottom_right_text_descr_p}>
-            {annotation}
-          </p>
+      <div>
+        <div className={style.bottom_right}>
+          <div className={`${active} ${style.bottom_right_text_descr}`}>
+            <p className={style.bottom_right_text_descr_p}>
+              {annotation}
+            </p>
+          </div>
+          <div className={`${active} ${style.bottom_right_buttons_box}`}>
+            <button className={`${style.bottom_right_buttons_box_button_watch} ${style.bottom_right_buttons_box_button}`} type="button" onClick={this.watchNow}>Watch Now</button>
+            <button className={`${style.bottom_right_buttons_box_button_view} ${style.bottom_right_buttons_box_button}`} type="button" onClick={this.openInfoClick}>{!isOpen ? 'View Info' : 'Close'}</button>
+          </div>
         </div>
-        <div className={`${active} ${style.bottom_right_buttons_box}`}>
-          <button className={`${style.bottom_right_buttons_box_button_watch} ${style.bottom_right_buttons_box_button}`} type="button">Watch Now</button>
-          <button className={`${style.bottom_right_buttons_box_button_view} ${style.bottom_right_buttons_box_button}`} type="button" onClick={this.openInfoClick}>{!isOpen ? 'View Info' : 'Close'}</button>
-        </div>
+        {isShownFilm ? <ModalWindowFilmContainer onChange={this.watchNow} filmId={filmId} /> : ''}
       </div>
     );
   }
@@ -39,6 +59,7 @@ class MovieInfoButtons extends React.Component {
 
 MovieInfoButtons.propTypes = {
   annotation: PropTypes.string.isRequired,
+  filmId: PropTypes.number.isRequired,
 };
 
 export default MovieInfoButtons;

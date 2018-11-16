@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from './MoviesGrid.scss';
-import GenresContainer from './Genres/GenresContainer';
 import MovieElement from './MovieElement/MovieElement';
 import MoviesCategoriesContainer from './MoviesCategories/MoviesCategoriesContainer';
 
@@ -31,23 +30,28 @@ class MoviesGrid extends React.Component {
 
   render() {
     const { films, isFetchingFilms, genres } = this.props;
-    const filmsItems = films.map((elem, index) => {
-      if (index > 1) {
-        return (
-          <li key={elem.id} className={style.moviesGrid_wrapper_MovieElement_ul_item}>
-            <MovieElement film={elem} genresList={genres} />
-          </li>
-        );
-      }
-      return false;
-    });
+    if (films.length === 0) {
+      return (
+        <main className={style.moviesGrid}>
+          <div className={style.moviesGrid_wrapper}>
+            <ul className={style.moviesGrid_wrapper_MovieElement_ul}>
+              <div className={style.error_search}>
+                По вашему запросу ничего не найдено, попробуйте снова...
+              </div>
+            </ul>
+          </div>
+        </main>
+      );
+    }
+    const filmsItems = films.map(elem => (
+      <li key={elem.id} className={style.moviesGrid_wrapper_MovieElement_ul_item}>
+        <MovieElement film={elem} genresList={genres} />
+      </li>
+    ));
     return (
       <main className={style.moviesGrid}>
         <div className={style.moviesGrid_categories}>
           <MoviesCategoriesContainer />
-          <div className={style.moviesGrid_categories_item}>
-            <GenresContainer title="Genres" />
-          </div>
         </div>
         <div className={style.moviesGrid_wrapper}>
           <ul className={style.moviesGrid_wrapper_MovieElement_ul}>

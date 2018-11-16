@@ -34,6 +34,12 @@
       right: 4%;
       top: 25%;
       cursor: pointer;
+      border: none;
+      background-color: transparent;
+    }
+
+    .header_top_search_label:focus {
+      outline: none;
     }
 
     .header_top_search_input {

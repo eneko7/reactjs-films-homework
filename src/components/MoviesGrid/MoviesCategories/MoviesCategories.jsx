@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from './MoviesCategories.scss';
+import GenresContainer from '../Genres/GenresContainer';
 
 class MoviesCategories extends React.Component {
   constructor(props) {
@@ -11,32 +12,49 @@ class MoviesCategories extends React.Component {
     this.fetchFilmsByCategory = this.fetchFilmsByCategory.bind(this);
   }
 
-  fetchFilmsByCategory(e) {
+  fetchFilmsByCategory(el) {
     this.setState(() => ({
-      activeCategory: e,
+      activeCategory: el,
     }));
-    const { pushNavigationLink } = this.props;
-    pushNavigationLink(e);
+    if (el !== 'Genres') {
+      const { pushNavigationLink } = this.props;
+      pushNavigationLink(el);
+    }
   }
 
   render() {
-    const categories = ['Trending', 'Top Rated', 'Coming Soon'];
+    const categories = ['Trending', 'Top Rated', 'Coming Soon', 'Genres'];
     const { activeCategory } = this.state;
+    const active = `${style.active}`;
+    const noactive = `${style.noactive}`;
     return (
       categories.map((el) => {
-        if (el === activeCategory) {
-          const active = `${style.active}`;
+        if (el === activeCategory && el !== 'Genres') {
           return (
             <div key={el} className={style.moviesGrid_categories_item}>
-              <button type="button" data-filter={el} className={`${active} ${style.moviesGrid_categories_item_button}`} onClick={this.fetchFilmsByCategory}>{el}</button>
+              <button type="button" data-filter={el} className={`${active} ${style.moviesGrid_categories_item_button}`} onClick={this.fetchFilmsByCategory.bind(null, el)}>{el}</button>
+            </div>
+          );
+        } if (el !== activeCategory && el !== 'Genres') {
+          return (
+            <div key={el} className={style.moviesGrid_categories_item}>
+              <button type="button" data-filter={el} className={`${style.moviesGrid_categories_item_button}`} onClick={this.fetchFilmsByCategory.bind(null, el)}>{el}</button>
+            </div>
+          );
+        } if (el !== activeCategory && el === 'Genres') {
+          return (
+            <div key={el} className={style.moviesGrid_categories_item}>
+              <GenresContainer title="Genres" activeClass={noactive} fetchChange={this.fetchFilmsByCategory} />
+            </div>
+          );
+        } if (el === activeCategory && el === 'Genres') {
+          return (
+            <div key={el} className={style.moviesGrid_categories_item}>
+              <GenresContainer title="Genres" activeClass={active} fetchChange={this.fetchFilmsByCategory} />
             </div>
           );
         }
-        return (
-          <div key={el} className={style.moviesGrid_categories_item}>
-            <button type="button" className={style.moviesGrid_categories_item_button} onClick={this.fetchFilmsByCategory.bind(null, el)}>{el}</button>
-          </div>
-        );
+        return true;
       })
     );
   }

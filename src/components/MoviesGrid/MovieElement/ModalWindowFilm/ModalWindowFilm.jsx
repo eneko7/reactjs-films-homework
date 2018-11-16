@@ -9,12 +9,12 @@ class ModalWindowFilm extends React.Component {
   }
 
   render() {
-    const { onChange, filmTrailerKey } = this.props;
+    const { filmId, onChange, filmTrailerKey } = this.props;
     return (
       <div className={style.ModalWindowFilm}>
         <button type="button" className={style.ModalWindowFilm_close} onClick={onChange} />
         <button type="button" className={style.ModalWindowFilm_close_button} onClick={onChange}>&times;</button>
-        {filmTrailerKey ? (
+        {filmId ? (
           <iframe
             title="title"
             className={style.ModalWindowFilm_film_iframe}

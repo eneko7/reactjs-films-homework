@@ -2,19 +2,14 @@
   position: absolute;
   z-index: 3;
   bottom: 0;
-  display: flex;
+  display: block;
   margin-left: 7%;
   margin-bottom: 30px;
   width: 88%;
-  justify-content: space-between;
 
   .header_bottom_left {
-    position: relative;
+    float:left;
+    position: absolute;
     bottom: 0;
-  }
-
-  .header_bottom_left.active {
-    position: static;
-    padding-top: 204px;
   }
 }

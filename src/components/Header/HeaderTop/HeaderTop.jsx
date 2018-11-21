@@ -10,9 +10,10 @@ class HeaderTop extends React.Component {
   }
 
   onChange(e) {
-    const { searchFilm, fetchFilmsPopular } = this.props;
+    const { searchFilm, fetchFilmsPopular, saveSearchingWord } = this.props;
     if (e.target.value !== '') {
       searchFilm(e.target.value);
+      saveSearchingWord(e.target.value);
     } else {
       fetchFilmsPopular();
     }
@@ -24,11 +25,19 @@ class HeaderTop extends React.Component {
   }
 
   render() {
+    const { searchedWord } = this.props;
     return (
       <div className={style.header_top}>
-        <span className={style.header_top_span}>FILMS</span>
+        <span className={style.header_top_span}><a href="/" className={style.header_top_span_a}>FILMS</a></span>
         <div className={style.header_top_search}>
-          <input type="text" id="search_input" className={style.header_top_search_input} onChange={this.onChange} placeholder="Searh..." />
+          <input
+            type="text"
+            id="search_input"
+            className={style.header_top_search_input}
+            onChange={this.onChange}
+            placeholder="Searh..."
+            value={searchedWord}
+          />
           <button className={style.header_top_search_label} onClick={this.searchFilms} type="button" />
         </div>
       </div>
@@ -38,5 +47,7 @@ class HeaderTop extends React.Component {
 HeaderTop.propTypes = {
   fetchFilmsPopular: PropTypes.func.isRequired,
   searchFilm: PropTypes.func.isRequired,
+  saveSearchingWord: PropTypes.func.isRequired,
+  searchedWord: PropTypes.string.isRequired,
 };
 export default HeaderTop;

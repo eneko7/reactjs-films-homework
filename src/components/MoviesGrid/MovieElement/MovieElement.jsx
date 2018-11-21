@@ -37,8 +37,8 @@ class MovieElement extends React.Component {
     const { film, genresList } = this.props;
     const { isShownInfo, isShownFilm } = this.state;
     let title = '';
-    if (film.title.length > 17) {
-      title = `${film.title.substr(0, 16)}...`;
+    if (film.title.length > 15) {
+      title = `${film.title.substr(0, 12)}...`;
     } else {
       title = `${film.title}`;
     }
@@ -107,7 +107,7 @@ class MovieElement extends React.Component {
             <div className={style.descriptionFilmLayer_info_overlay_description}>
               <div className={style.descriptionFilmLayer_info_overlay_description_Name_and_Rate}>
                 <span className={style.descriptionFilmLayer_info_overlay_description_name}>
-                  {title.toUpperCase()}
+                  {film.title.toUpperCase()}
                 </span>
                 <span className={style.descriptionFilmLayer_info_overlay_description_rate}>
                   {film.vote_average}
@@ -129,7 +129,10 @@ class MovieElement extends React.Component {
             </div>
           </div>
         </div>
-        {isShownFilm ? <ModalWindowFilmContainer onChange={this.watchFilm} filmId={film.id} /> : ''}
+        {isShownFilm
+          ? <ModalWindowFilmContainer onChange={this.watchFilm} filmId={film.id} />
+          : ''
+        }
       </div>
     );
   }

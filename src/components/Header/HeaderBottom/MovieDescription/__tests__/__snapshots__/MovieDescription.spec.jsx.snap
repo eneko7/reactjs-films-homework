@@ -7,7 +7,7 @@ exports[`MovieDescription renders correctly 1`] = `
   <span
     className="full_description_filmName"
   >
-    THE JUNGLE BOOK
+    name
   </span>
   <div
     className="full_description_filmDescr"
@@ -15,32 +15,17 @@ exports[`MovieDescription renders correctly 1`] = `
     <span
       className="full_description_filmDescr_item"
     >
-      Adventure
+      genre 1
     </span>
     <span
       className="full_description_filmDescr_item"
     >
-       Drama
+      genre 2
     </span>
     <span
       className="full_description_filmDescr_item"
     >
-       Family
-    </span>
-    <span
-      className="full_description_filmDescr_item"
-    >
-       Fantasy
-    </span>
-    <span
-      className="full_description_filmDescr_item"
-    >
-       |
-    </span>
-    <span
-      className="full_description_filmDescr_item"
-    >
-       1h 46m
+      genre 3
     </span>
   </div>
 </div>

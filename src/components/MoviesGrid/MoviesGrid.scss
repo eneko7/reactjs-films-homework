@@ -80,7 +80,21 @@
   margin-bottom:50px;
 }
 
-@media (max-width: 766px) {
+@media (max-width: 766px) { 
+  .moviesGrid {
+    .moviesGrid_wrapper {
+      .moviesGrid_wrapper_MovieElement_ul {
+        justify-content: space-between;
+
+        .moviesGrid_wrapper_MovieElement_ul_item {
+          width: 95%;
+          height: 600px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 767px) and (max-width: 769px) { 
   .moviesGrid {
     .moviesGrid_wrapper {
       .moviesGrid_wrapper_MovieElement_ul {
@@ -88,6 +102,7 @@
 
         .moviesGrid_wrapper_MovieElement_ul_item {
           width: 48%;
+          height: 600px;
         }
       }
     }

@@ -1,11 +1,11 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import Root from '../Root.jsx';
+import HeaderTop from '../index';
 
-describe('Root', () => {
+describe('HeaderTop', () => {
     const renderer = new ShallowRenderer();
-    renderer.render(<Root />);
+    renderer.render(<HeaderTop />);
     it('renders correctly', () => {
         const result = renderer.getRenderOutput();
         expect(result).toMatchSnapshot();

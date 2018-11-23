@@ -1,11 +1,11 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import Root from '../Root.jsx';
+import MovieRate from '../MovieRate.jsx';
 
-describe('Root', () => {
+describe('MovieRate', () => {
     const renderer = new ShallowRenderer();
-    renderer.render(<Root />);
+    renderer.render(<MovieRate rate="4.8" />);
     it('renders correctly', () => {
         const result = renderer.getRenderOutput();
         expect(result).toMatchSnapshot();

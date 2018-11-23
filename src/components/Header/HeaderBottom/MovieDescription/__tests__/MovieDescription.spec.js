@@ -1,11 +1,11 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import Root from '../Root.jsx';
+import MovieDescription from '../index';
 
-describe('Root', () => {
+describe('MovieDescription', () => {
     const renderer = new ShallowRenderer();
-    renderer.render(<Root />);
+    renderer.render(<MovieDescription filmName="THE JUNGLE BOOK"  filmDescr="Adventure, Drama, Family, Fantasy, |, 1h 46m" />);
     it('renders correctly', () => {
         const result = renderer.getRenderOutput();
         expect(result).toMatchSnapshot();

@@ -1,31 +1,80 @@
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import { Provider } from 'react-redux';
-// import * as genresActions from '../../../modules/genres/genresActions';
-// import * as filmsActions from '../../../modules/films/filmsActions';
-import Header from '../index';
+import renderer from 'react-test-renderer';
+import Header from '../Header';
+import HeaderContainer from '../index';
 
-const shallow = new ShallowRenderer();
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
-const store = mockStore({
-  films: {
-    allFilms: [],
-  },
-  genres: {
-    allGenres: [],
-  },
-});
+const data = {
+  films: [
+    {
+      backdrop_path: '/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg',
+      genre_ids: [18, 10751, 14],
+      original_title: 'original_title',
+      overview: 'overview',
+      vote_average: 8,
+      id: 338952,
+    },
+  ],
+  genres: [
+    {
+      id: 28,
+      name: 'Action',
+    },
+    {
+      id: 18,
+      name: 'Drama',
+    },
+    {
+      id: 10751,
+      name: 'Family',
+    },
+    {
+      id: 14,
+      name: 'Fantasy',
+    },
+  ],
+};
+
+const badData = {
+  films: [
+    '',
+  ],
+  genres: [
+    {
+      id: 28,
+      name: 'Action',
+    },
+    {
+      id: 18,
+      name: 'Drama',
+    },
+    {
+      id: 10751,
+      name: 'Family',
+    },
+    {
+      id: 14,
+      name: 'Fantasy',
+    },
+  ],
+};
 
 describe('Header', () => {
-  test('snapshot render', () => {
-    const component = shallow.render(
-      <Provider store={store}>
-        <Header />
-      </Provider>,
-    );
-    expect(component).toMatchSnapshot();
+  it('render correctly ', () => {
+    const output = renderer.create(<HeaderContainer {...data} />);
+    expect(output).toMatchSnapshot();
+  });
+
+  it('render correctly if film empty ', () => {
+    const output = renderer.create(<HeaderContainer {...badData} />);
+    expect(output).toMatchSnapshot();
+  });
+  it('render correctly ', () => {
+    const output = renderer.create(<Header {...data} />);
+    expect(output).toMatchSnapshot();
+  });
+
+  it('render correctly if film empty ', () => {
+    const output = renderer.create(<Header {...badData} />);
+    expect(output).toMatchSnapshot();
   });
 });

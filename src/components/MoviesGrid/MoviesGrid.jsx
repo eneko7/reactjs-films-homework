@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from './MoviesGrid.scss';
 import MovieElement from './MovieElement/MovieElement';
-import MoviesCategoriesContainer from './MoviesCategories/MoviesCategoriesContainer';
+import MoviesCategoriesContainer from './MoviesCategories/index';
 
 class MoviesGrid extends React.Component {
   constructor(props) {
@@ -30,19 +30,19 @@ class MoviesGrid extends React.Component {
 
   render() {
     const { films, isFetchingFilms, genres } = this.props;
-    if (films.length === 0) {
-      return (
-        <main className={style.moviesGrid}>
-          <div className={style.moviesGrid_wrapper}>
-            <ul className={style.moviesGrid_wrapper_MovieElement_ul}>
-              <div className={style.error_search}>
-                По вашему запросу ничего не найдено, попробуйте снова...
-              </div>
-            </ul>
-          </div>
-        </main>
-      );
-    }
+    // if (films.length === 0) {
+    //   return (
+    //     <main className={style.moviesGrid}>
+    //       <div className={style.moviesGrid_wrapper}>
+    //         <ul className={style.moviesGrid_wrapper_MovieElement_ul}>
+    //           <div className={style.error_search}>
+    //             По вашему запросу ничего не найдено, попробуйте снова...
+    //           </div>
+    //         </ul>
+    //       </div>
+    //     </main>
+    //   );
+    // }
     const filmsItems = films.map(elem => (
       <li key={elem.id} className={style.moviesGrid_wrapper_MovieElement_ul_item}>
         <MovieElement film={elem} genresList={genres} />
@@ -58,7 +58,7 @@ class MoviesGrid extends React.Component {
             {filmsItems}
           </ul>
           {isFetchingFilms
-            ? (
+            && (
               <div>
                 <div className={style.moviesGrid_wrapper_loading} id="loading">
                   <div className={style.moviesGrid_wrapper_loading} />
@@ -70,7 +70,6 @@ class MoviesGrid extends React.Component {
                 </div>
               </div>
             )
-            : ''
           }
         </div>
       </main>

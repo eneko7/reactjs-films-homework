@@ -33,13 +33,80 @@ exports[`MovieInfoButtons MovieInfoButtons -> Click (show info)  1`] = `
       </button>
     </div>
   </div>
-  
+</div>
+`;
+
+exports[`MovieInfoButtons MovieInfoButtons -> Click (watch film)  1`] = `
+<div>
+  <div
+    className="bottom_right"
+  >
+    <div
+      className=" bottom_right_text_descr"
+    >
+      <p
+        className="bottom_right_text_descr_p"
+      >
+        film description
+      </p>
+    </div>
+    <div
+      className=" bottom_right_buttons_box"
+    >
+      <button
+        className="bottom_right_buttons_box_button_watch bottom_right_buttons_box_button"
+        onClick={[Function]}
+        type="button"
+      >
+        Watch Now
+      </button>
+      <button
+        className="bottom_right_buttons_box_button_view bottom_right_buttons_box_button"
+        onClick={[Function]}
+        type="button"
+      >
+        View Info
+      </button>
+    </div>
+  </div>
+  <div>
+    test
+  </div>
 </div>
 `;
 
 exports[`MovieInfoButtons renders correctly 1`] = `
-<MovieInfoButtons
-  annotation="film description"
-  filmId={1023}
-/>
+<div>
+  <div
+    className="bottom_right"
+  >
+    <div
+      className=" bottom_right_text_descr"
+    >
+      <p
+        className="bottom_right_text_descr_p"
+      >
+        film description
+      </p>
+    </div>
+    <div
+      className=" bottom_right_buttons_box"
+    >
+      <button
+        className="bottom_right_buttons_box_button_watch bottom_right_buttons_box_button"
+        onClick={[Function]}
+        type="button"
+      >
+        Watch Now
+      </button>
+      <button
+        className="bottom_right_buttons_box_button_view bottom_right_buttons_box_button"
+        onClick={[Function]}
+        type="button"
+      >
+        View Info
+      </button>
+    </div>
+  </div>
+</div>
 `;

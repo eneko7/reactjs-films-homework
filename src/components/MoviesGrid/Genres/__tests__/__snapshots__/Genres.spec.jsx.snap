@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Genres Snapshot renders 1`] = `
+<Genres
+  activeClass="active"
+  genres={
+    Array [
+      Object {
+        "id": 1,
+        "name": "adventure",
+      },
+      Object {
+        "id": 2,
+        "name": "action",
+      },
+      Object {
+        "id": 3,
+        "name": "drama",
+      },
+    ]
+  }
+  title="Genres"
+/>
+`;

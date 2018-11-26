@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviesCategories Snapshot renders 1`] = `<Connect(MoviesCategories) />`;
+
+exports[`MoviesCategories Snapshot renders categories 1`] = `
+Array [
+  <div
+    className="moviesGrid_categories_item"
+  >
+    <button
+      className="moviesGrid_categories_item_button"
+      data-filter="Trending"
+      onClick={[Function]}
+      type="button"
+    >
+      Trending
+    </button>
+  </div>,
+  <div
+    className="moviesGrid_categories_item"
+  >
+    <button
+      className="moviesGrid_categories_item_button"
+      data-filter="Top Rated"
+      onClick={[Function]}
+      type="button"
+    >
+      Top Rated
+    </button>
+  </div>,
+  <div
+    className="moviesGrid_categories_item"
+  >
+    <button
+      className="active moviesGrid_categories_item_button"
+      data-filter="Coming Soon"
+      onClick={[Function]}
+      type="button"
+    >
+      Coming Soon
+    </button>
+  </div>,
+  <div
+    className="moviesGrid_categories_item"
+  >
+    <div>
+      test
+    </div>
+  </div>,
+]
+`;
+
+exports[`MoviesCategories Snapshot renders genres 1`] = `
+Array [
+  <div
+    className="moviesGrid_categories_item"
+  >
+    <button
+      className="active moviesGrid_categories_item_button"
+      data-filter="Trending"
+      onClick={[Function]}
+      type="button"
+    >
+      Trending
+    </button>
+  </div>,
+  <div
+    className="moviesGrid_categories_item"
+  >
+    <button
+      className="moviesGrid_categories_item_button"
+      data-filter="Top Rated"
+      onClick={[Function]}
+      type="button"
+    >
+      Top Rated
+    </button>
+  </div>,
+  <div
+    className="moviesGrid_categories_item"
+  >
+    <button
+      className="moviesGrid_categories_item_button"
+      data-filter="Coming Soon"
+      onClick={[Function]}
+      type="button"
+    >
+      Coming Soon
+    </button>
+  </div>,
+  <div
+    className="moviesGrid_categories_item"
+  >
+    <div>
+      <button
+        className="moviesGrid_categories_item_button"
+        data-filter="Genres"
+        onClick={[Function]}
+        style={
+          Object {
+            "borderBottom": "4px solid",
+          }
+        }
+        type="button"
+      >
+        <span>
+          Genres
+        </span>
+        <span
+          className="active moviesGrid_categories_item_span_arrow"
+        />
+      </button>
+      <div
+        className="active moviesGrid_categories_item_block"
+        id="genres_list"
+      >
+        <button
+          className="moviesGrid_categories_item_block_button"
+          data-elem="adventure"
+          onClick={[Function]}
+          type="button"
+        >
+          adventure
+        </button>
+        <button
+          className="moviesGrid_categories_item_block_button"
+          data-elem="action"
+          onClick={[Function]}
+          type="button"
+        >
+          action
+        </button>
+        <button
+          className="moviesGrid_categories_item_block_button"
+          data-elem="drama"
+          onClick={[Function]}
+          type="button"
+        >
+          drama
+        </button>
+      </div>
+    </div>
+  </div>,
+]
+`;

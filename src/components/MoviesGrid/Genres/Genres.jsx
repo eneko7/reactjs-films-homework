@@ -38,7 +38,7 @@ class Genres extends React.Component {
   render() {
     const { genres } = this.props;
     const genresCol = genres.map(el => (
-      <button type="button" key={el.id} className={style.moviesGrid_categories_item_block_button} onClick={this.changeTitle.bind(null, el.name, el.id)}>
+      <button type="button" key={el.id} className={style.moviesGrid_categories_item_block_button} data-elem={el.name} onClick={this.changeTitle.bind(null, el.name, el.id)}>
         {el.name}
       </button>
     ));
@@ -48,7 +48,7 @@ class Genres extends React.Component {
     const genresActive = activeClass !== 'undefined' ? { borderBottom: '4px solid' } : {};
     return (
       <div>
-        <button type="button" style={genresActive} className={`${style.moviesGrid_categories_item_button}`} onClick={this.openGenresClick}>
+        <button type="button" style={genresActive} className={`${style.moviesGrid_categories_item_button}`} onClick={this.openGenresClick} data-filter="Genres">
           <span>{headerTitle}</span>
           <span className={`${active} ${style.moviesGrid_categories_item_span_arrow}`} />
         </button>

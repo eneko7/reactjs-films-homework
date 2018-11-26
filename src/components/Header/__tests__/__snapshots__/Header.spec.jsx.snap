@@ -1,3 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header snapshot render 1`] = `<Connect(Header) />`;
+exports[`Header render correctly  1`] = `
+<Header
+  films={
+    Array [
+      Object {
+        "backdrop_path": "/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg",
+        "genre_ids": Array [
+          18,
+          10751,
+          14,
+        ],
+        "id": 338952,
+        "original_title": "original_title",
+        "overview": "overview",
+        "vote_average": 8,
+      },
+    ]
+  }
+  genres={
+    Array [
+      Object {
+        "id": 28,
+        "name": "Action",
+      },
+      Object {
+        "id": 18,
+        "name": "Drama",
+      },
+      Object {
+        "id": 10751,
+        "name": "Family",
+      },
+      Object {
+        "id": 14,
+        "name": "Fantasy",
+      },
+    ]
+  }
+/>
+`;

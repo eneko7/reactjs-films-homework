@@ -29,13 +29,7 @@ class MoviesCategories extends React.Component {
     const noactive = `${style.noactive}`;
     return (
       categories.map((el) => {
-        if (el === activeCategory && el !== 'Genres') {
-          return (
-            <div key={el} className={style.moviesGrid_categories_item}>
-              <button type="button" data-filter={el} className={`${active} ${style.moviesGrid_categories_item_button}`} onClick={this.fetchFilmsByCategory.bind(null, el)}>{el}</button>
-            </div>
-          );
-        } if (el !== activeCategory && el !== 'Genres') {
+        if (el !== activeCategory && el !== 'Genres') {
           return (
             <div key={el} className={style.moviesGrid_categories_item}>
               <button type="button" data-filter={el} className={`${style.moviesGrid_categories_item_button}`} onClick={this.fetchFilmsByCategory.bind(null, el)}>{el}</button>
@@ -54,7 +48,11 @@ class MoviesCategories extends React.Component {
             </div>
           );
         }
-        return true;
+        return (
+          <div key={el} className={style.moviesGrid_categories_item}>
+            <button type="button" data-filter={el} className={`${active} ${style.moviesGrid_categories_item_button}`} onClick={this.fetchFilmsByCategory.bind(null, el)}>{el}</button>
+          </div>
+        );
       })
     );
   }

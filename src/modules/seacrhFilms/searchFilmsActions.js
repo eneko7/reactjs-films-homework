@@ -13,7 +13,5 @@ export const saveSearchingWord = payload => (dispatch) => {
 };
 
 export const searchFilm = payload => (dispatch) => {
-  if (payload !== '') {
-    dispatch(fetchFilmsBySearch(payload));
-  }
+  dispatch(fetchFilmsBySearch(payload));
 };

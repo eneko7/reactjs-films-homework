@@ -1,4 +1,5 @@
 module.exports = {
+  // rootDir: '../../src/components/Header/HeaderBottom/MovieInfoButtons/',
   rootDir: '../../',
   clearMocks: true,
   moduleNameMapper: {

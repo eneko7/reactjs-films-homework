@@ -1,15 +1,9 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import renderer from 'react-test-renderer';
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import { Provider } from 'react-redux';
 import MovieInfoButtons from '../index';
 
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
-const store = mockStore({
-});
+jest.mock('../../../../MoviesGrid/MovieElement/ModalWindowFilm/ModalWindowFilmContainer', () => () => <div>test</div>);
 
 const data = {
   annotation: 'film description',
@@ -20,9 +14,7 @@ describe('MovieInfoButtons', () => {
   it('renders correctly', () => {
     const shallowRenderer = new ShallowRenderer();
     shallowRenderer.render(
-      <Provider store={store}>
-        <MovieInfoButtons {...data} />
-      </Provider>,
+      <MovieInfoButtons {...data} />,
     );
     const result = shallowRenderer.getRenderOutput();
     expect(result).toMatchSnapshot();

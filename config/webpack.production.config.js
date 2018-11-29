@@ -9,7 +9,7 @@ module.exports = merge(require('./webpack.base.config'), {
     output: {
         path: path.resolve(__dirname, '../build'),
         filename: '[name].[hash].js',
-        publicPath: '/build',
+        publicPath: 'build',
     },
     mode: 'production',
     devtool: 'none',

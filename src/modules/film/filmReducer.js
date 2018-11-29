@@ -16,21 +16,24 @@ const filmReducer = (state = initialState, action) => {
     case FETCH_FILM_SUCCESS:
       return {
         ...state,
-        filmTrailer: action.payload,
-        errorFilm: false,
         isFetchingFilm: false,
         isFetchedFilm: true,
+        filmTrailer: action.payload,
+        errorFilm: false,
       };
     case FETCH_FILM_REQUEST:
       return {
         ...state,
-        isFetchingFilms: true,
-        isFetchedFilms: false,
+        isFetchingFilm: true,
+        isFetchedFilm: false,
       };
     case FETCH_FILM_ERROR:
       return {
         ...state,
         errorFilm: true,
+        isFetchingFilm: false,
+        isFetchedFilm: false,
+        filmTrailer: '',
       };
     default:
       return {

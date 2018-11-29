@@ -1,80 +1,53 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import Header from '../Header';
-import HeaderContainer from '../index';
+
+const shallow = new ShallowRenderer();
 
 const data = {
   films: [
     {
-      backdrop_path: '/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg',
-      genre_ids: [18, 10751, 14],
-      original_title: 'original_title',
-      overview: 'overview',
-      vote_average: 8,
-      id: 338952,
+      allGenres: [{ id: 28, name: 'Action' }, { id: 12, name: 'Adventure' }, { id: 16, name: 'Animation' }],
+      filmId: 23355,
+      filmName: 'name',
+      filmGenres: [1, 2, 3],
+      filmRate: 5,
+      filmDescription: 'name',
     },
   ],
   genres: [
-    {
-      id: 28,
-      name: 'Action',
-    },
-    {
-      id: 18,
-      name: 'Drama',
-    },
-    {
-      id: 10751,
-      name: 'Family',
-    },
-    {
-      id: 14,
-      name: 'Fantasy',
-    },
+    { id: 28, name: 'Action' }, { id: 12, name: 'Adventure' }, { id: 16, name: 'Animation' },
   ],
 };
 
 const badData = {
-  films: [
-    '',
-  ],
+  films: '',
   genres: [
-    {
-      id: 28,
-      name: 'Action',
-    },
-    {
-      id: 18,
-      name: 'Drama',
-    },
-    {
-      id: 10751,
-      name: 'Family',
-    },
-    {
-      id: 14,
-      name: 'Fantasy',
-    },
+    { id: 28, name: 'Action' }, { id: 12, name: 'Adventure' }, { id: 16, name: 'Animation' },
   ],
 };
 
 describe('Header', () => {
   it('render correctly ', () => {
-    const output = renderer.create(<HeaderContainer {...data} />);
-    expect(output).toMatchSnapshot();
+    shallow.render(<Header {...data} />);
+    const tree = shallow.getRenderOutput();
+    expect(tree).toMatchSnapshot();
   });
 
   it('render correctly if film empty ', () => {
-    const output = renderer.create(<HeaderContainer {...badData} />);
-    expect(output).toMatchSnapshot();
+    shallow.render(<Header {...data} />);
+    const tree = shallow.getRenderOutput();
+    expect(tree).toMatchSnapshot();
   });
   it('render correctly ', () => {
-    const output = renderer.create(<Header {...data} />);
-    expect(output).toMatchSnapshot();
+    shallow.render(<Header {...badData} />);
+    const tree = shallow.getRenderOutput();
+    expect(tree).toMatchSnapshot();
   });
 
   it('render correctly if film empty ', () => {
-    const output = renderer.create(<Header {...badData} />);
-    expect(output).toMatchSnapshot();
+    shallow.render(<Header {...badData} />);
+    const tree = shallow.getRenderOutput();
+    expect(tree).toMatchSnapshot();
   });
 });

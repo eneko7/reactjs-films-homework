@@ -42,8 +42,6 @@ class MovieElement extends React.Component {
     } else {
       title = `${film.title}`;
     }
-
-    const topPicture = film.backdrop_path ? { backgroundImage: `url(http://image.tmdb.org/t/p/w1280${film.backdrop_path})` } : { backgroundImage: `url(${errorImg})` };
     const genres = [];
     film.genre_ids.forEach((elem) => {
       genresList.forEach((el) => {
@@ -61,10 +59,9 @@ class MovieElement extends React.Component {
       </span>
     ));
     const active = isShownInfo ? `${style.active}` : '';
-    const descriptionFilmLayerInfo = film.poster_path ? { backgroundImage: `url(http://image.tmdb.org/t/p/w500${film.poster_path})` } : { backgroundImage: `url(${errorImg})` };
     return (
       <div className={`${style.moviesGrid_wrapper_MovieElement_ul_item_wrap}`}>
-        <div style={topPicture} className={style.moviesGrid_wrapper_MovieElement_top_picture} />
+        <div style={film.backdrop_path !== null ? { backgroundImage: `url(http://image.tmdb.org/t/p/w1280${film.backdrop_path})` } : { backgroundImage: `url(${errorImg})` }} className={style.moviesGrid_wrapper_MovieElement_top_picture} />
         <div className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description}>
           <div className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_n_r}>
             <span className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Name}>
@@ -99,7 +96,7 @@ class MovieElement extends React.Component {
             </div>
           </div>
         </div>
-        <div className={`${active} ${style.descriptionFilmLayer_info}`} style={descriptionFilmLayerInfo}>
+        <div className={`${active} ${style.descriptionFilmLayer_info}`} style={film.poster_path !== null ? { backgroundImage: `url(http://image.tmdb.org/t/p/w500${film.poster_path})` } : { backgroundImage: `url(${errorImg})` }}>
           <div className={style.descriptionFilmLayer_info_overlay}>
             <button className={style.descriptionFilmLayer_info_close} onClick={this.showInfo} type="button">
               &times;

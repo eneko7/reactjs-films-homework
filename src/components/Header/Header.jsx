@@ -6,7 +6,6 @@ import HeaderTopContainer from './HeaderTop/HeaderTopContainer';
 
 const Header = (props) => {
   const { films, genres } = props;
-  const film = films[0];
   let data = {
     allGenres: genres,
     filmGenres: [18, 10751, 14],
@@ -16,15 +15,15 @@ const Header = (props) => {
     filmId: 338952,
     bg: { backgroundImage: 'url(http://image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)' },
   };
-  if (typeof film === 'object') {
+  if (typeof films[0] === 'object') {
     data = {
       allGenres: genres,
-      filmGenres: film.genre_ids,
-      filmName: film.original_title,
-      filmDescription: film.overview,
-      filmRate: film.vote_average,
-      filmId: film.id,
-      bg: { backgroundImage: `url(http://image.tmdb.org/t/p/w1280${film.backdrop_path})` },
+      filmGenres: films[0].genre_ids,
+      filmName: films[0].original_title,
+      filmDescription: films[0].overview,
+      filmRate: films[0].vote_average,
+      filmId: films[0].id,
+      bg: { backgroundImage: `url(http://image.tmdb.org/t/p/w1280${films[0].backdrop_path})` },
     };
   }
   return (

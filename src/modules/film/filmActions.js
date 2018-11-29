@@ -21,7 +21,7 @@ export const receiveFilmError = payload => ({
 export function fetchFilm(filmId) {
   return (dispatch) => {
     dispatch(receiveFilmRequest());
-    axios.get(`https://api.themoviedb.org/3/movie/${filmId}/videos?api_key=6a08c0def237c5910708279c9ee78cc5`)
+    return axios.get(`https://api.themoviedb.org/3/movie/${filmId}/videos?api_key=6a08c0def237c5910708279c9ee78cc5`)
       .then((response) => {
         dispatch(receiveFilmSuccess(response.data.results[0].key));
       })

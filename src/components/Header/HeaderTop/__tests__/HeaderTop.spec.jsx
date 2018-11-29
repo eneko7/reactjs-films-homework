@@ -1,3 +1,7 @@
+
+// const r = jest.genMockFromModule('react');
+// console.log('>>', r.createRef);
+// r.createRef = () => 'test value';
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import TestRenderer from 'react-test-renderer';
@@ -8,6 +12,7 @@ import { Provider } from 'react-redux';
 import * as searchFilmsActions from '../../../../modules/seacrhFilms/searchFilmsActions';
 import * as filmsActions from '../../../../modules/films/filmsActions';
 import HeaderTop from '../index';
+// console.log('>>', React.createRef());
 
 const shallow = new ShallowRenderer();
 const middlewares = [thunk];
@@ -42,11 +47,6 @@ describe('Search Snapshot', () => {
       status: 200,
       response: '',
     });
-    const e = {
-      target: {
-        value: 'word',
-      },
-    };
 
     const expectedActions = [
       { type: searchFilmsActions.SAVE_SEARCHING_WORD, payload: 'word' },
@@ -54,7 +54,8 @@ describe('Search Snapshot', () => {
     ];
 
     const { root } = testRenderer;
-    root.findByProps({ className: 'header_top_search_input' }).props.onChange(e);
+    const event = { stopPropagation: jest.fn(), preventDefault: jest.fn() };
+    root.findByProps({ className: 'header_top_search_input' }).props.onChange(event);
     moxios.wait(() => {
       expect(store.getActions()).toEqual(expectedActions);
       done();
@@ -76,7 +77,8 @@ describe('Search Snapshot', () => {
     ];
 
     const { root } = testRenderer;
-    root.findByProps({ className: 'header_top_search_label' }).props.onClick();
+    const event = { stopPropagation: jest.fn(), preventDefault: jest.fn() };
+    root.findByProps({ className: 'header_top_search_label' }).props.onClick(event);
     moxios.wait(() => {
       expect(store.getActions()).toEqual(expectedActions);
       done();
@@ -92,11 +94,11 @@ describe('Search Snapshot', () => {
       status: 200,
       response: '',
     });
-    const e = {
-      target: {
-        value: '',
-      },
-    };
+    // const e = {
+    //   target: {
+    //     value: '',
+    //   },
+    // };
 
     const expectedActions = [
       { type: searchFilmsActions.SAVE_SEARCHING_WORD, payload: '' },
@@ -104,7 +106,8 @@ describe('Search Snapshot', () => {
     ];
 
     const { root } = testRenderer;
-    root.findByProps({ className: 'header_top_search_input' }).props.onChange(e);
+    const event = { stopPropagation: jest.fn(), preventDefault: jest.fn() };
+    root.findByProps({ className: 'header_top_search_input' }).props.onChange(event);
     moxios.wait(() => {
       expect(store.getActions()).toEqual(expectedActions);
       done();

@@ -17,11 +17,10 @@ const genresReducer = (state = initialState, action) => {
     case FETCH_GENRES_SUCCESS:
       return {
         ...state,
-        allGenres: action.payload,
-        errorGenres: {},
         isFetchingGenres: false,
         isFetchedGenres: true,
-        lastGenreID: 0,
+        allGenres: action.payload,
+        errorGenres: '',
       };
     case FETCH_GENRES_REQUEST:
       return {
@@ -32,7 +31,10 @@ const genresReducer = (state = initialState, action) => {
     case FETCH_GENRES_ERROR:
       return {
         ...state,
-        errorGenres: {},
+        errorGenres: action.payload,
+        isFetchingGenres: false,
+        isFetchedGenres: false,
+        allGenres: [],
       };
     default:
       return {

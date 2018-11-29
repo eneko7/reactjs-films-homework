@@ -5,41 +5,38 @@ import style from './HeaderTop.scss';
 class HeaderTop extends React.Component {
   constructor(props) {
     super(props);
-    this.onChange = this.onChange.bind(this);
-    this.searchFilms = this.searchFilms.bind(this);
+    this.input = React.createRef();
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  onChange(e) {
+  handleSubmit(event) {
+    event.preventDefault();
     const { searchFilm, fetchFilmsPopular, saveSearchingWord } = this.props;
-    if (e.target.value !== '') {
-      searchFilm(e.target.value);
-      saveSearchingWord(e.target.value);
+    if (this.input.current.value !== '') {
+      searchFilm(this.input.current.value);
+      saveSearchingWord(this.input.current.value);
     } else {
       fetchFilmsPopular();
     }
   }
 
-  searchFilms() {
-    const { searchFilm } = this.props;
-    searchFilm(document.getElementById('search_input').value);
-  }
 
   render() {
-    const { searchedWord } = this.props;
     return (
       <div className={style.header_top}>
         <span className={style.header_top_span}><a href="/" className={style.header_top_span_a}>FILMS</a></span>
-        <div className={style.header_top_search}>
+        <form className={style.header_top_search} onSubmit={this.handleSubmit}>
           <input
             type="text"
+            defaultValue="search"
             id="search_input"
             className={style.header_top_search_input}
-            onChange={this.onChange}
+            ref={this.input}
+            onChange={this.handleSubmit}
             placeholder="Searh..."
-            value={searchedWord}
           />
-          <button className={style.header_top_search_label} onClick={this.searchFilms} type="button" />
-        </div>
+          <button className={style.header_top_search_label} onClick={this.handleSubmit} type="submit" />
+        </form>
       </div>
     );
   }
@@ -48,6 +45,6 @@ HeaderTop.propTypes = {
   fetchFilmsPopular: PropTypes.func.isRequired,
   searchFilm: PropTypes.func.isRequired,
   saveSearchingWord: PropTypes.func.isRequired,
-  searchedWord: PropTypes.string.isRequired,
+  // searchedWord: PropTypes.string.isRequired,
 };
 export default HeaderTop;

@@ -92,53 +92,7 @@ Array [
     className="moviesGrid_categories_item"
   >
     <div>
-      <button
-        className="moviesGrid_categories_item_button"
-        data-filter="Genres"
-        onClick={[Function]}
-        style={
-          Object {
-            "borderBottom": "4px solid",
-          }
-        }
-        type="button"
-      >
-        <span>
-          Genres
-        </span>
-        <span
-          className="active moviesGrid_categories_item_span_arrow"
-        />
-      </button>
-      <div
-        className="active moviesGrid_categories_item_block"
-        id="genres_list"
-      >
-        <button
-          className="moviesGrid_categories_item_block_button"
-          data-elem="adventure"
-          onClick={[Function]}
-          type="button"
-        >
-          adventure
-        </button>
-        <button
-          className="moviesGrid_categories_item_block_button"
-          data-elem="action"
-          onClick={[Function]}
-          type="button"
-        >
-          action
-        </button>
-        <button
-          className="moviesGrid_categories_item_block_button"
-          data-elem="drama"
-          onClick={[Function]}
-          type="button"
-        >
-          drama
-        </button>
-      </div>
+      test
     </div>
   </div>,
 ]

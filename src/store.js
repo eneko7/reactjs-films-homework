@@ -5,11 +5,11 @@ import {
   applyMiddleware,
 } from 'redux';
 import thunk from 'redux-thunk';
-import films from './films/filmsReducer';
-import film from './film/filmReducer';
-import genres from './genres/genresReducer';
-import navlinks from './navlinks/navlinksReducer';
-import search from './seacrhFilms/seacrhFilmsReducer';
+import films from './modules/films/filmsReducer';
+import film from './modules/film/filmReducer';
+import genres from './modules/genres/genresReducer';
+import navlinks from './modules/navlinks/navlinksReducer';
+import search from './modules/seacrhFilms/seacrhFilmsReducer';
 
 const rootReducer = combineReducers({
   films,

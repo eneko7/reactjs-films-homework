@@ -1,42 +1,171 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header render correctly  1`] = `
-<Header
-  films={
-    Array [
-      Object {
-        "backdrop_path": "/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg",
-        "genre_ids": Array [
-          18,
-          10751,
-          14,
-        ],
-        "id": 338952,
-        "original_title": "original_title",
-        "overview": "overview",
-        "vote_average": 8,
-      },
-    ]
+<header
+  className="app_header"
+  id="app_header"
+  style={
+    Object {
+      "backgroundImage": "url(http://image.tmdb.org/t/p/w1280undefined)",
+    }
   }
-  genres={
-    Array [
+>
+  <Connect(HeaderTop) />
+  <HeaderBottom
+    allGenres={
+      Array [
+        Object {
+          "id": 28,
+          "name": "Action",
+        },
+        Object {
+          "id": 12,
+          "name": "Adventure",
+        },
+        Object {
+          "id": 16,
+          "name": "Animation",
+        },
+      ]
+    }
+    bg={
       Object {
-        "id": 28,
-        "name": "Action",
-      },
-      Object {
-        "id": 18,
-        "name": "Drama",
-      },
-      Object {
-        "id": 10751,
-        "name": "Family",
-      },
-      Object {
-        "id": 14,
-        "name": "Fantasy",
-      },
-    ]
+        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280undefined)",
+      }
+    }
+  />
+</header>
+`;
+
+exports[`Header render correctly  2`] = `
+<header
+  className="app_header"
+  id="app_header"
+  style={
+    Object {
+      "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
+    }
   }
-/>
+>
+  <Connect(HeaderTop) />
+  <HeaderBottom
+    allGenres={
+      Array [
+        Object {
+          "id": 28,
+          "name": "Action",
+        },
+        Object {
+          "id": 12,
+          "name": "Adventure",
+        },
+        Object {
+          "id": 16,
+          "name": "Animation",
+        },
+      ]
+    }
+    bg={
+      Object {
+        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
+      }
+    }
+    filmDescription="Gellert Grindelwald has escaped imprisonment and has begun gathering followers to his cause—elevating wizards above all non-magical beings. The only one capable of putting a stop to him is the wizard he once called his closest friend, Albus Dumbledore. However, Dumbledore will need to seek help from the wizard who had thwarted Grindelwald once before, his former student Newt Scamander, who agrees to help, unaware of the dangers that lie ahead. Lines are drawn as love and loyalty are tested, even among the truest friends and family, in an increasingly divided wizarding world."
+    filmGenres={
+      Array [
+        18,
+        10751,
+        14,
+      ]
+    }
+    filmId={338952}
+    filmName="Fantastic Beasts: The Crimes of Grindelwald default"
+    filmRate={7.1}
+  />
+</header>
+`;
+
+exports[`Header render correctly if film empty  1`] = `
+<header
+  className="app_header"
+  id="app_header"
+  style={
+    Object {
+      "backgroundImage": "url(http://image.tmdb.org/t/p/w1280undefined)",
+    }
+  }
+>
+  <Connect(HeaderTop) />
+  <HeaderBottom
+    allGenres={
+      Array [
+        Object {
+          "id": 28,
+          "name": "Action",
+        },
+        Object {
+          "id": 12,
+          "name": "Adventure",
+        },
+        Object {
+          "id": 16,
+          "name": "Animation",
+        },
+      ]
+    }
+    bg={
+      Object {
+        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280undefined)",
+      }
+    }
+  />
+</header>
+`;
+
+exports[`Header render correctly if film empty  2`] = `
+<header
+  className="app_header"
+  id="app_header"
+  style={
+    Object {
+      "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
+    }
+  }
+>
+  <Connect(HeaderTop) />
+  <HeaderBottom
+    allGenres={
+      Array [
+        Object {
+          "id": 28,
+          "name": "Action",
+        },
+        Object {
+          "id": 12,
+          "name": "Adventure",
+        },
+        Object {
+          "id": 16,
+          "name": "Animation",
+        },
+      ]
+    }
+    bg={
+      Object {
+        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
+      }
+    }
+    filmDescription="Gellert Grindelwald has escaped imprisonment and has begun gathering followers to his cause—elevating wizards above all non-magical beings. The only one capable of putting a stop to him is the wizard he once called his closest friend, Albus Dumbledore. However, Dumbledore will need to seek help from the wizard who had thwarted Grindelwald once before, his former student Newt Scamander, who agrees to help, unaware of the dangers that lie ahead. Lines are drawn as love and loyalty are tested, even among the truest friends and family, in an increasingly divided wizarding world."
+    filmGenres={
+      Array [
+        18,
+        10751,
+        14,
+      ]
+    }
+    filmId={338952}
+    filmName="Fantastic Beasts: The Crimes of Grindelwald default"
+    filmRate={7.1}
+  />
+</header>
 `;

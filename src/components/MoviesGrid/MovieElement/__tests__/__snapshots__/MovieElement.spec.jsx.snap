@@ -465,6 +465,161 @@ exports[`MovieElement MovieElement -> Click (show info)  1`] = `
 </div>
 `;
 
+exports[`MovieElement MovieElement -> Click (show info) without poster  1`] = `
+<div
+  className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+>
+  <div
+    className="moviesGrid_wrapper_MovieElement_top_picture"
+    style={
+      Object {
+        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
+      }
+    }
+  />
+  <div
+    className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description"
+  >
+    <div
+      className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_n_r"
+    >
+      <span
+        className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Name"
+      >
+        ORIGINAL_TITLE
+      </span>
+      <span
+        className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Rate"
+      >
+        8
+      </span>
+    </div>
+    <div
+      className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres"
+    >
+      <span
+        className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen"
+      >
+        Drama
+      </span>
+      <span
+        className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen"
+      >
+        Family
+      </span>
+      <span
+        className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen"
+      >
+        Fantasy
+      </span>
+    </div>
+  </div>
+  <div
+    className="descriptionFilmLayer"
+  >
+    <div
+      className="descriptionFilmLayer_overlay"
+    >
+      <div
+        className="descriptionFilmLayer_overlay_description"
+      >
+        <button
+          className="descriptionFilmLayer_overlay_description_play circle_blue"
+          onClick={[Function]}
+          type="button"
+        >
+          <div
+            className="circle_blue_play"
+          />
+        </button>
+        <span
+          className="button_watch_now"
+        >
+          Watch Now
+        </span>
+        <button
+          className="button_show_info"
+          onClick={[Function]}
+          type="button"
+        >
+          View info
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="active descriptionFilmLayer_info"
+    style={
+      Object {
+        "backgroundImage": "url(http://image.tmdb.org/t/p/w500)",
+      }
+    }
+  >
+    <div
+      className="descriptionFilmLayer_info_overlay"
+    >
+      <button
+        className="descriptionFilmLayer_info_close"
+        onClick={[Function]}
+        type="button"
+      >
+        ×
+      </button>
+      <div
+        className="descriptionFilmLayer_info_overlay_description"
+      >
+        <div
+          className="descriptionFilmLayer_info_overlay_description_Name_and_Rate"
+        >
+          <span
+            className="descriptionFilmLayer_info_overlay_description_name"
+          >
+            ORIGINAL_TITLE
+          </span>
+          <span
+            className="descriptionFilmLayer_info_overlay_description_rate"
+          >
+            8
+          </span>
+        </div>
+        <div
+          className="descriptionFilmLayer_info_overlay_description_genres"
+        >
+          <span
+            className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen"
+          >
+            Drama
+          </span>
+          <span
+            className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen"
+          >
+            Family
+          </span>
+          <span
+            className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen"
+          >
+            Fantasy
+          </span>
+        </div>
+        <div
+          className="descriptionFilmLayer_info_overlay_description_overview"
+        >
+          overview
+        </div>
+        <button
+          className="descriptionFilmLayer_info_overlay_description_watch_now"
+          onClick={[Function]}
+          type="button"
+        >
+          Watch Now
+        </button>
+      </div>
+    </div>
+  </div>
+  
+</div>
+`;
+
 exports[`MovieElement MovieElement -> Click (watch film)  1`] = `
 <div
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
@@ -631,6 +786,161 @@ exports[`MovieElement renders correctly 1`] = `
     style={
       Object {
         "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
+      }
+    }
+  />
+  <div
+    className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description"
+  >
+    <div
+      className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_n_r"
+    >
+      <span
+        className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Name"
+      >
+        ORIGINAL_TITLE
+      </span>
+      <span
+        className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Rate"
+      >
+        8
+      </span>
+    </div>
+    <div
+      className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres"
+    >
+      <span
+        className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen"
+      >
+        Drama
+      </span>
+      <span
+        className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen"
+      >
+        Family
+      </span>
+      <span
+        className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen"
+      >
+        Fantasy
+      </span>
+    </div>
+  </div>
+  <div
+    className="descriptionFilmLayer"
+  >
+    <div
+      className="descriptionFilmLayer_overlay"
+    >
+      <div
+        className="descriptionFilmLayer_overlay_description"
+      >
+        <button
+          className="descriptionFilmLayer_overlay_description_play circle_blue"
+          onClick={[Function]}
+          type="button"
+        >
+          <div
+            className="circle_blue_play"
+          />
+        </button>
+        <span
+          className="button_watch_now"
+        >
+          Watch Now
+        </span>
+        <button
+          className="button_show_info"
+          onClick={[Function]}
+          type="button"
+        >
+          View info
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className=" descriptionFilmLayer_info"
+    style={
+      Object {
+        "backgroundImage": "url(http://image.tmdb.org/t/p/w500/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg)",
+      }
+    }
+  >
+    <div
+      className="descriptionFilmLayer_info_overlay"
+    >
+      <button
+        className="descriptionFilmLayer_info_close"
+        onClick={[Function]}
+        type="button"
+      >
+        ×
+      </button>
+      <div
+        className="descriptionFilmLayer_info_overlay_description"
+      >
+        <div
+          className="descriptionFilmLayer_info_overlay_description_Name_and_Rate"
+        >
+          <span
+            className="descriptionFilmLayer_info_overlay_description_name"
+          >
+            ORIGINAL_TITLE
+          </span>
+          <span
+            className="descriptionFilmLayer_info_overlay_description_rate"
+          >
+            8
+          </span>
+        </div>
+        <div
+          className="descriptionFilmLayer_info_overlay_description_genres"
+        >
+          <span
+            className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen"
+          >
+            Drama
+          </span>
+          <span
+            className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen"
+          >
+            Family
+          </span>
+          <span
+            className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen"
+          >
+            Fantasy
+          </span>
+        </div>
+        <div
+          className="descriptionFilmLayer_info_overlay_description_overview"
+        >
+          overview
+        </div>
+        <button
+          className="descriptionFilmLayer_info_overlay_description_watch_now"
+          onClick={[Function]}
+          type="button"
+        >
+          Watch Now
+        </button>
+      </div>
+    </div>
+  </div>
+  
+</div>
+`;
+
+exports[`MovieElement renders correctly without top picture 1`] = `
+<div
+  className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+>
+  <div
+    className="moviesGrid_wrapper_MovieElement_top_picture"
+    style={
+      Object {
+        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280)",
       }
     }
   />

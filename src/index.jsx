@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import getStore from './modules/store';
+import getStore from './store';
 import Root from './components/Root';
 
 const store = getStore();

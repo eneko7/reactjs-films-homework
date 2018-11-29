@@ -1,1 +1,3 @@
-export { default } from './Genres';
+import Genres from './GenresContainer';
+
+export default Genres;

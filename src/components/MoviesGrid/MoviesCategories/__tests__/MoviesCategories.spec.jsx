@@ -64,7 +64,6 @@ describe('MoviesCategories Snapshot', () => {
     instance.setState(() => ({
       activeCategory: el,
     }));
-    component.root.findByProps({ 'data-filter': el }).props.onClick(el);
     expect(component).toMatchSnapshot();
   });
 });

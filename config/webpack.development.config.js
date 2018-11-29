@@ -33,6 +33,20 @@ module.exports = merge(require('./webpack.base.config'), {
           'sass-loader',
         ],
       },
+      {
+        test: /\.(ico|png|jpg|gif|svg|woff(2)?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: '/build',
+              context: 'src/',
+              name: '[path][name].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
 });

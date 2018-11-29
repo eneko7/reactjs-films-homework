@@ -1,14 +1,9 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 
 const conf = {
-    output: {
-        path: path.resolve(__dirname, '../build'),
-        filename: 'main.js',
-        publicPath: '/build',
-    },
     resolve: {
         extensions: ['.js', '.jsx', 'scss'],
     },
@@ -23,20 +18,6 @@ const conf = {
                     'eslint-loader',
                 ],
             },
-            {
-                test: /\.(ico|png|jpg|gif|svg|woff(2)?)$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            publicPath: '/build',
-                            context: 'src/',
-                            name: '[path][name].[ext]',
-                        },
-                    },
-                ],
-            },
         ],
     },
     plugins: [
@@ -48,7 +29,12 @@ const conf = {
             filename: 'index.html',
             template: './src/index.html',
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new CleanWebpackPlugin(['build'], {
+            root: process.cwd(),
+            verbose: true,
+            dry: false,
+        }),
     ],
 };
 module.exports = conf;

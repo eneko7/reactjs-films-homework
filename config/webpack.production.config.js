@@ -6,6 +6,11 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = merge(require('./webpack.base.config'), {
+    output: {
+        path: path.resolve(__dirname, '../build'),
+        filename: '[name].[hash].js',
+        publicPath: '/',
+    },
     mode: 'production',
     devtool: 'none',
     entry: [
@@ -32,9 +37,6 @@ module.exports = merge(require('./webpack.base.config'), {
             new OptimizeCSSAssetsPlugin({}),
         ],
     },
-    output: {
-        filename: '[name].[hash].js',
-    },
     module: {
         rules: [
             {
@@ -50,6 +52,20 @@ module.exports = merge(require('./webpack.base.config'), {
                         },
                     },
                     'sass-loader',
+                ],
+            },
+            {
+                test: /\.(ico|png|jpg|gif|svg|woff(2)?)$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            publicPath: '/',
+                            context: 'src/',
+                            name: '[path][name].[ext]',
+                        },
+                    },
                 ],
             },
         ],

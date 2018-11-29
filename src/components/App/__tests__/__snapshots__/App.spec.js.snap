@@ -5,7 +5,6 @@ exports[`App renders correctly 1`] = `
   className="main_container"
 >
   <Header />
-  ,
   <Footer />
 </div>
 `;

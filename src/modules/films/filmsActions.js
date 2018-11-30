@@ -27,7 +27,7 @@ export const receiveFilmsError = payload => ({
 export function fetchFilms(url, page = 1) {
   return (dispatch) => {
     dispatch(receiveFilmsRequest());
-    axios.get(`${url}&page=${page}`)
+    return axios.get(`${url}&page=${page}`)
       .then((response) => {
         dispatch(receiveFilmsSuccess({ films: response.data.results, url, page }));
       })

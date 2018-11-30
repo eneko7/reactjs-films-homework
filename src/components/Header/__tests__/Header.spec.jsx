@@ -2,6 +2,7 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import Header from '../Header';
 
+jest.mock('../HeaderBottom', () => () => <div>test</div>);
 const shallow = new ShallowRenderer();
 
 const data = {
@@ -21,7 +22,7 @@ const data = {
 };
 
 const badData = {
-  films: '',
+  films: [],
   genres: [
     { id: 28, name: 'Action' }, { id: 12, name: 'Adventure' }, { id: 16, name: 'Animation' },
   ],

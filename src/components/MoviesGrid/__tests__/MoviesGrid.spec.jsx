@@ -37,7 +37,7 @@ describe('MoviesList Snapshot', () => {
   test('snapshot', () => {
     const component = shallow.render(
       <Provider store={store}>
-        <MoviesGrid />
+        <MoviesGrid fetchFilmsByGenre={() => ('Hello')} />
       </Provider>,
     );
     expect(component).toMatchSnapshot();

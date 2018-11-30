@@ -21,3 +21,5 @@ exports[`HeaderBottom renders correctly 1`] = `
   />
 </div>
 `;
+
+exports[`HeaderBottom renders correctly bad 1`] = `null`;

@@ -34,6 +34,9 @@ class MovieElement extends React.Component {
   }
 
   render() {
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
     const { film, genresList } = this.props;
     const { isShownInfo, isShownFilm } = this.state;
     let title = '';
@@ -52,16 +55,36 @@ class MovieElement extends React.Component {
     });
     const filmGenres = genres.map(elem => (
       <span
-        key={elem.toString()}
+        key={elem.toString() + getRandomInt(0, 100)}
         className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen}
       >
         {elem}
       </span>
     ));
     const active = isShownInfo ? `${style.active}` : '';
+    let topPicture = {};
+    if (film.backdrop_path !== null) {
+      topPicture = {
+        backgroundImage: `url(http://image.tmdb.org/t/p/w1280${film.backdrop_path})`,
+      };
+    } else {
+      topPicture = {
+        backgroundImage: `url(${errorImg})`,
+      };
+    }
+    let posterPicture = {};
+    if (film.poster_path !== null) {
+      posterPicture = {
+        backgroundImage: `url(http://image.tmdb.org/t/p/w1280${film.poster_path})`,
+      };
+    } else {
+      posterPicture = {
+        backgroundImage: `url(${errorImg})`,
+      };
+    }
     return (
       <div className={`${style.moviesGrid_wrapper_MovieElement_ul_item_wrap}`}>
-        <div style={film.backdrop_path !== null ? { backgroundImage: `url(http://image.tmdb.org/t/p/w1280${film.backdrop_path})` } : { backgroundImage: `url(${errorImg})` }} className={style.moviesGrid_wrapper_MovieElement_top_picture} />
+        <div style={topPicture} className={style.moviesGrid_wrapper_MovieElement_top_picture} />
         <div className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description}>
           <div className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_n_r}>
             <span className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Name}>
@@ -96,7 +119,7 @@ class MovieElement extends React.Component {
             </div>
           </div>
         </div>
-        <div className={`${active} ${style.descriptionFilmLayer_info}`} style={film.poster_path !== null ? { backgroundImage: `url(http://image.tmdb.org/t/p/w500${film.poster_path})` } : { backgroundImage: `url(${errorImg})` }}>
+        <div className={`${active} ${style.descriptionFilmLayer_info}`} style={posterPicture}>
           <div className={style.descriptionFilmLayer_info_overlay}>
             <button className={style.descriptionFilmLayer_info_close} onClick={this.showInfo} type="button">
               &times;

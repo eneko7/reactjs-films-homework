@@ -19,11 +19,13 @@ const store = mockStore({
 });
 const shallow = new ShallowRenderer();
 const data = {
+  filmTrailerKey: 'key',
   filmId: 1,
   onChange: () => ('Hello!'),
 };
 const dataFailId = {
-  filmId: '',
+  filmTrailerKey: 'key',
+  filmId: -1,
   onChange: () => ('Hello!'),
 };
 describe('ModalWindowFilm Snapshot', () => {
@@ -31,6 +33,16 @@ describe('ModalWindowFilm Snapshot', () => {
     const component = shallow.render(
       <Provider store={store}>
         <ModalWindowFilm {...data} />
+      </Provider>,
+    );
+    expect(component).toMatchSnapshot();
+  });
+});
+describe('ModalWindowFilm Snapshot', () => {
+  it('renders with trailer', () => {
+    const component = shallow.render(
+      <Provider store={store}>
+        <ModalWindowFilm {...dataFailId} />
       </Provider>,
     );
     expect(component).toMatchSnapshot();

@@ -38,7 +38,7 @@ class MoviesCategories extends React.Component {
         } if (el !== activeCategory && el === 'Genres') {
           return (
             <div key={el} className={style.moviesGrid_categories_item}>
-              <GenresContainer title="Genres" activeClass={noactive} fetchChange={this.fetchFilmsByCategory} />
+              <GenresContainer title="Genre" activeClass={noactive} fetchChange={this.fetchFilmsByCategory} />
             </div>
           );
         } if (el === activeCategory && el === 'Genres') {

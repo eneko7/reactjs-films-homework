@@ -10,11 +10,11 @@ class ModalWindowFilm extends React.Component {
 
   render() {
     const { filmId, onChange, filmTrailerKey } = this.props;
-    return (
-      <div className={style.ModalWindowFilm}>
-        <button type="button" className={style.ModalWindowFilm_close} onClick={onChange} />
-        <button type="button" className={style.ModalWindowFilm_close_button} onClick={onChange}>&times;</button>
-        {filmId ? (
+    if (filmId > 0) {
+      return (
+        <div className={style.ModalWindowFilm}>
+          <button type="button" className={style.ModalWindowFilm_close} onClick={onChange} />
+          <button type="button" className={style.ModalWindowFilm_close_button} onClick={onChange}>&times;</button>
           <iframe
             title="title"
             className={style.ModalWindowFilm_film_iframe}
@@ -23,9 +23,11 @@ class ModalWindowFilm extends React.Component {
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
-        ) : <div className={style.ModalWindowFilm_film_error} />}
-
-      </div>
+        </div>
+      );
+    }
+    return (
+      <div className={style.ModalWindowFilm_film_error} />
     );
   }
 }

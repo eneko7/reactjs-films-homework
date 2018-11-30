@@ -33,12 +33,12 @@ const data = {
   ],
 };
 
-const dataBadPicture = {
+const dataBadPictures = {
   film: {
     backdrop_path: '',
     genre_ids: [18, 10751, 14],
     title: 'original_title',
-    poster_path: '/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg',
+    poster_path: '',
     overview: 'overview',
     vote_average: 8,
     id: 338952,
@@ -93,6 +93,36 @@ const dataBadPicturePoster = {
   ],
 };
 
+const dataBadPictureTop = {
+  film: {
+    backdrop_path: '',
+    genre_ids: [18, 10751, 14],
+    title: 'original_title',
+    poster_path: '/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg',
+    overview: 'overview',
+    vote_average: 8,
+    id: 338952,
+  },
+  genresList: [
+    {
+      id: 28,
+      name: 'Action',
+    },
+    {
+      id: 18,
+      name: 'Drama',
+    },
+    {
+      id: 10751,
+      name: 'Family',
+    },
+    {
+      id: 14,
+      name: 'Fantasy',
+    },
+  ],
+};
+
 jest.mock('../ModalWindowFilm/ModalWindowFilmContainer', () => () => <div>test</div>);
 
 describe('MovieElement', () => {
@@ -103,16 +133,22 @@ describe('MovieElement', () => {
     expect(result).toMatchSnapshot();
   });
 
-  it('renders correctly without top picture', () => {
-    rendererShallow.render(<MovieElement {...dataBadPicture} />);
+  it('renders correctly without all pictures', () => {
+    rendererShallow.render(<MovieElement {...dataBadPictures} />);
     const result = rendererShallow.getRenderOutput();
     expect(result).toMatchSnapshot();
   });
 
-  it('MovieElement -> Click (show info) without poster ', () => {
-    const output = renderer.create(<MovieElement {...dataBadPicturePoster} />);
-    output.root.findByProps({ className: 'button_show_info' }).props.onClick();
-    expect(output).toMatchSnapshot();
+  it('renders correctly without poster', () => {
+    rendererShallow.render(<MovieElement {...dataBadPicturePoster} />);
+    const result = rendererShallow.getRenderOutput();
+    expect(result).toMatchSnapshot();
+  });
+
+  it('renders correctly without top picture', () => {
+    rendererShallow.render(<MovieElement {...dataBadPictureTop} />);
+    const result = rendererShallow.getRenderOutput();
+    expect(result).toMatchSnapshot();
   });
 
   it('MovieElement -> Click (show info) ', () => {

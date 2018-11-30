@@ -3,6 +3,15 @@
 exports[`ModalWindowFilm Snapshot renders with trailer 1`] = `
 <Connect(ModalWindowFilm)
   filmId={1}
+  filmTrailerKey="key"
+  onChange={[Function]}
+/>
+`;
+
+exports[`ModalWindowFilm Snapshot renders with trailer 2`] = `
+<Connect(ModalWindowFilm)
+  filmId={-1}
+  filmTrailerKey="key"
   onChange={[Function]}
 />
 `;
@@ -36,22 +45,6 @@ exports[`fetchFilm actions renders with trailer 1`] = `
 
 exports[`fetchFilm actions renders with trailer 2`] = `
 <div
-  className="ModalWindowFilm"
->
-  <button
-    className="ModalWindowFilm_close"
-    onClick={[Function]}
-    type="button"
-  />
-  <button
-    className="ModalWindowFilm_close_button"
-    onClick={[Function]}
-    type="button"
-  >
-    ×
-  </button>
-  <div
-    className="ModalWindowFilm_film_error"
-  />
-</div>
+  className="ModalWindowFilm_film_error"
+/>
 `;

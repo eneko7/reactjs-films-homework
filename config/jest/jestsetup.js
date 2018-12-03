@@ -1,5 +1,4 @@
 module.exports = {
-  // rootDir: '../../src/components/Header/HeaderTop/',
   rootDir: '../../',
   clearMocks: true,
   moduleNameMapper: {
@@ -10,7 +9,6 @@ module.exports = {
   testRegex: '/__tests__/.*\\.spec\\.jsx$',
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{js,jsx}'],
-  // collectCoverageFrom: ['src/components/Header/**/*.{js,jsx}'],
   coveragePathIgnorePatterns: ['src/index.js', 'src/store.js'],
   coverageThreshold: {
     global: {

@@ -34,9 +34,9 @@ class MovieElement extends React.Component {
   }
 
   render() {
-    function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min)) + min;
-    }
+    // function getRandomInt(min, max) {
+    //   return Math.floor(Math.random() * (max - min)) + min;
+    // }
     const { film, genresList } = this.props;
     const { isShownInfo, isShownFilm } = this.state;
     let title = '';
@@ -55,7 +55,7 @@ class MovieElement extends React.Component {
     });
     const filmGenres = genres.map(elem => (
       <span
-        key={elem.toString() + getRandomInt(0, 100)}
+        key={elem}
         className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen}
       >
         {elem}
@@ -63,7 +63,7 @@ class MovieElement extends React.Component {
     ));
     const active = isShownInfo ? `${style.active}` : '';
     let topPicture = {};
-    if (film.backdrop_path !== null) {
+    if (film.backdrop_path) {
       topPicture = {
         backgroundImage: `url(http://image.tmdb.org/t/p/w1280${film.backdrop_path})`,
       };

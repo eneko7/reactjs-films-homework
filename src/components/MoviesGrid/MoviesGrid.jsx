@@ -11,8 +11,8 @@ class MoviesGrid extends React.Component {
   }
 
   componentDidMount() {
-    const { fetchFilmsPopular } = this.props;
-    fetchFilmsPopular();
+    // const { fetchFilmsPopular } = this.props;
+    // fetchFilmsPopular();
     global.document.addEventListener('scroll', this.onScrollHandler);
   }
 
@@ -78,7 +78,7 @@ class MoviesGrid extends React.Component {
 }
 
 MoviesGrid.propTypes = {
-  fetchFilmsPopular: PropTypes.func.isRequired,
+  // fetchFilmsPopular: PropTypes.func.isRequired,
   fetchNextFilms: PropTypes.func.isRequired,
   isFetchingFilms: PropTypes.bool.isRequired,
   films: PropTypes.arrayOf(PropTypes.object).isRequired,

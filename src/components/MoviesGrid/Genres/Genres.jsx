@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import style from './Genres.scss';
 
@@ -38,9 +39,11 @@ class Genres extends React.Component {
   render() {
     const { genres } = this.props;
     const genresCol = genres.map(el => (
-      <button type="button" key={el.id} id={el.name} className={`${style.moviesGrid_categories_item_block_button}`} elem={el.name} onClick={this.changeTitle.bind(null, el.name, el.id)}>
-        {el.name}
-      </button>
+      <Link key={el.id} to={`/genres?genreName=${el.name}&genreId=${el.id}`} style={{ textDecoration: 'none' }}>
+        <button type="button" id={el.name} className={`${style.moviesGrid_categories_item_block_button}`} elem={el.name} onClick={this.changeTitle.bind(null, el.name, el.id)}>
+          {el.name}
+        </button>
+      </Link>
     ));
     const { isOpen, headerTitle } = this.state;
     const active = isOpen ? `${style.active}` : '';

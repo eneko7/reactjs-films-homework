@@ -1,1 +1,0 @@
-export {dafault} from './MovieRate';

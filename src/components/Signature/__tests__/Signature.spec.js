@@ -8,6 +8,7 @@ describe('App', () => {
     renderer.render(<Signature name="IHAR KARPUK" />);
     it('renders correctly', () => {
         const result = renderer.getRenderOutput();
-        expect(result).toMatchSnapshot();
+        expect(result.type).toBe('span');
+        expect(result.props.children).toEqual('IHAR KARPUK');
     });
 });

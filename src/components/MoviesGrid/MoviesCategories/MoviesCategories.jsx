@@ -18,11 +18,16 @@ class MoviesCategories extends React.Component {
     const { location: { search, pathname } } = this.props;
     const parsed = queryString.parse(search);
     const { sort } = parsed;
-    console.log(sort, pathname);
+    if (pathname === '/') {
+      this.fetchFilmsByCategory('Trending');
+    }
     if (pathname === '/films') {
-      console.log('>', 'fetchFilmsByCategory');
       this.fetchFilmsByCategory(sort);
-      // console.log(sort, this.fetchFilmsByCategory(sort));
+    }
+    if (pathname === '/genres') {
+      this.setState(() => ({
+        activeCategory: 'Genres',
+      }));
     }
   }
 
@@ -31,7 +36,6 @@ class MoviesCategories extends React.Component {
       activeCategory: el,
     }));
     if (el !== 'Genres') {
-      console.log(el);
       const { pushNavigationLink } = this.props;
       pushNavigationLink(el);
     }
@@ -57,47 +61,34 @@ class MoviesCategories extends React.Component {
         name: 'Coming Soon',
         defaultActive: false,
       },
-      {
-        route: '/genres',
-        query: 'genres',
-        name: 'Genres',
-        defaultActive: false,
-      },
     ];
     const { activeCategory } = this.state;
     const active = `${style.active}`;
-    const noactive = `${style.noactive}`;
-    return (
-      categories.map((el) => {
-        if (el.name !== activeCategory && el.name !== 'Genres') {
-          return (
-            <div key={el.name} className={style.moviesGrid_categories_item}>
-              <Link to={el.route}>
-                <button type="button" data-filter={el.name} className={`${style.moviesGrid_categories_item_button}`} onClick={this.fetchFilmsByCategory.bind(null, el.name)}>{el.name}</button>
-              </Link>
-            </div>
-          );
-        } if (el.name !== activeCategory && el.name === 'Genres') {
-          return (
-            <div key={el.name} className={style.moviesGrid_categories_item}>
-              <GenresContainer title="Genre" activeClass={noactive} fetchChange={this.fetchFilmsByCategory} />
-            </div>
-          );
-        } if (el.name === activeCategory && el.name === 'Genres') {
-          return (
-            <div key={el.name} className={style.moviesGrid_categories_item}>
-              <GenresContainer title="Genres" activeClass={active} fetchChange={this.fetchFilmsByCategory} />
-            </div>
-          );
-        }
+    const categoritesBlock = categories.map((el) => {
+      if (el.name !== activeCategory) {
         return (
           <div key={el.name} className={style.moviesGrid_categories_item}>
             <Link to={el.route}>
-              <button type="button" data-filter={el.name} className={`${active} ${style.moviesGrid_categories_item_button}`} onClick={this.fetchFilmsByCategory.bind(null, el.name)}>{el.name}</button>
+              <button type="button" data-filter={el.name} className={`${style.moviesGrid_categories_item_button}`} onClick={this.fetchFilmsByCategory.bind(null, el.name)}>{el.name}</button>
             </Link>
           </div>
         );
-      })
+      }
+      return (
+        <div key={el.name} className={style.moviesGrid_categories_item}>
+          <Link to={el.route}>
+            <button type="button" data-filter={el.name} className={`${active} ${style.moviesGrid_categories_item_button}`} onClick={this.fetchFilmsByCategory.bind(null, el.name)}>{el.name}</button>
+          </Link>
+        </div>
+      );
+    });
+    return (
+      <div className={style.moviesGrid_categories}>
+        {categoritesBlock}
+        <div className={style.moviesGrid_categories_item}>
+          <GenresContainer title="Genres" activeCategory={activeCategory} fetchChange={this.fetchFilmsByCategory} />
+        </div>
+      </div>
     );
   }
 }

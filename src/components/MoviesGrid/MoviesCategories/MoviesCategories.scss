@@ -1,4 +1,11 @@
-.moviesGrid_categories_item {
+.moviesGrid_categories {
+  margin: 70px 7%;
+  margin-top: 0;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-start;
+
+  .moviesGrid_categories_item {
     .moviesGrid_categories_item_button {
       cursor: pointer;
       font-size: 25px;
@@ -18,3 +25,4 @@
       border-bottom:4px solid #0aaee4;
     }
   }
+}

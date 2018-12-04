@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MoviesCategories Snapshot renders 1`] = `<Connect(MoviesCategories) />`;
+exports[`MoviesCategories Snapshot renders 1`] = `<withRouter(Connect(MoviesCategories)) />`;
 
 exports[`MoviesCategories Snapshot renders categories 1`] = `
 Array [

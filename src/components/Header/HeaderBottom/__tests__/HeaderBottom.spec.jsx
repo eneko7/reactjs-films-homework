@@ -21,7 +21,7 @@ const data = {
     {
       id: 23355,
       original_title: 'name',
-      genre_ids: [1, 2, 3],
+      genre_ids: [18, 10751, 14],
       vote_average: 5,
       overview: 'name',
     },

@@ -225,7 +225,7 @@ exports[`Genres logic renders genres dropdown open 1`] = `
 `;
 
 exports[`GenresNavLink Snapshot renders 1`] = `
-<Connect(Genres)
+<withRouter(Connect(Genres))
   activeClass="undefined"
   fetchChange={[Function]}
   fetchFilmsByGenre={[Function]}
@@ -234,7 +234,7 @@ exports[`GenresNavLink Snapshot renders 1`] = `
 `;
 
 exports[`GenresNavLink Snapshot renders 2`] = `
-<Connect(Genres)
+<withRouter(Connect(Genres))
   activeClass="active"
   fetchChange={[Function]}
   fetchFilmsByGenre={[Function]}

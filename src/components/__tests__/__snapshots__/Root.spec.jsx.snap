@@ -1,11 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Root renders correctly 1`] = `
-<div
-  className="main_container"
->
-  <Connect(Header) />
-  <Connect(MoviesGrid) />
-  <Footer />
-</div>
+<Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/films/:film"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/films"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/search"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/:sort"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/genre"
+  />
+</Switch>
 `;

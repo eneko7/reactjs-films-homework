@@ -18,6 +18,5 @@ export const pushNavigationLink = payload => (dispatch) => {
     'Coming Soon': fetchFilmsComingSoon,
     Genres: fetchFilmsByGenre,
   };
-  console.log(payload);
   dispatch((map[payload])());
 };

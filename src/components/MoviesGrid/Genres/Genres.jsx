@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import queryString from 'query-string';
 import PropTypes from 'prop-types';
 import style from './Genres.scss';
 
@@ -16,8 +17,13 @@ class Genres extends React.Component {
   }
 
   componentDidMount() {
-    const { fetchGenres } = this.props;
+    const { location: { search, pathname }, fetchGenres } = this.props;
+    const parsed = queryString.parse(search);
+    const { genreId, genreName } = parsed;
     fetchGenres();
+    if (pathname === '/genres') {
+      this.changeTitle(genreName, genreId);
+    }
   }
 
   openGenresClick() {
@@ -47,8 +53,8 @@ class Genres extends React.Component {
     ));
     const { isOpen, headerTitle } = this.state;
     const active = isOpen ? `${style.active}` : '';
-    const { activeClass } = this.props;
-    const genresActive = activeClass !== 'undefined' ? { borderBottom: '4px solid' } : { borderBottom: 'none' };
+    const { activeCategory } = this.props;
+    const genresActive = activeCategory === 'Genres' ? { borderBottom: '4px solid' } : { borderBottom: 'none' };
     return (
       <div>
         <button type="button" style={genresActive} className={`${style.moviesGrid_categories_item_button}`} onClick={this.openGenresClick} data-filter="Genres" id="Genres">
@@ -69,7 +75,11 @@ Genres.propTypes = {
   fetchFilmsByGenre: PropTypes.func.isRequired,
   genres: PropTypes.arrayOf(PropTypes.object).isRequired,
   title: PropTypes.string.isRequired,
-  activeClass: PropTypes.string.isRequired,
+  activeCategory: PropTypes.string.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+    search: PropTypes.string,
+  }).isRequired,
 };
 
 export default Genres;

@@ -8,7 +8,13 @@ exports[`HeaderBottom renders correctly 1`] = `
     className="active header_bottom_left"
   >
     <MovieDescription
-      filmGenres={Array []}
+      filmGenres={
+        Array [
+          "Drama",
+          "Family",
+          "Fantasy",
+        ]
+      }
       filmName="name"
     />
     <MovieRate

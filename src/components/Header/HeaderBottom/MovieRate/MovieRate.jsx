@@ -20,7 +20,7 @@ const MovieRate = (props) => {
 };
 
 MovieRate.propTypes = {
-  rate: PropTypes.string.isRequired,
+  rate: PropTypes.number.isRequired,
 };
 
 export default MovieRate;

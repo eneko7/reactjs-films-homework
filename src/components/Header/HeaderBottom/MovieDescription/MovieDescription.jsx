@@ -4,7 +4,6 @@ import style from './MovieDescription.scss';
 
 const MovieDescription = (props) => {
   const { filmDescrProps, filmName } = props;
-  console.log('>>>>>>>>>>>', filmDescrProps);
   const filmDescr = filmDescrProps.split(',');
   const descrItems = filmDescr.map(item => (
     <span

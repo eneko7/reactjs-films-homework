@@ -3,7 +3,6 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = merge(require('./webpack.base.config'), {
@@ -62,10 +61,5 @@ module.exports = merge(require('./webpack.base.config'), {
       filename: 'css/[name].[contenthash].css',
     }),
     new webpack.HashedModuleIdsPlugin(),
-    new CleanWebpackPlugin(['build'], {
-      root: process.cwd(),
-      verbose: true,
-      dry: false,
-    }),
   ],
 });

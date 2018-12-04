@@ -12,6 +12,7 @@ app.use('/build', express.static(path.resolve(__dirname, './build')));
 
 if (process.env.NODE_ENV === 'development') {
   const compiler = webpack(config);
+  // eslint-disable-next-line no-console
   console.log(process.env.NODE_ENV);
   app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
@@ -35,4 +36,5 @@ app.get('/', (req, res) => {
   });
 });
 
+// eslint-disable-next-line no-console
 app.listen(port, () => console.log(`Listening on port ${port}`));

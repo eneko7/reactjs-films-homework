@@ -18,9 +18,9 @@ exports[`HeaderTop renders correctly 1`] = `
       placeholder="Searh..."
       type="text"
     />
-    <label
+    <button
       className="header_top_search_label"
-      htmlFor="search_input"
+      type="button"
     />
   </div>
 </div>

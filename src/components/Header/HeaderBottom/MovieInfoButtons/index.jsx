@@ -1,1 +1,1 @@
-export {default} from './MovieInfoButtons';
+export { default } from './MovieInfoButtons';

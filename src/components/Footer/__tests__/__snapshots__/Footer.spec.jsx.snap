@@ -12,9 +12,9 @@ exports[`Footer renders correctly 1`] = `
   <span
     className="footer_copyright"
   >
-    Copyright © 
+    Copyright ©
     2018
-     FILMS. 
+    FILMS.
     <Signature
       name="IHAR KARPUK"
     />

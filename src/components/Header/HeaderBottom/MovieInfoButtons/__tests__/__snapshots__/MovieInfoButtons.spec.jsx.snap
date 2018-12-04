@@ -18,12 +18,14 @@ exports[`MovieInfoButtons MovieInfoButtons -> Click (show info)  1`] = `
   >
     <button
       className="bottom_right_buttons_box_button_watch bottom_right_buttons_box_button"
+      type="button"
     >
       Watch Now
     </button>
     <button
       className="bottom_right_buttons_box_button_view bottom_right_buttons_box_button"
       onClick={[Function]}
+      type="button"
     >
       Close
     </button>
@@ -40,19 +42,23 @@ exports[`MovieInfoButtons renders correctly 1`] = `
   >
     <p
       className="bottom_right_text_descr_p"
-    />
+    >
+      There are growing dangers in the wizarding world og 1926 New York. Something mysterious is leaving a path of destruction in the streets, threatening to expose the wizarding
+    </p>
   </div>
   <div
     className=" bottom_right_buttons_box"
   >
     <button
       className="bottom_right_buttons_box_button_watch bottom_right_buttons_box_button"
+      type="button"
     >
       Watch Now
     </button>
     <button
       className="bottom_right_buttons_box_button_view bottom_right_buttons_box_button"
       onClick={[Function]}
+      type="button"
     >
       View Info
     </button>

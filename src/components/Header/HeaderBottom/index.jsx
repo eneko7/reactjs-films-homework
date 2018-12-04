@@ -1,1 +1,1 @@
-export {dafault} from './HeaderBottom.jsx';
+export { default } from './HeaderBottom';

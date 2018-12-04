@@ -1,1 +1,1 @@
-export {dafault} from './MovieRate';
+export { default } from './MovieRate';

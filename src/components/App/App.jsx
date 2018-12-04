@@ -1,18 +1,11 @@
 import React from 'react';
 import './App.scss';
-import Footer from '../Footer/Footer.jsx';
-import Header from '../Header/Header.jsx';
+import Footer from '../Footer/Footer';
 
+const App = () => (
+  <div className="main_container">
+    <Footer />
+  </div>
+);
 
-class App extends React.Component {
-    render() {
-        return(
-            <div className="main_container">
-                <Header />
-                <Footer />
-            </div>
-        );
-    }
-};
-
-export default App; 
+export default App;

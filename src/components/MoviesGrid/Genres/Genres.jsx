@@ -44,8 +44,8 @@ class Genres extends React.Component {
     ));
     const { isOpen, headerTitle } = this.state;
     const active = isOpen ? `${style.active}` : '';
-    const { activeClass } = this.props;
-    const genresActive = activeClass !== 'undefined' ? { borderBottom: '4px solid' } : { borderBottom: 'none' };
+    const { activeCategory } = this.props;
+    const genresActive = activeCategory === 'Genres' ? { borderBottom: '4px solid' } : { borderBottom: 'none' };
     return (
       <div>
         <button type="button" style={genresActive} className={`${style.moviesGrid_categories_item_button}`} onClick={this.openGenresClick} data-filter="Genres" id="Genres">
@@ -66,7 +66,7 @@ Genres.propTypes = {
   fetchFilmsByGenre: PropTypes.func.isRequired,
   genres: PropTypes.arrayOf(PropTypes.object).isRequired,
   title: PropTypes.string.isRequired,
-  activeClass: PropTypes.string.isRequired,
+  activeCategory: PropTypes.string.isRequired,
 };
 
 export default Genres;

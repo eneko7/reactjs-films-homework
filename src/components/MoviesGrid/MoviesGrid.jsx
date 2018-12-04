@@ -50,9 +50,7 @@ class MoviesGrid extends React.Component {
     ));
     return (
       <main className={style.moviesGrid}>
-        <div className={style.moviesGrid_categories}>
-          <MoviesCategoriesContainer />
-        </div>
+        <MoviesCategoriesContainer />
         <div className={style.moviesGrid_wrapper}>
           <ul className={style.moviesGrid_wrapper_MovieElement_ul}>
             {filmsItems}

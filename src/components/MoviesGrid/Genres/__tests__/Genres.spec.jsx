@@ -47,7 +47,7 @@ describe('GenresNavLink Snapshot', () => {
   test('renders', () => {
     const component = shallow.render(
       <Provider store={store}>
-        <Genres title="Genres" activeClass="undefined" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        <Genres title="Genres" activeCategory="Trending" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
       </Provider>,
     );
     expect(component).toMatchSnapshot();
@@ -55,7 +55,7 @@ describe('GenresNavLink Snapshot', () => {
   test('renders', () => {
     const component = shallow.render(
       <Provider store={store}>
-        <Genres title="Genres" activeClass="active" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        <Genres title="Genres" activeCategory="Genres" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
       </Provider>,
     );
     expect(component).toMatchSnapshot();
@@ -70,7 +70,7 @@ describe('Genres logic', () => {
   it('renders genres dropdown open', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <Genres title="Genres" activeClass="active" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        <Genres title="Genres" activeCategory="Geners" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
       </Provider>,
     );
     component.root.findByProps({ className: 'moviesGrid_categories_item_button' }).props.onClick();
@@ -80,7 +80,7 @@ describe('Genres logic', () => {
   it('renders genres dropdown close', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <Genres title="Genres" activeClass="undefined" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        <Genres title="Genres" activeCategory="Trending" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
       </Provider>,
     );
     component.root.findByProps({ className: 'moviesGrid_categories_item_button' }).props.onClick();
@@ -91,7 +91,7 @@ describe('Genres logic', () => {
   it('renders genres dropdown chose', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <Genres title="Genres" activeClass="active" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        <Genres title="Genres" activeCategory="Genres" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
       </Provider>,
     );
     const { root } = component;
@@ -103,7 +103,7 @@ describe('Genres logic', () => {
   it('renders genres dropdown chose', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <Genres title="Genres" activeClass="undefined" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        <Genres title="Genres" activeCategory="Trending" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
       </Provider>,
     );
     const { root } = component;

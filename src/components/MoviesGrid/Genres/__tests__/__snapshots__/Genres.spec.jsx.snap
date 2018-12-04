@@ -177,7 +177,7 @@ exports[`Genres logic renders genres dropdown open 1`] = `
     onClick={[Function]}
     style={
       Object {
-        "borderBottom": "4px solid",
+        "borderBottom": "none",
       }
     }
     type="button"
@@ -226,7 +226,7 @@ exports[`Genres logic renders genres dropdown open 1`] = `
 
 exports[`GenresNavLink Snapshot renders 1`] = `
 <Connect(Genres)
-  activeClass="undefined"
+  activeCategory="Trending"
   fetchChange={[Function]}
   fetchFilmsByGenre={[Function]}
   title="Genres"
@@ -235,7 +235,7 @@ exports[`GenresNavLink Snapshot renders 1`] = `
 
 exports[`GenresNavLink Snapshot renders 2`] = `
 <Connect(Genres)
-  activeClass="active"
+  activeCategory="Genres"
   fetchChange={[Function]}
   fetchFilmsByGenre={[Function]}
   title="Genres"

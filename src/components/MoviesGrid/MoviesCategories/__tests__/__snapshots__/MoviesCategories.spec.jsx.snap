@@ -3,7 +3,9 @@
 exports[`MoviesCategories Snapshot renders 1`] = `<Connect(MoviesCategories) />`;
 
 exports[`MoviesCategories Snapshot renders categories 1`] = `
-Array [
+<div
+  className="moviesGrid_categories"
+>
   <div
     className="moviesGrid_categories_item"
   >
@@ -15,7 +17,7 @@ Array [
     >
       Trending
     </button>
-  </div>,
+  </div>
   <div
     className="moviesGrid_categories_item"
   >
@@ -27,7 +29,7 @@ Array [
     >
       Top Rated
     </button>
-  </div>,
+  </div>
   <div
     className="moviesGrid_categories_item"
   >
@@ -39,19 +41,21 @@ Array [
     >
       Coming Soon
     </button>
-  </div>,
+  </div>
   <div
     className="moviesGrid_categories_item"
   >
     <div>
       test
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`MoviesCategories Snapshot renders genres 1`] = `
-Array [
+<div
+  className="moviesGrid_categories"
+>
   <div
     className="moviesGrid_categories_item"
   >
@@ -63,7 +67,7 @@ Array [
     >
       Trending
     </button>
-  </div>,
+  </div>
   <div
     className="moviesGrid_categories_item"
   >
@@ -75,7 +79,7 @@ Array [
     >
       Top Rated
     </button>
-  </div>,
+  </div>
   <div
     className="moviesGrid_categories_item"
   >
@@ -87,13 +91,13 @@ Array [
     >
       Coming Soon
     </button>
-  </div>,
+  </div>
   <div
     className="moviesGrid_categories_item"
   >
     <div>
       test
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;

@@ -228,7 +228,6 @@ exports[`GenresNavLink Snapshot renders 1`] = `
 <Connect(Genres)
   activeCategory="Trending"
   fetchChange={[Function]}
-  fetchFilmsByGenre={[Function]}
   title="Genres"
 />
 `;
@@ -237,7 +236,6 @@ exports[`GenresNavLink Snapshot renders 2`] = `
 <Connect(Genres)
   activeCategory="Genres"
   fetchChange={[Function]}
-  fetchFilmsByGenre={[Function]}
   title="Genres"
 />
 `;

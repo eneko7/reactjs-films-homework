@@ -32,7 +32,6 @@ class Genres extends React.Component {
     }));
 
     const { fetchFilmsByGenre, fetchChange } = this.props;
-    console.log(fetchFilmsByGenre);
     fetchFilmsByGenre(id);
     fetchChange('Genres');
   }
@@ -62,10 +61,14 @@ class Genres extends React.Component {
   }
 }
 
+Genres.defaultProps = {
+  fetchFilmsByGenre: () => {},
+};
+
 Genres.propTypes = {
   fetchGenres: PropTypes.func.isRequired,
   fetchChange: PropTypes.func.isRequired,
-  fetchFilmsByGenre: PropTypes.func.isRequired,
+  fetchFilmsByGenre: PropTypes.func,
   genres: PropTypes.arrayOf(PropTypes.object).isRequired,
   title: PropTypes.string.isRequired,
   activeCategory: PropTypes.string.isRequired,

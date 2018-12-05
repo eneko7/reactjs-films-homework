@@ -37,7 +37,7 @@ exports[`fetchFilm actions renders with trailer 1`] = `
     allowFullScreen={true}
     className="ModalWindowFilm_film_iframe"
     frameBorder="0"
-    src="https://www.youtube.com/embed/undefined?autoplay=1&modestbranding=1&showinfo=0&rel=0"
+    src="https://www.youtube.com/embed/key?autoplay=1&modestbranding=1&showinfo=0&rel=0"
     title="title"
   />
 </div>

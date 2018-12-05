@@ -32,11 +32,15 @@ class ModalWindowFilm extends React.Component {
   }
 }
 
+ModalWindowFilm.defaultProps = {
+  filmTrailerKey: 'key',
+};
+
 ModalWindowFilm.propTypes = {
   onChange: PropTypes.func.isRequired,
   fetchFilm: PropTypes.func.isRequired,
   filmId: PropTypes.number.isRequired,
-  filmTrailerKey: PropTypes.string.isRequired,
+  filmTrailerKey: PropTypes.string,
 };
 
 export default ModalWindowFilm;

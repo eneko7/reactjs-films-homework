@@ -48,14 +48,14 @@ class MovieElement extends React.Component {
     const genres = [];
     film.genre_ids.forEach((elem) => {
       genresList.forEach((el) => {
-        if (elem === el.id) {
+        if (elem === el.id && !genres.includes(el.name)) {
           genres.push(el.name);
         }
       });
     });
     const filmGenres = genres.map(elem => (
       <span
-        key={elem}
+        key={elem.toString()}
         className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen}
       >
         {elem}

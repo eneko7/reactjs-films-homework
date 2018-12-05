@@ -1,11 +1,12 @@
 const merge = require('webpack-merge');
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = merge(require('./webpack.base.config'), {
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: 'main.js',
-    publicPath: '/build',
+    publicPath: '/',
   },
   mode: 'development',
   devtool: 'source-map',
@@ -40,7 +41,7 @@ module.exports = merge(require('./webpack.base.config'), {
           {
             loader: 'file-loader',
             options: {
-              publicPath: '/build',
+              publicPath: '/',
               context: 'src/',
               name: '[path][name].[ext]',
             },
@@ -49,4 +50,7 @@ module.exports = merge(require('./webpack.base.config'), {
       },
     ],
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 });

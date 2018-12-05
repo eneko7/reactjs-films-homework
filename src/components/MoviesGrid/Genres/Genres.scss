@@ -1,6 +1,3 @@
-.moviesGrid_categories_item_button:focus{
-  outline:none;
-}
 .moviesGrid_categories_item_button {
   cursor: pointer;
   font-size: 25px;
@@ -30,6 +27,10 @@
   }
 }
 
+.moviesGrid_categories_item_button:focus {
+  outline: none;
+}
+
 .moviesGrid_categories_item_block {
   list-style-type: none;
   display: none;
@@ -44,6 +45,7 @@
     font-size: 18px;
     margin-top: 10px;
   }
+
   .moviesGrid_categories_item_block_button:hover {
     background: #0aaee4;
     color: #fff;
@@ -74,5 +76,5 @@
 }
 
 .moviesGrid_categories_item_button.active {
-  border-bottom: 4px solid #0aaee4!important;
+  border-bottom: 4px solid #0aaee4 !important;
 }

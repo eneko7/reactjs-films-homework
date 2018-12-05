@@ -40,6 +40,7 @@ const store = mockStore({
     isFetchedGenres: false,
     lastGenreID: 1,
   },
+  fetchFilmsByGenre: () => ('Hello'),
 });
 
 const shallow = new ShallowRenderer();

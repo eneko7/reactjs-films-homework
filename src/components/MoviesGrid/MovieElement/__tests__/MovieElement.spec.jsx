@@ -15,10 +15,6 @@ const data = {
   },
   genresList: [
     {
-      id: 28,
-      name: 'Action',
-    },
-    {
       id: 18,
       name: 'Drama',
     },
@@ -44,10 +40,6 @@ const dataBadPictures = {
     id: 338952,
   },
   genresList: [
-    {
-      id: 28,
-      name: 'Action',
-    },
     {
       id: 18,
       name: 'Drama',
@@ -75,10 +67,6 @@ const dataBadPicturePoster = {
   },
   genresList: [
     {
-      id: 28,
-      name: 'Action',
-    },
-    {
       id: 18,
       name: 'Drama',
     },
@@ -104,10 +92,6 @@ const dataBadPictureTop = {
     id: 338952,
   },
   genresList: [
-    {
-      id: 28,
-      name: 'Action',
-    },
     {
       id: 18,
       name: 'Drama',

@@ -1,7 +1,6 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const webpack = require('webpack');
-
 
 const conf = {
   resolve: {
@@ -29,7 +28,6 @@ const conf = {
       filename: 'index.html',
       template: './src/index.html',
     }),
-    new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(['build'], {
       root: process.cwd(),
       verbose: true,

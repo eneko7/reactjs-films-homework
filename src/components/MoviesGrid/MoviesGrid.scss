@@ -73,14 +73,14 @@
 }
 
 .error_search {
-  width:100%;
+  width: 100%;
   text-align: center;
   color: #0aaee4;
   font-size: 30px;
-  margin-bottom:50px;
+  margin-bottom: 50px;
 }
 
-@media (max-width: 766px) { 
+@media (max-width: 766px) {
   .moviesGrid {
     .moviesGrid_wrapper {
       .moviesGrid_wrapper_MovieElement_ul {
@@ -94,7 +94,8 @@
     }
   }
 }
-@media (min-width: 767px) and (max-width: 769px) { 
+
+@media (min-width: 767px) and (max-width: 769px) {
   .moviesGrid {
     .moviesGrid_wrapper {
       .moviesGrid_wrapper_MovieElement_ul {

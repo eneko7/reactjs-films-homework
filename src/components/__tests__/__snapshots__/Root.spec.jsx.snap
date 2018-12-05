@@ -15,9 +15,9 @@ exports[`Root Root renders correctly 1`] = `
     <span
       className="footer_copyright"
     >
-      Copyright © 
+      Copyright ©
       2018
-       FILMS. 
+      FILMS.
       <span
         className="copyright_signature"
       >

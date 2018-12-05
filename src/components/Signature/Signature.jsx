@@ -1,17 +1,16 @@
 import React from 'react';
-import style from './Signature.scss';
 import PropTypes from 'prop-types';
+import style from './Signature.scss';
 
-class Signature extends React.Component {
-    render () {
-        return (
-            <span className={style.copyright_signature}>{this.props.name}</span>
-        );
-    }
-}
+const Signature = (props) => {
+  const { name } = props;
+  return (
+    <span className={style.copyright_signature}>{name}</span>
+  );
+};
 
 Signature.propTypes = {
-    name: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default Signature;

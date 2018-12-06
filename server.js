@@ -13,10 +13,8 @@ if (process.env.NODE_ENV === 'development') {
   const webpackDevMiddleware = require('webpack-dev-middleware');
   const webpackHotMiddleware = require('webpack-hot-middleware');
   const compiler = webpack(config);
-
   // eslint-disable-next-line no-console
   console.log(process.env.NODE_ENV);
-
   app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
   }));

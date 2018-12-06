@@ -5,7 +5,7 @@ import style from './MovieRate.scss';
 const MovieRate = (props) => {
   const { rate } = props;
   const rateStyle = {
-    width: `${(rate - 0.1) / 5 * 100} %`,
+    width: `${(parseFloat(rate) - 0.1) / 5 * 100}%`,
   };
   return (
     <div className={style.bottom_left_filmRate}>

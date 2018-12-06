@@ -4,7 +4,6 @@ exports[`Root Root renders correctly 1`] = `
 <div
   className="main_container"
 >
-<<<<<<< HEAD
   <header
     className="app_header"
   >
@@ -137,8 +136,6 @@ exports[`Root Root renders correctly 1`] = `
       </div>
     </div>
   </header>
-=======
->>>>>>> 8084142df0ee52241f61214375ea1ce5322e752b
   <footer
     className="footer"
   >

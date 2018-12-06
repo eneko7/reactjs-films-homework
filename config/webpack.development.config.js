@@ -41,7 +41,7 @@ module.exports = merge(require('./webpack.base.config'), {
           {
             loader: 'file-loader',
             options: {
-              publicPath: '/build',
+              publicPath: '/',
               context: 'src/',
               name: '[path][name].[ext]',
             },

@@ -90,7 +90,7 @@ exports[`Root Root renders correctly 1`] = `
               id="rate"
               style={
                 Object {
-                  "width": "94 %",
+                  "width": "94%",
                 }
               }
             />

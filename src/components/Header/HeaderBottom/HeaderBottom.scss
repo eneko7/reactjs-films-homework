@@ -18,3 +18,15 @@
     padding-top: 204px;
   }
 }
+@media (max-width:767px) {
+  .header_bottom {
+    display: block;
+    width: 94%;
+    margin-left: 6%;
+
+    .header_bottom_left.active {
+      padding-top: 0;
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -70,3 +70,22 @@
     }
   }
 }
+@media (max-width:420px) {
+  .header_top {
+    .header_top_search {
+      float: none;
+      width: 90%;
+      margin-right: 0;
+      margin: 0 auto;
+      z-index: 4;
+
+      .header_top_search_input {
+        margin-top: 20px
+      }
+
+      .header_top_search_label {
+        top: 70%;
+      }
+    }
+  }
+}

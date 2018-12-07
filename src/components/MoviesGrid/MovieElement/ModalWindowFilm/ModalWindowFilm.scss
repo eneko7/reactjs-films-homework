@@ -57,3 +57,12 @@
     background-repeat: no-repeat;
   }
 }
+
+@media(max-width: 767px) {
+  .ModalWindowFilm {
+    .ModalWindowFilm_close_button {
+      top: 0;
+      right: 0;
+    }
+  }
+}

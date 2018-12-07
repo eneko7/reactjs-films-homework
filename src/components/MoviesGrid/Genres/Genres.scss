@@ -78,3 +78,14 @@
 .moviesGrid_categories_item_button.active {
   border-bottom: 4px solid #0aaee4 !important;
 }
+
+@media(max-width: 767px) {
+  .moviesGrid_categories_item_button {
+    font-size: 15px;
+    line-height: 18px;
+    margin-right: 0;
+  }
+  .moviesGrid_categories_item_block.active {
+    left: 45%;
+  }
+}

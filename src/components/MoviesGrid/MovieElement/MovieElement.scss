@@ -13,7 +13,7 @@
     display: none;
 
     .descriptionFilmLayer_overlay {
-      background-color: rgba(0,0,0,0.6);
+      background-color: rgba(0, 0, 0, 0.6);
       width: 100%;
       height: 94%;
       position: relative;
@@ -21,7 +21,7 @@
       .descriptionFilmLayer_overlay_description {
         width: 100%;
         height: 100%;
-        color:white;
+        color: white;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -43,7 +43,7 @@
             border-top: 20px solid #47c3ef;
             border-bottom: 20px solid #47c3ef;
             border-left: 30px solid white;
-            height: 0px;
+            height: 0;
             margin-left: 10px;
           }
         }
@@ -53,7 +53,7 @@
         }
 
         .button_watch_now {
-          margin-top:-70px;
+          margin-top: -70px;
           font-size: 25px;
           font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
           display: block;
@@ -61,17 +61,18 @@
           text-align: center;
         }
 
-        .button_show_info{
+        .button_show_info {
           width: 150px;
           height: 45px;
           border: 1px solid #fff;
           border-radius: 6px;
-          color:white;
+          color: white;
           font-size: 20px;
-          margin-top:-65px;
+          margin-top: -65px;
           background: none;
           cursor: pointer;
         }
+
         .button_show_info:focus {
           outline: none;
         }
@@ -89,12 +90,12 @@
     display: none;
 
     .descriptionFilmLayer_info_overlay {
-      background-color: rgba(0,0,0,0.7);
+      background-color: rgba(0, 0, 0, 0.7);
       width: 100%;
       height: 100%;
       position: relative;
 
-      .descriptionFilmLayer_info_close{
+      .descriptionFilmLayer_info_close {
         color: white;
         font-size: 40px;
         font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
@@ -106,11 +107,11 @@
         cursor: pointer;
       }
 
-      .descriptionFilmLayer_info_close:focus{
-        outline:none;
+      .descriptionFilmLayer_info_close:focus {
+        outline: none;
       }
-      
-      .descriptionFilmLayer_info_overlay_description{
+
+      .descriptionFilmLayer_info_overlay_description {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
@@ -120,19 +121,19 @@
         width: calc(100% - 40px);
         height: calc(100% - 85px);
 
-        .descriptionFilmLayer_info_overlay_description_Name_and_Rate{
+        .descriptionFilmLayer_info_overlay_description_Name_and_Rate {
           display: flex;
           justify-content: space-between;
           width: 88%;
 
-          .descriptionFilmLayer_info_overlay_description_name{
+          .descriptionFilmLayer_info_overlay_description_name {
             font-size: 16px;
             line-height: 18px;
             color: #fff;
             font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
           }
 
-          .descriptionFilmLayer_info_overlay_description_rate{
+          .descriptionFilmLayer_info_overlay_description_rate {
             font-size: 18px;
             line-height: 18px;
             color: #47c3ef;
@@ -144,7 +145,7 @@
           }
         }
 
-        .descriptionFilmLayer_info_overlay_description_overview{
+        .descriptionFilmLayer_info_overlay_description_overview {
           width: 88%;
           margin-top: 15px;
           color: white;
@@ -152,7 +153,7 @@
           line-height: 22px;
         }
 
-        .descriptionFilmLayer_info_overlay_description_watch_now{
+        .descriptionFilmLayer_info_overlay_description_watch_now {
           background-color: #3bb3df;
           font-size: 18px;
           letter-spacing: 1px;
@@ -164,10 +165,10 @@
           height: 40px;
           border-radius: 6px;
           cursor: pointer;
-          margin-top:20px;
+          margin-top: 20px;
           align-self: flex-start;
         }
-        
+
         .descriptionFilmLayer_info_overlay_description_watch_now:focus {
           outline: none;
         }
@@ -183,12 +184,10 @@
   }
 }
 
-.moviesGrid_wrapper_MovieElement_ul_item_wrap:hover .descriptionFilmLayer
-{
+.moviesGrid_wrapper_MovieElement_ul_item_wrap:hover .descriptionFilmLayer {
   background-position: top;
   background-size: cover;
   background-repeat: none;
-  display: block;
   display: block;
 }
 
@@ -234,6 +233,7 @@
     }
   }
 }
+
 .moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres {
   display: flex;
   flex-wrap: wrap;

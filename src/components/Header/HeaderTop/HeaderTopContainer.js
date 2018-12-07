@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import HeaderTop from './HeaderTop';
 import { saveSearchingWord, searchFilm } from '../../../modules/seacrhFilms/searchFilmsActions';
 import { fetchFilmsPopular } from '../../../modules/films/filmsActions';
@@ -13,4 +14,4 @@ const mapDispatchToProps = {
   searchFilm,
   fetchFilmsPopular,
 };
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderTop);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HeaderTop));

@@ -2,6 +2,7 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import TestRenderer from 'react-test-renderer';
 import configureMockStore from 'redux-mock-store';
+import { MemoryRouter } from 'react-router';
 import thunk from 'redux-thunk';
 import moxios from 'moxios';
 import { Provider } from 'react-redux';
@@ -42,12 +43,21 @@ const store = mockStore({
   },
 });
 
+const location = {
+  location: {
+    pathname: '/genres',
+    search: '/genres?genreName=Action&genreId=1',
+  },
+};
+
 const shallow = new ShallowRenderer();
 describe('GenresNavLink Snapshot', () => {
   test('renders', () => {
     const component = shallow.render(
       <Provider store={store}>
-        <Genres title="Genres" activeClass="undefined" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        <MemoryRouter {...location}>
+          <Genres title="Genres" activeCategory="Trending" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        </MemoryRouter>
       </Provider>,
     );
     expect(component).toMatchSnapshot();
@@ -55,7 +65,7 @@ describe('GenresNavLink Snapshot', () => {
   test('renders', () => {
     const component = shallow.render(
       <Provider store={store}>
-        <Genres title="Genres" activeClass="active" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        <Genres title="Genres" activeCategory="Genres" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
       </Provider>,
     );
     expect(component).toMatchSnapshot();
@@ -70,7 +80,9 @@ describe('Genres logic', () => {
   it('renders genres dropdown open', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <Genres title="Genres" activeClass="active" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        <MemoryRouter {...location}>
+          <Genres title="Genres" activeCategory="Genres" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        </MemoryRouter>
       </Provider>,
     );
     component.root.findByProps({ className: 'moviesGrid_categories_item_button' }).props.onClick();
@@ -80,7 +92,9 @@ describe('Genres logic', () => {
   it('renders genres dropdown close', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <Genres title="Genres" activeClass="undefined" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        <MemoryRouter {...location}>
+          <Genres title="Genres" activeCategory="Trending" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        </MemoryRouter>
       </Provider>,
     );
     component.root.findByProps({ className: 'moviesGrid_categories_item_button' }).props.onClick();
@@ -88,22 +102,27 @@ describe('Genres logic', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('renders genres dropdown chose', () => {
+  it('renders genres dropdown chose 1', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <Genres title="Genres" activeClass="active" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        <MemoryRouter {...location}>
+          <Genres title="Genres" activeCategory="Genres" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        </MemoryRouter>
       </Provider>,
     );
     const { root } = component;
     root.findByProps({ className: 'moviesGrid_categories_item_button' }).props.onClick();
+    console.log(root.findByProps({ id: 'genres_list' }).children);
     root.findByProps({ id: 'genres_list' }).children[0].props.onClick();
     expect(component).toMatchSnapshot();
   });
 
-  it('renders genres dropdown chose', () => {
+  it('renders genres dropdown chose 2', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <Genres title="Genres" activeClass="undefined" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        <MemoryRouter {...location}>
+          <Genres title="Genres" activeCategory="Trending" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        </MemoryRouter>
       </Provider>,
     );
     const { root } = component;

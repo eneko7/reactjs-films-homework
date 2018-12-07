@@ -6,6 +6,9 @@
   justify-content: flex-start;
 
   .moviesGrid_categories_item {
+    display: inline-block;
+    float: left;
+
     .moviesGrid_categories_item_button {
       cursor: pointer;
       font-size: 25px;
@@ -16,13 +19,30 @@
       padding-bottom: 5px;
       text-align: center;
       background: none;
-      border:none;
+      border: none;
     }
+
     .moviesGrid_categories_item_button:focus {
       outline: none;
     }
-    .moviesGrid_categories_item_button.active{
-      border-bottom:4px solid #0aaee4;
+
+    .moviesGrid_categories_item_button.active {
+      border-bottom: 4px solid #0aaee4;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .moviesGrid_categories {
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    .moviesGrid_categories_item {
+      .moviesGrid_categories_item_button {
+        font-size: 15px;
+        line-height: 18px;
+        margin-right: 5px;
+      }
     }
   }
 }

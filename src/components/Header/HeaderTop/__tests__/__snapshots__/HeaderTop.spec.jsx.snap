@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Search Snapshot snapshot render 1`] = `<Connect(HeaderTop) />`;
+exports[`Search Snapshot snapshot render 1`] = `<withRouter(Connect(HeaderTop)) />`;

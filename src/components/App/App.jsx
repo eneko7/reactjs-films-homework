@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.scss';
-import MovieDetailsPage from '../../pages/MovieDetailsPage/MovieDetailsPage';
+import MovieDetailsPage from '../../pages/MovieDetailsPage';
 
 const App = () => (
   <Switch>

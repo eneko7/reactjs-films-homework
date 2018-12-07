@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
 
   .ModalWindowFilm_close {
     font-size: 70px;
@@ -22,7 +22,7 @@
     cursor: pointer;
   }
 
-  .ModalWindowFilm_close_button{
+  .ModalWindowFilm_close_button {
     font-size: 70px;
     z-index: 9;
     color: white;
@@ -45,7 +45,8 @@
     position: absolute;
     z-index: 10;
   }
-  .ModalWindowFilm_film_error{
+
+  .ModalWindowFilm_film_error {
     width: 50%;
     height: 50%;
     position: absolute;
@@ -54,5 +55,14 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 767px) {
+  .ModalWindowFilm {
+    .ModalWindowFilm_close_button {
+      top: 0;
+      right: 0;
+    }
   }
 }

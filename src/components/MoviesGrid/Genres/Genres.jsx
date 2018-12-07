@@ -61,14 +61,10 @@ class Genres extends React.Component {
   }
 }
 
-Genres.defaultProps = {
-  fetchFilmsByGenre: () => {},
-};
-
 Genres.propTypes = {
   fetchGenres: PropTypes.func.isRequired,
   fetchChange: PropTypes.func.isRequired,
-  fetchFilmsByGenre: PropTypes.func,
+  fetchFilmsByGenre: PropTypes.func.isRequired,
   genres: PropTypes.arrayOf(PropTypes.object).isRequired,
   title: PropTypes.string.isRequired,
   activeCategory: PropTypes.string.isRequired,

@@ -10,7 +10,7 @@ exports[`MoviesCategories Snapshot renders categories 1`] = `
     className="moviesGrid_categories_item"
   >
     <button
-      className="moviesGrid_categories_item_button"
+      className=" moviesGrid_categories_item_button"
       data-filter="Trending"
       onClick={[Function]}
       type="button"
@@ -22,7 +22,7 @@ exports[`MoviesCategories Snapshot renders categories 1`] = `
     className="moviesGrid_categories_item"
   >
     <button
-      className="moviesGrid_categories_item_button"
+      className=" moviesGrid_categories_item_button"
       data-filter="Top Rated"
       onClick={[Function]}
       type="button"
@@ -72,7 +72,7 @@ exports[`MoviesCategories Snapshot renders genres 1`] = `
     className="moviesGrid_categories_item"
   >
     <button
-      className="moviesGrid_categories_item_button"
+      className=" moviesGrid_categories_item_button"
       data-filter="Top Rated"
       onClick={[Function]}
       type="button"
@@ -84,7 +84,7 @@ exports[`MoviesCategories Snapshot renders genres 1`] = `
     className="moviesGrid_categories_item"
   >
     <button
-      className="moviesGrid_categories_item_button"
+      className=" moviesGrid_categories_item_button"
       data-filter="Coming Soon"
       onClick={[Function]}
       type="button"

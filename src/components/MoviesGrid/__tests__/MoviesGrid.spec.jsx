@@ -8,8 +8,9 @@ import { Provider } from 'react-redux';
 import MoviesGrid from '../index';
 import mockFilms from '../../../modules/mocks/getFilmsMock';
 import mockGenres from '../../../modules/mocks/getGenresMock';
-import * as genresActions from '../../../modules/genres/genresActions';
 import * as filmsActions from '../../../modules/films/filmsActions';
+
+jest.mock('../Genres', () => () => 'Genres');
 
 const shallow = new ShallowRenderer();
 const middlewares = [thunk];
@@ -69,7 +70,6 @@ describe('MoviesGrid logics', () => {
       response: { genres: mockGenres },
     });
     const expectedActions = [
-      { type: genresActions.FETCH_GENRES_REQUEST },
       { type: 'FETCH_FILMS_REQUEST' },
     ];
 

@@ -32,11 +32,12 @@
   }
 }
 
-@media(max-width: 767px) {
+@media (max-width: 767px) {
   .moviesGrid_categories {
     justify-content: flex-start;
     align-items: flex-end;
-    .moviesGrid_categories_item {      
+
+    .moviesGrid_categories_item {
       .moviesGrid_categories_item_button {
         font-size: 15px;
         line-height: 18px;

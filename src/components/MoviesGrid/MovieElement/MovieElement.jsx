@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from './MovieElement.scss';
 import ModalWindowFilmContainer from './ModalWindowFilm/ModalWindowFilmContainer';
-import errorImg from '../../../images/error_video.jpg';
+
+const errorImg = '../../../images/error_video.jpg';
 
 class MovieElement extends React.Component {
   constructor(props) {
@@ -63,7 +64,7 @@ class MovieElement extends React.Component {
     ));
     const active = isShownInfo ? `${style.active}` : '';
     let topPicture = {};
-    if (film.backdrop_path) {
+    if (film.backdrop_path !== null) {
       topPicture = {
         backgroundImage: `url(http://image.tmdb.org/t/p/w1280${film.backdrop_path})`,
       };

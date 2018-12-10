@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from './Header.scss';
-import HeaderBottom from './HeaderBottom/HeaderBottom';
-import HeaderTopContainer from './HeaderTop/HeaderTopContainer';
+import HeaderBottom from './HeaderBottom';
+import HeaderTopContainer from './HeaderTop';
 
 const Header = (props) => {
   const { films, genres } = props;

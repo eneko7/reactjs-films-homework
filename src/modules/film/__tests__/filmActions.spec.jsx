@@ -54,4 +54,46 @@ describe('getFilm actions', () => {
       done();
     });
   });
+  it('success fetch main film', (done) => {
+    moxios.stubRequest(/api.themoviedb.org/, {
+      status: 200,
+      response: getFilmMock,
+    });
+
+    const expectedActions = [
+      { type: actions.FETCH_FILM_REQUEST },
+      { type: actions.FETCH_FILM_INFO_SUCCESS, payload: getFilmMock },
+    ];
+
+    const store = mockStore({});
+
+    store.dispatch(actions.receiveMainFilmInfo(335983));
+    moxios.wait(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+      done();
+    });
+  });
+
+  it('failed fetch main film', (done) => {
+    moxios.stubRequest(/api.themoviedb.org/, {
+      status: 500,
+      response: 'error',
+    });
+
+    const expectedActions = [
+      { type: actions.FETCH_FILM_REQUEST },
+      {
+        type: actions.FETCH_FILM_ERROR,
+        payload: 'Request failed with status code 500',
+      },
+    ];
+
+    const store = mockStore({});
+
+    store.dispatch(actions.receiveMainFilmInfo(335983));
+    moxios.wait(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+      done();
+    });
+  });
 });

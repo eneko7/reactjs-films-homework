@@ -1,8 +1,14 @@
 import axios from 'axios';
 
+export const FETCH_FILM_INFO_SUCCESS = 'FETCH_FILM_INFO_SUCCESS';
 export const FETCH_FILM_REQUEST = 'FETCH_FILM_REQUEST';
 export const FETCH_FILM_SUCCESS = 'FETCH_FILM_SUCCESS';
 export const FETCH_FILM_ERROR = 'FETCH_FILM_ERROR';
+
+export const receiveFilmInfoSuccess = payload => ({
+  type: FETCH_FILM_INFO_SUCCESS,
+  payload,
+});
 
 export const receiveFilmSuccess = payload => ({
   type: FETCH_FILM_SUCCESS,
@@ -24,6 +30,17 @@ export function fetchFilm(filmId) {
     return axios.get(`https://api.themoviedb.org/3/movie/${filmId}/videos?api_key=6a08c0def237c5910708279c9ee78cc5`)
       .then((response) => {
         dispatch(receiveFilmSuccess(response.data.results[0].key));
+      })
+      .catch(error => dispatch(receiveFilmError(error.message)));
+  };
+}
+
+export function receiveMainFilmInfo(filmId) {
+  return (dispatch) => {
+    dispatch(receiveFilmRequest());
+    return axios.get(`https://api.themoviedb.org/3/movie/${filmId}?api_key=6a08c0def237c5910708279c9ee78cc5`)
+      .then((response) => {
+        dispatch(receiveFilmInfoSuccess(response.data));
       })
       .catch(error => dispatch(receiveFilmError(error.message)));
   };

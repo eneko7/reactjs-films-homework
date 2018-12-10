@@ -7,5 +7,6 @@ const mapStateToProps = state => ({
   films: getFilms(state),
   genres: getGenres(state),
 });
-
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = {
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

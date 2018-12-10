@@ -11,7 +11,7 @@ exports[`Header render correctly  1`] = `
   }
 >
   <Connect(HeaderTop) />
-  <HeaderBottom
+  <Unknown
     bg={
       Object {
         "backgroundImage": "url(http://image.tmdb.org/t/p/w1280undefined)",
@@ -79,7 +79,7 @@ exports[`Header render correctly if film empty  1`] = `
   }
 >
   <Connect(HeaderTop) />
-  <HeaderBottom
+  <Unknown
     bg={
       Object {
         "backgroundImage": "url(http://image.tmdb.org/t/p/w1280undefined)",

@@ -26,6 +26,20 @@
   }
 }
 
+@media (max-width: 900px) {
+  .full_description {
+    .full_description_filmDescr {
+      display: block;
+
+      .full_description_filmDescr_item {
+        display: inline-block;
+        font-size: 15px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .full_description {
     .full_description_filmName {

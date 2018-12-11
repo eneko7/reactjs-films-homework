@@ -45,6 +45,5 @@ HeaderTop.propTypes = {
   fetchFilmsPopular: PropTypes.func.isRequired,
   searchFilm: PropTypes.func.isRequired,
   saveSearchingWord: PropTypes.func.isRequired,
-  // searchedWord: PropTypes.string.isRequired,
 };
 export default HeaderTop;

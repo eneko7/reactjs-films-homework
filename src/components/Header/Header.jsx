@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from './Header.scss';
 import HeaderBottom from './HeaderBottom';
-import HeaderTopContainer from './HeaderTop';
+import HeaderTop from './HeaderTop';
 
 const Header = (props) => {
   const { films, genres } = props;
@@ -15,7 +15,7 @@ const Header = (props) => {
   };
   return (
     <header id="app_header" className={style.app_header} style={data.bg}>
-      <HeaderTopContainer />
+      <HeaderTop />
       <HeaderBottom {...data} />
     </header>
   );

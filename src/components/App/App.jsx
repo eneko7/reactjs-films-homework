@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.scss';
-import Footer from '../Footer/Footer';
-import MoviesGridContainer from '../MoviesGrid/MoviesGridContainer';
-import HeaderContainer from '../Header/HeaderContainer';
+import Footer from '../Footer';
+import Header from '../Header';
 
 const App = () => (
   <div className="main_container">
-    <HeaderContainer />
-    <MoviesGridContainer />
+    <Header />
     <Footer />
   </div>
 );

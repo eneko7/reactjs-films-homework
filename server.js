@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 const express = require('express');
 const webpack = require('webpack');
 const path = require('path');
@@ -9,15 +10,11 @@ const app = express();
 app.use('/build', express.static(path.resolve(__dirname, './build')));
 
 if (process.env.NODE_ENV === 'development') {
-  // eslint-disable-next-line global-require
   const webpackDevMiddleware = require('webpack-dev-middleware');
-  // eslint-disable-next-line global-require
   const webpackHotMiddleware = require('webpack-hot-middleware');
   const compiler = webpack(config);
-
   // eslint-disable-next-line no-console
   console.log(process.env.NODE_ENV);
-
   app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
   }));

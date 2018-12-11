@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MovieDescription from './MovieDescription/MovieDescription';
-import MovieRate from './MovieRate/MovieRate';
-import MovieInfoButtons from './MovieInfoButtons/MovieInfoButtons';
+import MovieDescription from './MovieDescription';
+import MovieRate from './MovieRate';
+import MovieInfoButtons from './MovieInfoButtons';
 import style from './HeaderBottom.scss';
 
 const HeaderBottom = (props) => {

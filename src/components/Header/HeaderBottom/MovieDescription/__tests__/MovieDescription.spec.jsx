@@ -1,10 +1,11 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
+
 import MovieDescription from '../index';
 
 const data = {
-  filmName: 'name',
-  filmGenres: ['genre 1', 'genre 2', 'genre 3'],
+  filmName: 'THE JUNGLE BOOK',
+  filmDescrProps: 'Adventure, Drama, Family, Fantasy, |, 1h 46m',
 };
 
 describe('MovieDescription', () => {

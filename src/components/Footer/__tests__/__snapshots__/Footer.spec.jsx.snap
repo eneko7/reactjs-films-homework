@@ -13,11 +13,8 @@ exports[`Footer renders correctly 1`] = `
     className="footer_copyright"
   >
     Copyright ©
-     
     2018
-     
     FILMS.
-     
     <Signature
       name="IHAR KARPUK"
     />

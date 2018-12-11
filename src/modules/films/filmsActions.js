@@ -1,4 +1,6 @@
+/* eslint-disable max-len */
 import axios from 'axios';
+import { receiveMainFilmInfo } from '../film/filmActions';
 
 export const FETCH_FILMS_REQUEST = 'FETCH_FILMS_REQUEST';
 export const FETCH_FILMS_SUCCESS = 'FETCH_FILMS_SUCCESS';
@@ -30,6 +32,7 @@ export function fetchFilms(url, page = 1) {
     return axios.get(`${url}&page=${page}`)
       .then((response) => {
         dispatch(receiveFilmsSuccess({ films: response.data.results, url, page }));
+        dispatch(receiveMainFilmInfo(response.data.results[0].id));
       })
       .catch(error => dispatch(receiveFilmsError(error.message)));
   };

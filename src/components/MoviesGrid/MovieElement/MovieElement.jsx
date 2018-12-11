@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import style from './MovieElement.scss';
 import ModalWindowFilmContainer from './ModalWindowFilm/ModalWindowFilmContainer';
 
@@ -11,15 +12,26 @@ class MovieElement extends React.Component {
     this.state = {
       isShownInfo: false,
       isShownFilm: false,
+      isShownMainScreen: false,
     };
     this.showInfo = this.showInfo.bind(this);
     this.watchFilm = this.watchFilm.bind(this);
+    this.showMainScreen = this.showMainScreen.bind(this);
   }
 
   showInfo() {
     this.setState(prevState => ({
       isShownInfo: !prevState.isShownInfo,
     }));
+  }
+
+  showMainScreen(filmId) {
+    this.setState(prevState => ({
+      isShownMainScreen: !prevState.isShownMainScreen,
+    }));
+    const { history } = this.props;
+    const { isShownMainScreen } = this.state;
+    history.push(`/film?filmId=${filmId}&isShownMainScreen=${isShownMainScreen}`);
   }
 
   watchFilm() {
@@ -82,7 +94,7 @@ class MovieElement extends React.Component {
       };
     }
     return (
-      <div className={`${style.moviesGrid_wrapper_MovieElement_ul_item_wrap}`}>
+      <div className={`${style.moviesGrid_wrapper_MovieElement_ul_item_wrap}`} onClick={() => this.showMainScreen(film.id)} role="presentation">
         <div style={topPicture} className={style.moviesGrid_wrapper_MovieElement_top_picture} />
         <div className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description}>
           <div className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_n_r}>
@@ -167,6 +179,12 @@ MovieElement.propTypes = {
     ]),
   ).isRequired,
   genresList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
+  // location: PropTypes.shape({
+  //   params: PropTypes.object,
+  //   pathname: PropTypes.string,
+  //   search: PropTypes.string,
+  // }).isRequired,
 };
 
-export default MovieElement;
+export default withRouter(MovieElement);

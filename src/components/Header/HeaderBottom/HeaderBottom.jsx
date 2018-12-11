@@ -7,9 +7,9 @@ import style from './HeaderBottom.scss';
 
 const HeaderBottom = (props) => {
   const {
-    films, genres,
+    films, genres, duration,
   } = props;
-  if (films[0]) {
+  if (films[0] && duration) {
     const genresCol = [];
     const genresOfFilm = films[0].genre_ids;
     genresOfFilm.forEach((elem) => {
@@ -20,7 +20,11 @@ const HeaderBottom = (props) => {
     return (
       <div className={style.header_bottom}>
         <div className={`${style.active} ${style.header_bottom_left}`}>
-          <MovieDescription filmName={films[0].original_title} filmGenres={genresCol} />
+          <MovieDescription
+            filmName={films[0].title}
+            filmGenres={genresCol}
+            filmDuration={duration}
+          />
           <MovieRate rate={films[0].vote_average} />
         </div>
         <MovieInfoButtons annotation={films[0].overview} filmId={films[0].id} />
@@ -33,6 +37,7 @@ const HeaderBottom = (props) => {
 HeaderBottom.propTypes = {
   genres: PropTypes.arrayOf(PropTypes.object).isRequired,
   films: PropTypes.arrayOf(PropTypes.object).isRequired,
+  duration: PropTypes.number.isRequired,
 };
 
 export default HeaderBottom;

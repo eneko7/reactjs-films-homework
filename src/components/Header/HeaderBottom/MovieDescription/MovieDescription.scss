@@ -1,4 +1,6 @@
 .full_description {
+  width: 100%;
+
   .full_description_filmName {
     font-size: 45px;
     letter-spacing: 1px;
@@ -11,11 +13,10 @@
 
   .full_description_filmDescr {
     margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
+    display: block;
 
     .full_description_filmDescr_item {
-      display: flex;
+      display: inline-block;
       font-size: 18px;
       line-height: 30px;
       color: #fff;
@@ -26,7 +27,7 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .full_description {
     .full_description_filmDescr {
       display: block;

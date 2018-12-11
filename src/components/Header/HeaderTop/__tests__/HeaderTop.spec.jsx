@@ -1,11 +1,11 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import Signature from '../index';
+import HeaderTop from '../index';
 
-describe('App', () => {
+describe('HeaderTop', () => {
   const renderer = new ShallowRenderer();
-  renderer.render(<Signature name="IHAR KARPUK" />);
+  renderer.render(<HeaderTop />);
   it('renders correctly', () => {
     const result = renderer.getRenderOutput();
     expect(result).toMatchSnapshot();

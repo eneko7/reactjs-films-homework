@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderTop renders correctly 1`] = `
+<div
+  className="header_top"
+>
+  <span
+    className="header_top_span"
+  >
+    FILMS
+  </span>
+  <div
+    className="header_top_search"
+  >
+    <input
+      className="header_top_search_input"
+      id="search_input"
+      placeholder="Searh..."
+      type="text"
+    />
+    <button
+      className="header_top_search_label"
+      type="button"
+    />
+  </div>
+</div>
+`;

@@ -1,11 +1,16 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import Signature from '../index';
+import MovieDescription from '../index';
 
-describe('App', () => {
+const data = {
+  filmName: 'THE JUNGLE BOOK',
+  filmDescrProps: 'Adventure, Drama, Family, Fantasy, |, 1h 46m',
+};
+
+describe('MovieDescription', () => {
   const renderer = new ShallowRenderer();
-  renderer.render(<Signature name="IHAR KARPUK" />);
+  renderer.render(<MovieDescription {...data} />);
   it('renders correctly', () => {
     const result = renderer.getRenderOutput();
     expect(result).toMatchSnapshot();

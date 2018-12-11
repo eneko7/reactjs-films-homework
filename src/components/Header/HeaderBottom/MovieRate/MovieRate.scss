@@ -1,0 +1,67 @@
+.bottom_left_filmRate {
+  margin-top: 25px;
+
+  .bottom_left_filmRate_stars_outer {
+    display: block;
+    position: relative;
+    float: left;
+
+    .bottom_left_filmRate_stars_outer_stars_inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+    }
+
+    .bottom_left_filmRate_stars_outer_stars_inner::before {
+      content: "★ ★ ★ ★ ★";
+      color: #09ade3;
+      font-size: 36px;
+    }
+  }
+
+  .bottom_left_filmRate_stars_outer::before {
+    content: "☆ ☆ ☆ ☆ ☆";
+    color: #09ade3;
+    font-size: 36px;
+  }
+
+  .bottom_left_filmRate_number {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 24px;
+    color: #fff;
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    text-align: center;
+    border-radius: 6px;
+    border: 2px solid #09ade3;
+    padding: 3px 5px;
+    position: relative;
+    top: 10px;
+    left: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .bottom_left_filmRate {
+    margin-top: 10px;
+
+    .bottom_left_filmRate_stars_outer {
+      .bottom_left_filmRate_stars_outer_stars_inner::before {
+        font-size: 25px;
+      }
+    }
+
+    .bottom_left_filmRate_stars_outer::before {
+      font-size: 25px;
+    }
+
+    .bottom_left_filmRate_number {
+      font-size: 20px;
+      line-height: 20px;
+      top: 0;
+    }
+  }
+}

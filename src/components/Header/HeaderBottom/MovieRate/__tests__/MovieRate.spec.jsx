@@ -1,11 +1,11 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
-import Signature from '../index';
+import MovieRate from '../MovieRate';
 
-describe('App', () => {
+describe('MovieRate', () => {
   const renderer = new ShallowRenderer();
-  renderer.render(<Signature name="IHAR KARPUK" />);
+  renderer.render(<MovieRate rate={4.8} />);
   it('renders correctly', () => {
     const result = renderer.getRenderOutput();
     expect(result).toMatchSnapshot();

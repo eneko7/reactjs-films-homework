@@ -1,0 +1,61 @@
+.full_description {
+  .full_description_filmName {
+    font-size: 45px;
+    letter-spacing: 1px;
+    line-height: 44px;
+    color: #fff;
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    font-weight: 800;
+    display: block;
+  }
+
+  .full_description_filmDescr {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    .full_description_filmDescr_item {
+      display: flex;
+      font-size: 18px;
+      line-height: 30px;
+      color: #fff;
+      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+      margin-right: 15px;
+      font-weight: normal;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .full_description {
+    .full_description_filmDescr {
+      display: block;
+
+      .full_description_filmDescr_item {
+        display: inline-block;
+        font-size: 15px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .full_description {
+    .full_description_filmName {
+      font-size: 25px;
+    }
+
+    .full_description_filmDescr {
+      display: block;
+      margin-top: 5px;
+
+      .full_description_filmDescr_item {
+        display: inline-block;
+        font-size: 15px;
+        line-height: 20px;
+        margin-right: 7px;
+      }
+    }
+  }
+}

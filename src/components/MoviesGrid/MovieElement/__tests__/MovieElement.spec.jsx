@@ -35,10 +35,10 @@ const data = {
 
 const dataBadPictures = {
   film: {
-    backdrop_path: '',
+    backdrop_path: null,
     genre_ids: [18, 10751, 14],
     title: 'original_title',
-    poster_path: '',
+    poster_path: null,
     overview: 'overview',
     vote_average: 8,
     id: 338952,
@@ -68,7 +68,7 @@ const dataBadPicturePoster = {
     backdrop_path: '/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg',
     genre_ids: [18, 10751, 14],
     title: 'original_title',
-    poster_path: '',
+    poster_path: null,
     overview: 'overview',
     vote_average: 8,
     id: 338952,
@@ -95,7 +95,7 @@ const dataBadPicturePoster = {
 
 const dataBadPictureTop = {
   film: {
-    backdrop_path: '',
+    backdrop_path: null,
     genre_ids: [18, 10751, 14],
     title: 'original_title',
     poster_path: '/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg',

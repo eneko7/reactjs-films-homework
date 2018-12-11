@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from './MovieElement.scss';
 import ModalWindowFilmContainer from './ModalWindowFilm/ModalWindowFilmContainer';
-import errorImg from '../../../images/error_video.jpg';
+
+const errorImg = '../../../images/error_video.jpg';
 
 class MovieElement extends React.Component {
   constructor(props) {
@@ -34,9 +35,6 @@ class MovieElement extends React.Component {
   }
 
   render() {
-    function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min)) + min;
-    }
     const { film, genresList } = this.props;
     const { isShownInfo, isShownFilm } = this.state;
     let title = '';
@@ -45,17 +43,18 @@ class MovieElement extends React.Component {
     } else {
       title = `${film.title}`;
     }
+    const filmVoteAverage = parseFloat(film.vote_average).toFixed(1);
     const genres = [];
     film.genre_ids.forEach((elem) => {
       genresList.forEach((el) => {
-        if (elem === el.id) {
+        if (elem === el.id && !genres.includes(el.name)) {
           genres.push(el.name);
         }
       });
     });
     const filmGenres = genres.map(elem => (
       <span
-        key={elem.toString() + getRandomInt(0, 100)}
+        key={elem.toString()}
         className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres_gen}
       >
         {elem}
@@ -91,7 +90,7 @@ class MovieElement extends React.Component {
               {title.toUpperCase()}
             </span>
             <span className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Rate}>
-              {film.vote_average}
+              {filmVoteAverage}
             </span>
           </div>
           <div className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres}>

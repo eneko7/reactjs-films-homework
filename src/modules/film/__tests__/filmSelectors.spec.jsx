@@ -6,6 +6,7 @@ describe('Film Selectors', () => {
     errorFilm: false,
     isFetchingFilm: false,
     isFetchedFilm: false,
+    selectedFilm: null,
   };
   const state = {
     film: initialState,
@@ -21,5 +22,9 @@ describe('Film Selectors', () => {
   it('getIsErrorFilm selector', () => {
     expect(selectors.getIsErrorFilm(state))
       .toEqual(state.film.errorFilm);
+  });
+  it('getSelectedFilm selector', () => {
+    expect(selectors.getSelectedFilm(state))
+      .toEqual(state.film.selectedFilm);
   });
 });

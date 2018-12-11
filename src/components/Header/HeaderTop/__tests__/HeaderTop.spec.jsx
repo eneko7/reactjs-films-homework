@@ -2,6 +2,7 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import TestRenderer from 'react-test-renderer';
+import { MemoryRouter } from 'react-router';
 import moxios from 'moxios';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -23,12 +24,19 @@ const store2 = mockStore({
     searchedWord: '',
   },
 });
-
+const location = {
+  location: {
+    pathname: '/search',
+    search: '/search?q=test',
+  },
+};
 describe('Search Snapshot', () => {
   test('snapshot render', () => {
     const component = shallow.render(
       <Provider store={store}>
-        <HeaderTop />
+        <MemoryRouter {...location}>
+          <HeaderTop />
+        </MemoryRouter>
       </Provider>,
     );
     expect(component).toMatchSnapshot();
@@ -52,7 +60,9 @@ describe('Header top save word', () => {
   test('dispatch save word', (done) => {
     const testRenderer = TestRenderer.create(
       <Provider store={store}>
-        <HeaderTop />
+        <MemoryRouter {...location}>
+          <HeaderTop />
+        </MemoryRouter>
       </Provider>,
       {
         createNodeMock: (element) => {
@@ -97,7 +107,9 @@ describe('Header top save word -> click', () => {
   test('dispatch save word -> Click (search button)', (done) => {
     const testRenderer = TestRenderer.create(
       <Provider store={store}>
-        <HeaderTop />
+        <MemoryRouter {...location}>
+          <HeaderTop />
+        </MemoryRouter>
       </Provider>,
       {
         createNodeMock: (element) => {
@@ -142,7 +154,9 @@ describe('Header top save word without word', () => {
   test('dispatch without word', (done) => {
     const testRenderer = TestRenderer.create(
       <Provider store={store2}>
-        <HeaderTop />
+        <MemoryRouter {...location}>
+          <HeaderTop />
+        </MemoryRouter>
       </Provider>,
       {
         createNodeMock: (element) => {

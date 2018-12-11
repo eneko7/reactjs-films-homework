@@ -80,6 +80,29 @@
   margin-bottom: 50px;
 }
 
+@media (max-width: 1440px) {
+  .moviesGrid {
+    .moviesGrid_wrapper {
+      .moviesGrid_wrapper_MovieElement_ul {
+        .moviesGrid_wrapper_MovieElement_ul_item {
+          width: 31.6%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .moviesGrid {
+    .moviesGrid_wrapper {
+      .moviesGrid_wrapper_MovieElement_ul {
+        .moviesGrid_wrapper_MovieElement_ul_item {
+          width: 48.3%;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 766px) {
   .moviesGrid {
     .moviesGrid_wrapper {

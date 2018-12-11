@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 import MoviesGrid from './MoviesGrid';
 import { fetchFilmsPopular, fetchNextFilms } from '../../modules/films/filmsActions';
 import { getFilms, getIsFetchingFilms } from '../../modules/films/filmsSelectors';
@@ -15,4 +14,4 @@ const mapDispatchToProps = {
   fetchFilmsPopular,
   fetchNextFilms,
 };
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MoviesGrid));
+export default connect(mapStateToProps, mapDispatchToProps)(MoviesGrid);

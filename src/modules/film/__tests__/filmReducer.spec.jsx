@@ -6,7 +6,9 @@ const initialState = {
   errorFilm: false,
   isFetchingFilm: false,
   isFetchedFilm: false,
+  selectedFilm: null,
 };
+
 describe('Film Reducers', () => {
   it('fetch film succeed', () => {
     expect(reducer(initialState, actions.receiveFilmSuccess(true)))
@@ -14,6 +16,17 @@ describe('Film Reducers', () => {
         isFetchingFilm: false,
         isFetchedFilm: true,
         filmTrailer: true,
+        errorFilm: false,
+        selectedFilm: null,
+      });
+  });
+  it('fetch film succeed', () => {
+    expect(reducer(initialState, actions.receiveFilmInfoSuccess(true)))
+      .toEqual({
+        ...initialState,
+        isFetchingFilm: false,
+        isFetchedFilm: true,
+        selectedFilm: true,
         errorFilm: false,
       });
   });
@@ -32,6 +45,7 @@ describe('Film Reducers', () => {
         isFetchingFilm: false,
         isFetchedFilm: false,
         filmTrailer: '',
+        selectedFilm: null,
       });
   });
   it('without any actions', () => {

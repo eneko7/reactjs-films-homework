@@ -1,5 +1,6 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
+import { MemoryRouter } from 'react-router';
 import TestRenderer from 'react-test-renderer';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -30,13 +31,21 @@ const store = mockStore({
     lastGenreID: 1,
   },
 });
+const location = {
+  location: {
+    pathname: '/films',
+    search: '/films?sort=Trending',
+  },
+};
 jest.mock('../../Genres/GenresContainer', () => () => <div>test</div>);
 const shallow = new ShallowRenderer();
 describe('MoviesCategories Snapshot', () => {
   it('renders', () => {
     const component = shallow.render(
       <Provider store={store}>
-        <MoviesCategories />
+        <MemoryRouter {...location}>
+          <MoviesCategories fetchFilmsBySearch={() => ('Hello!')} />
+        </MemoryRouter>
       </Provider>,
     );
     expect(component).toMatchSnapshot();
@@ -45,7 +54,9 @@ describe('MoviesCategories Snapshot', () => {
   it('renders categories', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <MoviesCategories />
+        <MemoryRouter {...location}>
+          <MoviesCategories fetchFilmsBySearch={() => ('Hello!')} />
+        </MemoryRouter>
       </Provider>,
     );
     const elArr = ['Trending', 'Top Rated', 'Coming Soon'];
@@ -56,7 +67,9 @@ describe('MoviesCategories Snapshot', () => {
   it('renders genres', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <MoviesCategories />
+        <MemoryRouter {...location}>
+          <MoviesCategories fetchFilmsBySearch={() => ('Hello!')} />
+        </MemoryRouter>
       </Provider>,
     );
     const { instance } = component.root;

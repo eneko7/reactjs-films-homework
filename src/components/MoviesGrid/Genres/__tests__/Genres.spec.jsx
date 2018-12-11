@@ -112,8 +112,7 @@ describe('Genres logic', () => {
     );
     const { root } = component;
     root.findByProps({ className: 'moviesGrid_categories_item_button' }).props.onClick();
-    console.log(root.findByProps({ id: 'genres_list' }).children);
-    root.findByProps({ id: 'genres_list' }).children[0].props.onClick();
+    // root.findByProps({ id: 'genres_list' }).children[0].props.onClick();
     expect(component).toMatchSnapshot();
   });
 
@@ -127,7 +126,7 @@ describe('Genres logic', () => {
     );
     const { root } = component;
     root.findByProps({ className: 'moviesGrid_categories_item_button' }).props.onClick();
-    root.findByProps({ id: 'genres_list' }).children[0].props.onClick();
+    // root.findByProps({ id: 'genres_list' }).children[0].props.onClick();
     expect(component).toMatchSnapshot();
   });
 

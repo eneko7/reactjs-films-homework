@@ -56,7 +56,7 @@ class Genres extends React.Component {
     const { activeCategory } = this.props;
     const genresActive = activeCategory === 'Genres' ? { borderBottom: '4px solid' } : { borderBottom: 'none' };
     return (
-      <div>
+      <React.Fragment>
         <button type="button" style={genresActive} className={`${style.moviesGrid_categories_item_button}`} onClick={this.openGenresClick} data-filter="Genres" id="Genres">
           <span>{headerTitle}</span>
           <span className={`${active} ${style.moviesGrid_categories_item_span_arrow}`} />
@@ -64,7 +64,7 @@ class Genres extends React.Component {
         <div className={`${active} ${style.moviesGrid_categories_item_block}`} id="genres_list">
           {genresCol}
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

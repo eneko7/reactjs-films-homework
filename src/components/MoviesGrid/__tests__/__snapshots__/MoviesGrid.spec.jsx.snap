@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MoviesList Snapshot snapshot 1`] = `
-<withRouter(Connect(MoviesGrid))
-  fetchFilmsByGenre={[Function]}
-/>
+<MemoryRouter>
+  <Connect(MoviesGrid)
+    fetchFilmsByGenre={[Function]}
+    fetchFilmsBySearch={[Function]}
+  />
+</MemoryRouter>
 `;

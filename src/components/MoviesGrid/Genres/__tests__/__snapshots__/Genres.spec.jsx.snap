@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Genres logic renders genres dropdown chose 1`] = `
-<div>
+Array [
   <button
     className="moviesGrid_categories_item_button"
     data-filter="Genres"
@@ -20,7 +20,7 @@ exports[`Genres logic renders genres dropdown chose 1`] = `
     <span
       className=" moviesGrid_categories_item_span_arrow"
     />
-  </button>
+  </button>,
   <div
     className=" moviesGrid_categories_item_block"
     id="genres_list"
@@ -52,12 +52,12 @@ exports[`Genres logic renders genres dropdown chose 1`] = `
     >
       drama
     </button>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`Genres logic renders genres dropdown chose 2`] = `
-<div>
+Array [
   <button
     className="moviesGrid_categories_item_button"
     data-filter="Genres"
@@ -76,7 +76,7 @@ exports[`Genres logic renders genres dropdown chose 2`] = `
     <span
       className=" moviesGrid_categories_item_span_arrow"
     />
-  </button>
+  </button>,
   <div
     className=" moviesGrid_categories_item_block"
     id="genres_list"
@@ -108,12 +108,12 @@ exports[`Genres logic renders genres dropdown chose 2`] = `
     >
       drama
     </button>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`Genres logic renders genres dropdown close 1`] = `
-<div>
+Array [
   <button
     className="moviesGrid_categories_item_button"
     data-filter="Genres"
@@ -132,7 +132,7 @@ exports[`Genres logic renders genres dropdown close 1`] = `
     <span
       className=" moviesGrid_categories_item_span_arrow"
     />
-  </button>
+  </button>,
   <div
     className=" moviesGrid_categories_item_block"
     id="genres_list"
@@ -164,12 +164,12 @@ exports[`Genres logic renders genres dropdown close 1`] = `
     >
       drama
     </button>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`Genres logic renders genres dropdown open 1`] = `
-<div>
+Array [
   <button
     className="moviesGrid_categories_item_button"
     data-filter="Genres"
@@ -188,7 +188,7 @@ exports[`Genres logic renders genres dropdown open 1`] = `
     <span
       className="active moviesGrid_categories_item_span_arrow"
     />
-  </button>
+  </button>,
   <div
     className="active moviesGrid_categories_item_block"
     id="genres_list"
@@ -220,8 +220,8 @@ exports[`Genres logic renders genres dropdown open 1`] = `
     >
       drama
     </button>
-  </div>
-</div>
+  </div>,
+]
 `;
 
 exports[`GenresNavLink Snapshot renders 1`] = `

@@ -46,6 +46,7 @@ class MovieElement extends React.Component {
     } else {
       title = `${film.title}`;
     }
+    const filmVoteAverage = parseFloat(film.vote_average).toFixed(1);
     const genres = [];
     film.genre_ids.forEach((elem) => {
       genresList.forEach((el) => {
@@ -92,7 +93,7 @@ class MovieElement extends React.Component {
               {title.toUpperCase()}
             </span>
             <span className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Rate}>
-              {film.vote_average}
+              {filmVoteAverage}
             </span>
           </div>
           <div className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_genres}>

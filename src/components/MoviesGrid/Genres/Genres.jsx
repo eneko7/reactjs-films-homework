@@ -21,7 +21,7 @@ class Genres extends React.Component {
     const parsed = queryString.parse(search);
     const { genreId, genreName } = parsed;
     fetchGenres();
-    if (pathname === '/genres') {
+    if (pathname === '/genres' || pathname === 'film') {
       this.changeTitle(genreName, genreId);
     }
   }

@@ -38,10 +38,21 @@ class MoviesCategories extends React.Component {
   }
 
   componentDidMount() {
-    const { location: { search, pathname }, pushNavigationLink, fetchFilmsBySearch } = this.props;
+    const {
+      location: { search, pathname },
+      pushNavigationLink,
+      fetchFilmsBySearch,
+      fetchFilmsByGenre,
+      receiveMainFilmInfo,
+    } = this.props;
     const parsed = queryString.parse(search);
-    const { sort } = parsed;
-    const { q } = parsed;
+    const {
+      sort,
+      q,
+      filmId,
+      genreId,
+      category,
+    } = parsed;
     if (pathname === '/') {
       this.fetchFilmsByCategory('Trending');
       pushNavigationLink('Trending');
@@ -57,6 +68,44 @@ class MoviesCategories extends React.Component {
       this.setState(() => ({
         activeCategory: 'Genres',
       }));
+    }
+    if (pathname === '/film') {
+      if (category === '') {
+        this.fetchFilmsByCategory('Trending');
+        pushNavigationLink('Trending');
+        setTimeout(() => {
+          receiveMainFilmInfo(filmId);
+        }, 0);
+      }
+      if (category === 'search') {
+        fetchFilmsBySearch(q);
+        setTimeout(() => {
+          receiveMainFilmInfo(filmId);
+        }, 0);
+      }
+      if (category === 'genres') {
+        this.setState(() => ({
+          activeCategory: 'Genres',
+        }));
+        fetchFilmsByGenre(genreId);
+        setTimeout(() => {
+          receiveMainFilmInfo(filmId);
+        }, 0);
+      }
+      if (category === 'categories') {
+        this.fetchFilmsByCategory(sort);
+        pushNavigationLink(sort);
+        setTimeout(() => {
+          receiveMainFilmInfo(filmId);
+        }, 0);
+      }
+      if (!category && !sort) {
+        this.fetchFilmsByCategory('Trending');
+        pushNavigationLink('Trending');
+        setTimeout(() => {
+          receiveMainFilmInfo(filmId);
+        }, 0);
+      }
     }
   }
 
@@ -89,6 +138,8 @@ class MoviesCategories extends React.Component {
 MoviesCategories.propTypes = {
   pushNavigationLink: PropTypes.func.isRequired,
   fetchFilmsBySearch: PropTypes.func.isRequired,
+  fetchFilmsByGenre: PropTypes.func.isRequired,
+  receiveMainFilmInfo: PropTypes.func.isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string,
     search: PropTypes.string,

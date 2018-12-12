@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router';
+import queryString from 'query-string';
 import style from './MovieElement.scss';
 import ModalWindowFilmContainer from './ModalWindowFilm/ModalWindowFilmContainer';
 
@@ -29,9 +29,30 @@ class MovieElement extends React.Component {
     this.setState(prevState => ({
       isShownMainScreen: !prevState.isShownMainScreen,
     }));
-    const { history } = this.props;
-    const { isShownMainScreen } = this.state;
-    history.push(`/film?filmId=${filmId}&isShownMainScreen=${isShownMainScreen}`);
+    const { history, receiveMainFilmInfo, location: { pathname, search } } = this.props;
+    receiveMainFilmInfo(filmId);
+    const parsed = queryString.parse(search);
+    const {
+      genreName,
+      genreId,
+      sort,
+      q,
+    } = parsed;
+    if (pathname === '/') {
+      history.push(`/film?filmId=${filmId}&category=`);
+    }
+    if (pathname === '/films' && sort) {
+      history.push(`/film?filmId=${filmId}&category=categories&sort=${sort}`);
+    }
+    if (pathname === '/search' && q) {
+      history.push(`/film?filmId=${filmId}&category=search&q=${q}`);
+    }
+    if (pathname === '/genres' && genreId) {
+      history.push(`/film?filmId=${filmId}&category=genres&genreName=${genreName}&genreId=${genreId}`);
+    }
+    if (pathname === '/film') {
+      history.push(`/film?filmId=${filmId}`);
+    }
   }
 
   watchFilm() {
@@ -180,11 +201,12 @@ MovieElement.propTypes = {
   ).isRequired,
   genresList: PropTypes.arrayOf(PropTypes.object).isRequired,
   history: PropTypes.objectOf(PropTypes.any).isRequired,
-  // location: PropTypes.shape({
-  //   params: PropTypes.object,
-  //   pathname: PropTypes.string,
-  //   search: PropTypes.string,
-  // }).isRequired,
+  receiveMainFilmInfo: PropTypes.func.isRequired,
+  location: PropTypes.shape({
+    params: PropTypes.object,
+    pathname: PropTypes.string,
+    search: PropTypes.string,
+  }).isRequired,
 };
 
-export default withRouter(MovieElement);
+export default MovieElement;

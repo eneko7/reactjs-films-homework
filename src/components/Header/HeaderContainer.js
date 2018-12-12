@@ -3,6 +3,7 @@ import Header from './Header';
 import { getFilms } from '../../modules/films/filmsSelectors';
 import { getGenres } from '../../modules/genres/genresSelectors';
 import { getSelectedFilm } from '../../modules/film/filmSelectors';
+import { receiveMainFilmInfo } from '../../modules/film/filmActions';
 
 const mapStateToProps = state => ({
   films: getFilms(state),
@@ -10,4 +11,8 @@ const mapStateToProps = state => ({
   selectedFilm: getSelectedFilm(state),
 });
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = {
+  receiveMainFilmInfo,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

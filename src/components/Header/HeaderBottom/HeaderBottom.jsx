@@ -7,27 +7,20 @@ import style from './HeaderBottom.scss';
 
 const HeaderBottom = (props) => {
   const {
-    films, genres, duration,
+    selectedFilm, duration,
   } = props;
-  if (films[0] && duration) {
-    const genresCol = [];
-    const genresOfFilm = films[0].genre_ids;
-    genresOfFilm.forEach((elem) => {
-      genres.forEach((el) => {
-        if (elem === el.id) genresCol.push(el.name);
-      });
-    });
+  if (selectedFilm && duration) {
     return (
       <div className={style.header_bottom}>
         <div className={`${style.active} ${style.header_bottom_left}`}>
           <MovieDescription
-            filmName={films[0].title}
-            filmGenres={genresCol}
+            filmName={selectedFilm.title}
+            filmGenres={selectedFilm.genres}
             filmDuration={duration}
           />
-          <MovieRate rate={films[0].vote_average} />
+          <MovieRate rate={selectedFilm.vote_average} />
         </div>
-        <MovieInfoButtons annotation={films[0].overview} filmId={films[0].id} />
+        <MovieInfoButtons annotation={selectedFilm.overview} filmId={selectedFilm.id} />
       </div>
     );
   }
@@ -35,8 +28,15 @@ const HeaderBottom = (props) => {
 };
 
 HeaderBottom.propTypes = {
-  genres: PropTypes.arrayOf(PropTypes.object).isRequired,
-  films: PropTypes.arrayOf(PropTypes.object).isRequired,
+  selectedFilm: PropTypes.objectOf(
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.array,
+      PropTypes.bool,
+      PropTypes.object,
+    ]),
+  ).isRequired,
   duration: PropTypes.number.isRequired,
 };
 

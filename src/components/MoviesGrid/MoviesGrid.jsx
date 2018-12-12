@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from './MoviesGrid.scss';
-import MovieElement from './MovieElement/MovieElement';
-import MoviesCategoriesContainer from './MoviesCategories/index';
+import MovieElement from './MovieElement';
+import MoviesCategories from './MoviesCategories';
 
 class MoviesGrid extends React.Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class MoviesGrid extends React.Component {
     ));
     return (
       <main className={style.moviesGrid}>
-        <MoviesCategoriesContainer />
+        <MoviesCategories />
         <div className={style.moviesGrid_wrapper}>
           <ul className={style.moviesGrid_wrapper_MovieElement_ul}>
             {filmsItems}

@@ -11,8 +11,8 @@ const MovieDescription = (props) => {
   const filmDurationHours = (filmDuration / 60).toFixed(0);
   const filmDurationMinutes = (filmDuration % 60);
   const descrItems = filmGenres.map(item => (
-    <span key={item} className={style.full_description_filmDescr_item}>
-      {item}
+    <span key={item.id} className={style.full_description_filmDescr_item}>
+      {item.name}
     </span>
   ));
   return (
@@ -31,7 +31,7 @@ const MovieDescription = (props) => {
 
 MovieDescription.propTypes = {
   filmName: PropTypes.string.isRequired,
-  filmGenres: PropTypes.arrayOf(PropTypes.string).isRequired,
+  filmGenres: PropTypes.arrayOf(PropTypes.object).isRequired,
   filmDuration: PropTypes.number.isRequired,
 };
 

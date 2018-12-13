@@ -8,7 +8,7 @@ exports[`MovieElement MovieElement -> Click (close film)  1`] = `
     className="moviesGrid_wrapper_MovieElement_top_picture"
     style={
       Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
+        "backgroundImage": "url(//image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
       }
     }
   />
@@ -86,7 +86,7 @@ exports[`MovieElement MovieElement -> Click (close film)  1`] = `
     className=" descriptionFilmLayer_info"
     style={
       Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg)",
+        "backgroundImage": "url(//image.tmdb.org/t/p/w1280/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg)",
       }
     }
   >
@@ -163,7 +163,7 @@ exports[`MovieElement MovieElement -> Click (close info)  1`] = `
     className="moviesGrid_wrapper_MovieElement_top_picture"
     style={
       Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
+        "backgroundImage": "url(//image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
       }
     }
   />
@@ -241,7 +241,7 @@ exports[`MovieElement MovieElement -> Click (close info)  1`] = `
     className=" descriptionFilmLayer_info"
     style={
       Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg)",
+        "backgroundImage": "url(//image.tmdb.org/t/p/w1280/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg)",
       }
     }
   >
@@ -318,7 +318,7 @@ exports[`MovieElement MovieElement -> Click (show info)  1`] = `
     className="moviesGrid_wrapper_MovieElement_top_picture"
     style={
       Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
+        "backgroundImage": "url(//image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
       }
     }
   />
@@ -396,7 +396,7 @@ exports[`MovieElement MovieElement -> Click (show info)  1`] = `
     className="active descriptionFilmLayer_info"
     style={
       Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg)",
+        "backgroundImage": "url(//image.tmdb.org/t/p/w1280/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg)",
       }
     }
   >
@@ -473,7 +473,7 @@ exports[`MovieElement MovieElement -> Click (watch film)  1`] = `
     className="moviesGrid_wrapper_MovieElement_top_picture"
     style={
       Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
+        "backgroundImage": "url(//image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
       }
     }
   />
@@ -551,7 +551,7 @@ exports[`MovieElement MovieElement -> Click (watch film)  1`] = `
     className=" descriptionFilmLayer_info"
     style={
       Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg)",
+        "backgroundImage": "url(//image.tmdb.org/t/p/w1280/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg)",
       }
     }
   >
@@ -630,7 +630,7 @@ exports[`MovieElement renders correctly 1`] = `
     className="moviesGrid_wrapper_MovieElement_top_picture"
     style={
       Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
+        "backgroundImage": "url(//image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
       }
     }
   />
@@ -708,7 +708,7 @@ exports[`MovieElement renders correctly 1`] = `
     className=" descriptionFilmLayer_info"
     style={
       Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg)",
+        "backgroundImage": "url(//image.tmdb.org/t/p/w1280/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg)",
       }
     }
   >
@@ -940,7 +940,7 @@ exports[`MovieElement renders correctly without poster 1`] = `
     className="moviesGrid_wrapper_MovieElement_top_picture"
     style={
       Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
+        "backgroundImage": "url(//image.tmdb.org/t/p/w1280/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg)",
       }
     }
   />
@@ -1173,7 +1173,7 @@ exports[`MovieElement renders correctly without top picture 1`] = `
     className=" descriptionFilmLayer_info"
     style={
       Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg)",
+        "backgroundImage": "url(//image.tmdb.org/t/p/w1280/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg)",
       }
     }
   >

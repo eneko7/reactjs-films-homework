@@ -6,7 +6,7 @@ exports[`Header render correctly  1`] = `
   id="app_header"
   style={
     Object {
-      "backgroundImage": "url(http://image.tmdb.org/t/p/w1280undefined)",
+      "backgroundImage": "url(//image.tmdb.org/t/p/w1280undefined)",
     }
   }
 >
@@ -14,7 +14,7 @@ exports[`Header render correctly  1`] = `
   <Unknown
     bg={
       Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280undefined)",
+        "backgroundImage": "url(//image.tmdb.org/t/p/w1280undefined)",
       }
     }
     films={
@@ -74,7 +74,7 @@ exports[`Header render correctly if film empty  1`] = `
   id="app_header"
   style={
     Object {
-      "backgroundImage": "url(http://image.tmdb.org/t/p/w1280undefined)",
+      "backgroundImage": "url(//image.tmdb.org/t/p/w1280undefined)",
     }
   }
 >
@@ -82,7 +82,7 @@ exports[`Header render correctly if film empty  1`] = `
   <Unknown
     bg={
       Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280undefined)",
+        "backgroundImage": "url(//image.tmdb.org/t/p/w1280undefined)",
       }
     }
     films={

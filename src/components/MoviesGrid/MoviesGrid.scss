@@ -17,7 +17,7 @@
     .moviesGrid_wrapper_MovieElement_ul {
       margin: 0 7%;
       display: flex;
-      justify-content: start;
+      justify-content: space-between;
       flex-wrap: wrap;
       padding: 0;
       list-style-type: none;
@@ -26,7 +26,7 @@
         width: 23.3%;
         height: 500px;
         margin-bottom: 60px;
-        margin-right: 1.7%;
+        border-radius: 6px;
       }
     }
 
@@ -111,7 +111,7 @@
         justify-content: space-between;
 
         .moviesGrid_wrapper_MovieElement_ul_item {
-          width: 95%;
+          width: 100%;
           height: 600px;
         }
       }

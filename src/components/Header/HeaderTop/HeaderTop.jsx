@@ -20,7 +20,6 @@ class HeaderTop extends React.Component {
     }
   }
 
-
   render() {
     return (
       <div className={style.header_top}>
@@ -28,7 +27,6 @@ class HeaderTop extends React.Component {
         <form className={style.header_top_search} onSubmit={this.handleSubmit}>
           <input
             type="text"
-            defaultValue="search"
             id="search_input"
             className={style.header_top_search_input}
             ref={this.input}

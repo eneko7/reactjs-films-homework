@@ -24,14 +24,6 @@ class MovieInfoButtons extends React.Component {
     this.setState(prevState => ({
       isShownFilm: !prevState.isShownFilm,
     }));
-    // const { isShownFilm } = this.state;
-    // if (isShownFilm) {
-    //   document.getElementsByTagName('body')[0].style.overflow = 'auto';
-    //   // document.getElementById('app_header').style.height = '70vh';
-    // } else {
-    //   document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-    //   // document.getElementById('app_header').style.height = '100vh';
-    // }
   }
 
   render() {

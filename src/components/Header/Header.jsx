@@ -7,7 +7,13 @@ import HeaderTop from './HeaderTop';
 const Header = (props) => {
   const { films, genres } = props;
   let data = {};
-  if (films.length < 1) return null;
+  if (films.length < 1) {
+    return (
+      <header id="app_header" className={`${style.app_header} ${style.error}`}>
+        <HeaderTop />
+      </header>
+    );
+  }
   data = {
     films,
     genres,

@@ -10,6 +10,11 @@
   z-index: 3;
 }
 
+.app_header.error {
+  height: 7vh;
+  background: none !important;
+}
+
 .app_header::after {
   content: '';
   position: absolute;
@@ -24,5 +29,12 @@
 @media (max-width: 767px) {
   .app_header {
     height: 100vh;
+  }
+}
+
+@media (max-width: 621px) {
+  .app_header.error {
+    height: 15vh;
+    background: none !important;
   }
 }

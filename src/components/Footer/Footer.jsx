@@ -7,8 +7,11 @@ const Footer = () => (
     <span className={style.footer_films}>FILMS</span>
     <span className={style.footer_copyright}>
       Copyright ©
+      {' '}
       {(new Date()).getFullYear()}
+      {' '}
       FILMS.
+      {' '}
       <Signature name="IHAR KARPUK" />
     </span>
   </footer>

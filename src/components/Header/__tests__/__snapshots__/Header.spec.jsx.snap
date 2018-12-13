@@ -66,7 +66,14 @@ exports[`Header render correctly  1`] = `
 </header>
 `;
 
-exports[`Header render correctly  2`] = `null`;
+exports[`Header render correctly  2`] = `
+<header
+  className="app_header error"
+  id="app_header"
+>
+  <Connect(HeaderTop) />
+</header>
+`;
 
 exports[`Header render correctly if film empty  1`] = `
 <header
@@ -134,4 +141,11 @@ exports[`Header render correctly if film empty  1`] = `
 </header>
 `;
 
-exports[`Header render correctly if film empty  2`] = `null`;
+exports[`Header render correctly if film empty  2`] = `
+<header
+  className="app_header error"
+  id="app_header"
+>
+  <Connect(HeaderTop) />
+</header>
+`;

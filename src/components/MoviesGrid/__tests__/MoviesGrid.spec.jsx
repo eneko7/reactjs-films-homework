@@ -150,6 +150,51 @@ describe('MoviesGrid logics', () => {
     eventMap.scroll();
     expect(filmsActions.fetchNextFilms).not.toBeCalled();
   });
+  test("function for fetch next films shouldn't be called when films are fetching", () => {
+    const store3 = mockStore({
+      films: {
+        allFilms: [],
+        isFetchingFilms: true,
+      },
+      genres: {
+        allGenres: mockGenres.genres,
+        lastGenreID: 0,
+      },
+      film: {
+        filmTrailer: 'trailer',
+        isFetchingFilm: true,
+        errorFilm: false,
+      },
+      navlinks: {
+        clickedLink: 'Trending',
+      },
+    });
+    const eventMap = {
+      scroll: null,
+    };
+    global.document.addEventListener = jest.fn((event, cb) => {
+      eventMap[event] = cb;
+    });
+    Object.defineProperty(global.window, 'innerHeight', {
+      writable: true,
+      value: 1000,
+    });
+    Object.defineProperty(global.window, 'pageYOffset', {
+      writable: true,
+      value: 1000,
+    });
+    Object.defineProperty(global.document.body, 'offsetHeight', {
+      writable: true,
+      value: 1,
+    });
+    TestRenderer.create(
+      <Provider store={store3}>
+        <MoviesGrid />
+      </Provider>,
+    );
+    eventMap.scroll();
+    expect(filmsActions.fetchNextFilms).not.toBeCalled();
+  });
   test('lifecycle method should have been called', () => {
     const component = TestRenderer.create(
       <Provider store={store}>

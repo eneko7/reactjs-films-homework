@@ -3,101 +3,111 @@
 exports[`MoviesCategories Snapshot renders 1`] = `<Connect(MoviesCategories) />`;
 
 exports[`MoviesCategories Snapshot renders categories 1`] = `
-<div
-  className="moviesGrid_categories"
->
+Array [
   <div
-    className="moviesGrid_categories_item"
+    className="moviesGrid_categories"
   >
-    <button
-      className=" moviesGrid_categories_item_button"
-      data-filter="Trending"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="moviesGrid_categories_item"
     >
-      Trending
-    </button>
-  </div>
-  <div
-    className="moviesGrid_categories_item"
-  >
-    <button
-      className=" moviesGrid_categories_item_button"
-      data-filter="Top Rated"
-      onClick={[Function]}
-      type="button"
-    >
-      Top Rated
-    </button>
-  </div>
-  <div
-    className="moviesGrid_categories_item"
-  >
-    <button
-      className="active moviesGrid_categories_item_button"
-      data-filter="Coming Soon"
-      onClick={[Function]}
-      type="button"
-    >
-      Coming Soon
-    </button>
-  </div>
-  <div
-    className="moviesGrid_categories_item"
-  >
-    <div>
-      test
+      <button
+        className=" moviesGrid_categories_item_button"
+        data-filter="Trending"
+        onClick={[Function]}
+        type="button"
+      >
+        Trending
+      </button>
     </div>
-  </div>
-</div>
+    <div
+      className="moviesGrid_categories_item"
+    >
+      <button
+        className=" moviesGrid_categories_item_button"
+        data-filter="Top Rated"
+        onClick={[Function]}
+        type="button"
+      >
+        Top Rated
+      </button>
+    </div>
+    <div
+      className="moviesGrid_categories_item"
+    >
+      <button
+        className="active moviesGrid_categories_item_button"
+        data-filter="Coming Soon"
+        onClick={[Function]}
+        type="button"
+      >
+        Coming Soon
+      </button>
+    </div>
+    <div
+      className="moviesGrid_categories_item"
+    >
+      <div>
+        test
+      </div>
+    </div>
+  </div>,
+  <div
+    className="underLine"
+  />,
+]
 `;
 
 exports[`MoviesCategories Snapshot renders genres 1`] = `
-<div
-  className="moviesGrid_categories"
->
+Array [
   <div
-    className="moviesGrid_categories_item"
+    className="moviesGrid_categories"
   >
-    <button
-      className="active moviesGrid_categories_item_button"
-      data-filter="Trending"
-      onClick={[Function]}
-      type="button"
+    <div
+      className="moviesGrid_categories_item"
     >
-      Trending
-    </button>
-  </div>
-  <div
-    className="moviesGrid_categories_item"
-  >
-    <button
-      className=" moviesGrid_categories_item_button"
-      data-filter="Top Rated"
-      onClick={[Function]}
-      type="button"
-    >
-      Top Rated
-    </button>
-  </div>
-  <div
-    className="moviesGrid_categories_item"
-  >
-    <button
-      className=" moviesGrid_categories_item_button"
-      data-filter="Coming Soon"
-      onClick={[Function]}
-      type="button"
-    >
-      Coming Soon
-    </button>
-  </div>
-  <div
-    className="moviesGrid_categories_item"
-  >
-    <div>
-      test
+      <button
+        className="active moviesGrid_categories_item_button"
+        data-filter="Trending"
+        onClick={[Function]}
+        type="button"
+      >
+        Trending
+      </button>
     </div>
-  </div>
-</div>
+    <div
+      className="moviesGrid_categories_item"
+    >
+      <button
+        className=" moviesGrid_categories_item_button"
+        data-filter="Top Rated"
+        onClick={[Function]}
+        type="button"
+      >
+        Top Rated
+      </button>
+    </div>
+    <div
+      className="moviesGrid_categories_item"
+    >
+      <button
+        className=" moviesGrid_categories_item_button"
+        data-filter="Coming Soon"
+        onClick={[Function]}
+        type="button"
+      >
+        Coming Soon
+      </button>
+    </div>
+    <div
+      className="moviesGrid_categories_item"
+    >
+      <div>
+        test
+      </div>
+    </div>
+  </div>,
+  <div
+    className="underLine"
+  />,
+]
 `;

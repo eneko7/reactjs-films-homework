@@ -20,7 +20,7 @@ const HeaderBottom = (props) => {
     return (
       <div className={style.header_bottom}>
         <div className={`${style.active} ${style.header_bottom_left}`}>
-          <MovieDescription filmName={films[0].original_title} filmGenres={genresCol} />
+          <MovieDescription filmName={films[0].title} filmGenres={genresCol} />
           <MovieRate rate={films[0].vote_average} />
         </div>
         <MovieInfoButtons annotation={films[0].overview} filmId={films[0].id} />

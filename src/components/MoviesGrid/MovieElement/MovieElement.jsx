@@ -26,18 +26,9 @@ class MovieElement extends React.Component {
     this.setState(prevState => ({
       isShownFilm: !prevState.isShownFilm,
     }));
-    // const { isShownFilm } = this.state;
-    // if (isShownFilm) {
-    //   document.getElementsByTagName('body')[0].style.overflow = 'auto';
-    // } else {
-    //   document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-    // }
   }
 
   render() {
-    // function getRandomInt(min, max) {
-    //   return Math.floor(Math.random() * (max - min)) + min;
-    // }
     const { film, genresList } = this.props;
     const { isShownInfo, isShownFilm } = this.state;
     let title = '';

@@ -27,6 +27,10 @@ const HeaderBottom = (props) => {
   return null;
 };
 
+HeaderBottom.defaultProps = {
+  duration: 0,
+};
+
 HeaderBottom.propTypes = {
   selectedFilm: PropTypes.objectOf(
     PropTypes.oneOfType([
@@ -37,7 +41,7 @@ HeaderBottom.propTypes = {
       PropTypes.object,
     ]),
   ).isRequired,
-  duration: PropTypes.number.isRequired,
+  duration: PropTypes.number,
 };
 
 export default HeaderBottom;

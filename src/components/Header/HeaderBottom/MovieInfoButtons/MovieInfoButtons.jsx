@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from './MovieInfoButtons.scss';
-import ModalWindowFilmContainer from '../../../MoviesGrid/MovieElement/ModalWindowFilm/ModalWindowFilmContainer';
+import ModalWindowFilm from '../../../MoviesGrid/MovieElement/ModalWindowFilm';
 
 class MovieInfoButtons extends React.Component {
   constructor(props) {
@@ -24,14 +24,6 @@ class MovieInfoButtons extends React.Component {
     this.setState(prevState => ({
       isShownFilm: !prevState.isShownFilm,
     }));
-    // const { isShownFilm } = this.state;
-    // if (isShownFilm) {
-    //   document.getElementsByTagName('body')[0].style.overflow = 'auto';
-    //   // document.getElementById('app_header').style.height = '70vh';
-    // } else {
-    //   document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-    //   // document.getElementById('app_header').style.height = '100vh';
-    // }
   }
 
   render() {
@@ -51,7 +43,7 @@ class MovieInfoButtons extends React.Component {
             <button className={`${style.bottom_right_buttons_box_button_view} ${style.bottom_right_buttons_box_button}`} type="button" onClick={this.openInfoClick}>{!isOpen ? 'View Info' : 'Close'}</button>
           </div>
         </div>
-        {isShownFilm && <ModalWindowFilmContainer onChange={this.watchNow} filmId={filmId} />}
+        {isShownFilm && <ModalWindowFilm onChange={this.watchNow} filmId={filmId} />}
       </div>
     );
   }

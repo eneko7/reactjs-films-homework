@@ -1,13 +1,14 @@
 .moviesGrid_categories {
   margin: 70px 7%;
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   display: flex;
+  position: relative;
+  z-index: 1;
   justify-content: flex-start;
 
   .moviesGrid_categories_item {
     display: inline-block;
-    float: left;
 
     .moviesGrid_categories_item_button {
       cursor: pointer;
@@ -30,6 +31,15 @@
       border-bottom: 4px solid #0aaee4;
     }
   }
+}
+
+.underLine {
+  margin: 0 7%;
+  margin-bottom: 30px;
+  height: 2px;
+  background-color: #e0e0e1;
+  position: relative;
+  top: -2px;
 }
 
 @media (max-width: 767px) {

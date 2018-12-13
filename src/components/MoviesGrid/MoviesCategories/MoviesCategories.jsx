@@ -126,12 +126,15 @@ class MoviesCategories extends React.Component {
       </div>
     ));
     return (
-      <div className={style.moviesGrid_categories}>
-        {categoritesBlock}
-        <div className={style.moviesGrid_categories_item}>
-          <Genres title="Genres" activeCategory={activeCategory} fetchChange={this.fetchFilmsByCategory} />
+      <React.Fragment>
+        <div className={style.moviesGrid_categories}>
+          {categoritesBlock}
+          <div className={style.moviesGrid_categories_item}>
+            <Genres title="Genres" activeCategory={activeCategory} fetchChange={this.fetchFilmsByCategory} />
+          </div>
         </div>
-      </div>
+        <div className={style.underLine} />
+      </React.Fragment>
     );
   }
 }

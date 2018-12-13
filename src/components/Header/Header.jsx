@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
-// import queryString from 'query-string';
 import style from './Header.scss';
 import HeaderBottom from './HeaderBottom';
-import HeaderTopContainer from './HeaderTop/HeaderTopContainer';
+import HeaderTop from './HeaderTop';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Header extends React.Component {
@@ -13,15 +12,21 @@ class Header extends React.Component {
       selectedFilm,
     } = this.props;
     let data = {};
-    if (!selectedFilm) return null;
+    if (!selectedFilm) {
+      return (
+        <header id="app_header" className={`${style.app_header} ${style.error}`}>
+          <HeaderTop />
+        </header>
+      );
+    }
     data = {
       selectedFilm,
       duration: selectedFilm.runtime,
-      bg: { backgroundImage: `url(http://image.tmdb.org/t/p/w1280${selectedFilm.backdrop_path})` },
+      bg: { backgroundImage: `url(//image.tmdb.org/t/p/w1280${selectedFilm.backdrop_path})` },
     };
     return (
       <header id="app_header" className={style.app_header} style={data.bg}>
-        <HeaderTopContainer />
+        <HeaderTop />
         <HeaderBottom {...data} />
       </header>
     );

@@ -3,6 +3,8 @@
 exports[`MovieElement MovieElement -> Click (close film)  1`] = `
 <div
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  onClick={[Function]}
+  role="presentation"
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -26,7 +28,7 @@ exports[`MovieElement MovieElement -> Click (close film)  1`] = `
       <span
         className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Rate"
       >
-        8
+        8.0
       </span>
     </div>
     <div
@@ -158,6 +160,8 @@ exports[`MovieElement MovieElement -> Click (close film)  1`] = `
 exports[`MovieElement MovieElement -> Click (close info)  1`] = `
 <div
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  onClick={[Function]}
+  role="presentation"
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -181,7 +185,7 @@ exports[`MovieElement MovieElement -> Click (close info)  1`] = `
       <span
         className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Rate"
       >
-        8
+        8.0
       </span>
     </div>
     <div
@@ -313,6 +317,8 @@ exports[`MovieElement MovieElement -> Click (close info)  1`] = `
 exports[`MovieElement MovieElement -> Click (show info)  1`] = `
 <div
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  onClick={[Function]}
+  role="presentation"
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -336,7 +342,7 @@ exports[`MovieElement MovieElement -> Click (show info)  1`] = `
       <span
         className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Rate"
       >
-        8
+        8.0
       </span>
     </div>
     <div
@@ -468,6 +474,8 @@ exports[`MovieElement MovieElement -> Click (show info)  1`] = `
 exports[`MovieElement MovieElement -> Click (watch film)  1`] = `
 <div
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  onClick={[Function]}
+  role="presentation"
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -491,7 +499,7 @@ exports[`MovieElement MovieElement -> Click (watch film)  1`] = `
       <span
         className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Rate"
       >
-        8
+        8.0
       </span>
     </div>
     <div
@@ -625,6 +633,8 @@ exports[`MovieElement MovieElement -> Click (watch film)  1`] = `
 exports[`MovieElement renders correctly 1`] = `
 <div
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  onClick={[Function]}
+  role="presentation"
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -648,7 +658,7 @@ exports[`MovieElement renders correctly 1`] = `
       <span
         className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Rate"
       >
-        8
+        8.0
       </span>
     </div>
     <div
@@ -780,6 +790,8 @@ exports[`MovieElement renders correctly 1`] = `
 exports[`MovieElement renders correctly without all pictures 1`] = `
 <div
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  onClick={[Function]}
+  role="presentation"
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -803,7 +815,7 @@ exports[`MovieElement renders correctly without all pictures 1`] = `
       <span
         className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Rate"
       >
-        8
+        8.0
       </span>
     </div>
     <div
@@ -935,6 +947,8 @@ exports[`MovieElement renders correctly without all pictures 1`] = `
 exports[`MovieElement renders correctly without poster 1`] = `
 <div
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  onClick={[Function]}
+  role="presentation"
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -958,7 +972,7 @@ exports[`MovieElement renders correctly without poster 1`] = `
       <span
         className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Rate"
       >
-        8
+        8.0
       </span>
     </div>
     <div
@@ -1090,6 +1104,8 @@ exports[`MovieElement renders correctly without poster 1`] = `
 exports[`MovieElement renders correctly without top picture 1`] = `
 <div
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  onClick={[Function]}
+  role="presentation"
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -1113,7 +1129,7 @@ exports[`MovieElement renders correctly without top picture 1`] = `
       <span
         className="moviesGrid_wrapper_MovieElement_ul_item_wrap_description_Rate"
       >
-        8
+        8.0
       </span>
     </div>
     <div

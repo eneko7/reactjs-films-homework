@@ -29,7 +29,6 @@ class HeaderTop extends React.Component {
     }
   }
 
-
   render() {
     const {
       location: { search },

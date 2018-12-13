@@ -2,7 +2,6 @@ import React from 'react';
 import style from './Footer.scss';
 import Signature from '../Signature';
 
-
 const Footer = () => (
   <footer className={style.footer}>
     <span className={style.footer_films}>FILMS</span>

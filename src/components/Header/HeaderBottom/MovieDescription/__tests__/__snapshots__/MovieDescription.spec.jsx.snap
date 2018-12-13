@@ -14,18 +14,22 @@ exports[`MovieDescription renders correctly 1`] = `
   >
     <span
       className="full_description_filmDescr_item"
+    />
+    <span
+      className="full_description_filmDescr_item"
+    />
+    <span
+      className="full_description_filmDescr_item"
+    />
+    <span
+      className="full_description_filmDescr_item"
     >
-      genre 1
+      |
     </span>
     <span
       className="full_description_filmDescr_item"
     >
-      genre 2
-    </span>
-    <span
-      className="full_description_filmDescr_item"
-    >
-      genre 3
+      NaNh NaNm
     </span>
   </div>
 </div>

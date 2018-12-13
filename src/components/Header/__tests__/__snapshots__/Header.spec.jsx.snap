@@ -1,137 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header render correctly  1`] = `
-<header
-  className="app_header"
-  id="app_header"
-  style={
-    Object {
-      "backgroundImage": "url(http://image.tmdb.org/t/p/w1280undefined)",
-    }
-  }
->
-  <withRouter(Connect(HeaderTop)) />
-  <HeaderBottom
-    bg={
-      Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280undefined)",
-      }
-    }
-    films={
-      Array [
-        Object {
-          "allGenres": Array [
-            Object {
-              "id": 28,
-              "name": "Action",
-            },
-            Object {
-              "id": 12,
-              "name": "Adventure",
-            },
-            Object {
-              "id": 16,
-              "name": "Animation",
-            },
-          ],
-          "filmDescription": "name",
-          "filmGenres": Array [
-            1,
-            2,
-            3,
-          ],
-          "filmId": 23355,
-          "filmName": "name",
-          "filmRate": 5,
-        },
-      ]
-    }
-    genres={
-      Array [
-        Object {
-          "id": 28,
-          "name": "Action",
-        },
-        Object {
-          "id": 12,
-          "name": "Adventure",
-        },
-        Object {
-          "id": 16,
-          "name": "Animation",
-        },
-      ]
-    }
-  />
-</header>
+<Route>
+  [Function]
+</Route>
 `;
 
-exports[`Header render correctly  2`] = `null`;
+exports[`Header render correctly  2`] = `
+<Route>
+  [Function]
+</Route>
+`;
 
 exports[`Header render correctly if film empty  1`] = `
-<header
-  className="app_header"
-  id="app_header"
-  style={
-    Object {
-      "backgroundImage": "url(http://image.tmdb.org/t/p/w1280undefined)",
-    }
-  }
->
-  <withRouter(Connect(HeaderTop)) />
-  <HeaderBottom
-    bg={
-      Object {
-        "backgroundImage": "url(http://image.tmdb.org/t/p/w1280undefined)",
-      }
-    }
-    films={
-      Array [
-        Object {
-          "allGenres": Array [
-            Object {
-              "id": 28,
-              "name": "Action",
-            },
-            Object {
-              "id": 12,
-              "name": "Adventure",
-            },
-            Object {
-              "id": 16,
-              "name": "Animation",
-            },
-          ],
-          "filmDescription": "name",
-          "filmGenres": Array [
-            1,
-            2,
-            3,
-          ],
-          "filmId": 23355,
-          "filmName": "name",
-          "filmRate": 5,
-        },
-      ]
-    }
-    genres={
-      Array [
-        Object {
-          "id": 28,
-          "name": "Action",
-        },
-        Object {
-          "id": 12,
-          "name": "Adventure",
-        },
-        Object {
-          "id": 16,
-          "name": "Animation",
-        },
-      ]
-    }
-  />
-</header>
+<Route>
+  [Function]
+</Route>
 `;
 
-exports[`Header render correctly if film empty  2`] = `null`;
+exports[`Header render correctly if film empty  2`] = `
+<Route>
+  [Function]
+</Route>
+`;

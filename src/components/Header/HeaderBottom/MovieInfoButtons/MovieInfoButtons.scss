@@ -47,6 +47,7 @@
 
     .bottom_right_buttons_box_button_watch {
       background-color: #3bb3df;
+      border-style: none;
     }
 
     .bottom_right_buttons_box_button_view {
@@ -55,11 +56,13 @@
 
     .bottom_right_buttons_box_button_view:hover {
       background: #3bb3df;
+      border-style: none;
     }
   }
 
   .bottom_right_buttons_box.active {
     position: relative;
+    border-style: none;
     top: -4px;
   }
 }
@@ -83,23 +86,17 @@
     }
 
     .bottom_right_buttons_box {
-      display: inline-block;
       margin-right: 0;
       position: relative;
       top: 0;
       width: 100%;
 
       .bottom_right_buttons_box_button {
-        width: 125px;
+        width: 130px;
         font-size: 17px;
       }
 
-      .bottom_right_buttons_box_button_watch {
-        float: left;
-      }
-
       .bottom_right_buttons_box_button_view {
-        float: right;
         margin-right: 30px;
       }
     }

@@ -1,31 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeaderBottom renders correctly 1`] = `
-<div
-  className="header_bottom"
->
-  <div
-    className="active header_bottom_left"
-  >
-    <MovieDescription
-      filmGenres={
-        Array [
-          "Drama",
-          "Family",
-          "Fantasy",
-        ]
-      }
-      filmName="name"
-    />
-    <MovieRate
-      rate={5}
-    />
-  </div>
-  <MovieInfoButtons
-    annotation="name"
-    filmId={23355}
-  />
-</div>
-`;
+exports[`HeaderBottom renders correctly 1`] = `null`;
 
 exports[`HeaderBottom renders correctly bad 1`] = `null`;

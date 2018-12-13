@@ -16,131 +16,141 @@ exports[`MoviesCategories Snapshot renders 1`] = `
 `;
 
 exports[`MoviesCategories Snapshot renders categories 1`] = `
-<div
-  className="moviesGrid_categories"
->
+Array [
   <div
-    className="moviesGrid_categories_item"
+    className="moviesGrid_categories"
   >
-    <a
-      href="/films?sort=Trending"
-      onClick={[Function]}
+    <div
+      className="moviesGrid_categories_item"
     >
-      <button
-        className=" moviesGrid_categories_item_button"
-        data-filter="Trending"
+      <a
+        href="/films?sort=Trending"
         onClick={[Function]}
-        type="button"
       >
-        Trending
-      </button>
-    </a>
-  </div>
-  <div
-    className="moviesGrid_categories_item"
-  >
-    <a
-      href="/films?sort=Top Rated"
-      onClick={[Function]}
-    >
-      <button
-        className=" moviesGrid_categories_item_button"
-        data-filter="Top Rated"
-        onClick={[Function]}
-        type="button"
-      >
-        Top Rated
-      </button>
-    </a>
-  </div>
-  <div
-    className="moviesGrid_categories_item"
-  >
-    <a
-      href="/films?sort=Coming Soon"
-      onClick={[Function]}
-    >
-      <button
-        className="active moviesGrid_categories_item_button"
-        data-filter="Coming Soon"
-        onClick={[Function]}
-        type="button"
-      >
-        Coming Soon
-      </button>
-    </a>
-  </div>
-  <div
-    className="moviesGrid_categories_item"
-  >
-    <div>
-      test
+        <button
+          className=" moviesGrid_categories_item_button"
+          data-filter="Trending"
+          onClick={[Function]}
+          type="button"
+        >
+          Trending
+        </button>
+      </a>
     </div>
-  </div>
-</div>
+    <div
+      className="moviesGrid_categories_item"
+    >
+      <a
+        href="/films?sort=Top Rated"
+        onClick={[Function]}
+      >
+        <button
+          className=" moviesGrid_categories_item_button"
+          data-filter="Top Rated"
+          onClick={[Function]}
+          type="button"
+        >
+          Top Rated
+        </button>
+      </a>
+    </div>
+    <div
+      className="moviesGrid_categories_item"
+    >
+      <a
+        href="/films?sort=Coming Soon"
+        onClick={[Function]}
+      >
+        <button
+          className="active moviesGrid_categories_item_button"
+          data-filter="Coming Soon"
+          onClick={[Function]}
+          type="button"
+        >
+          Coming Soon
+        </button>
+      </a>
+    </div>
+    <div
+      className="moviesGrid_categories_item"
+    >
+      <div>
+        test
+      </div>
+    </div>
+  </div>,
+  <div
+    className="underLine"
+  />,
+]
 `;
 
 exports[`MoviesCategories Snapshot renders genres 1`] = `
-<div
-  className="moviesGrid_categories"
->
+Array [
   <div
-    className="moviesGrid_categories_item"
+    className="moviesGrid_categories"
   >
-    <a
-      href="/films?sort=Trending"
-      onClick={[Function]}
+    <div
+      className="moviesGrid_categories_item"
     >
-      <button
-        className="active moviesGrid_categories_item_button"
-        data-filter="Trending"
+      <a
+        href="/films?sort=Trending"
         onClick={[Function]}
-        type="button"
       >
-        Trending
-      </button>
-    </a>
-  </div>
-  <div
-    className="moviesGrid_categories_item"
-  >
-    <a
-      href="/films?sort=Top Rated"
-      onClick={[Function]}
-    >
-      <button
-        className=" moviesGrid_categories_item_button"
-        data-filter="Top Rated"
-        onClick={[Function]}
-        type="button"
-      >
-        Top Rated
-      </button>
-    </a>
-  </div>
-  <div
-    className="moviesGrid_categories_item"
-  >
-    <a
-      href="/films?sort=Coming Soon"
-      onClick={[Function]}
-    >
-      <button
-        className=" moviesGrid_categories_item_button"
-        data-filter="Coming Soon"
-        onClick={[Function]}
-        type="button"
-      >
-        Coming Soon
-      </button>
-    </a>
-  </div>
-  <div
-    className="moviesGrid_categories_item"
-  >
-    <div>
-      test
+        <button
+          className="active moviesGrid_categories_item_button"
+          data-filter="Trending"
+          onClick={[Function]}
+          type="button"
+        >
+          Trending
+        </button>
+      </a>
     </div>
-  </div>
-</div>
+    <div
+      className="moviesGrid_categories_item"
+    >
+      <a
+        href="/films?sort=Top Rated"
+        onClick={[Function]}
+      >
+        <button
+          className=" moviesGrid_categories_item_button"
+          data-filter="Top Rated"
+          onClick={[Function]}
+          type="button"
+        >
+          Top Rated
+        </button>
+      </a>
+    </div>
+    <div
+      className="moviesGrid_categories_item"
+    >
+      <a
+        href="/films?sort=Coming Soon"
+        onClick={[Function]}
+      >
+        <button
+          className=" moviesGrid_categories_item_button"
+          data-filter="Coming Soon"
+          onClick={[Function]}
+          type="button"
+        >
+          Coming Soon
+        </button>
+      </a>
+    </div>
+    <div
+      className="moviesGrid_categories_item"
+    >
+      <div>
+        test
+      </div>
+    </div>
+  </div>,
+  <div
+    className="underLine"
+  />,
+]
 `;

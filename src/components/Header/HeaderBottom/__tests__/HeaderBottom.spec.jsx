@@ -17,16 +17,14 @@ const data = {
       name: 'Fantasy',
     },
   ],
-  films: [
-    {
-      id: 23355,
-      original_title: 'name',
-      title: 'name',
-      genre_ids: [18, 10751, 14],
-      vote_average: 5,
-      overview: 'name',
-    },
-  ],
+  film: {
+    id: 23355,
+    original_title: 'name',
+    title: 'name',
+    genre_ids: [18, 10751, 14],
+    vote_average: 5,
+    overview: 'name',
+  },
 };
 const badData = {
   genres: [
@@ -43,7 +41,7 @@ const badData = {
       name: 'Fantasy',
     },
   ],
-  films: [],
+  film: {},
 };
 
 describe('HeaderBottom', () => {

@@ -9,7 +9,7 @@ const HeaderBottom = (props) => {
   const {
     film, genres,
   } = props;
-  if (film) {
+  if (Object.keys(film).length !== 0) {
     const genresCol = [];
     const genresOfFilm = film.genre_ids;
     genresOfFilm.forEach((elem) => {

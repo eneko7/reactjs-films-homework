@@ -12,39 +12,32 @@ exports[`Header render correctly  1`] = `
 >
   <Connect(HeaderTop) />
   <Unknown
-    bg={
+    film={
       Object {
-        "backgroundImage": "url(//image.tmdb.org/t/p/w1280undefined)",
+        "allGenres": Array [
+          Object {
+            "id": 28,
+            "name": "Action",
+          },
+          Object {
+            "id": 12,
+            "name": "Adventure",
+          },
+          Object {
+            "id": 16,
+            "name": "Animation",
+          },
+        ],
+        "filmDescription": "name",
+        "filmGenres": Array [
+          1,
+          2,
+          3,
+        ],
+        "filmId": 23355,
+        "filmName": "name",
+        "filmRate": 5,
       }
-    }
-    films={
-      Array [
-        Object {
-          "allGenres": Array [
-            Object {
-              "id": 28,
-              "name": "Action",
-            },
-            Object {
-              "id": 12,
-              "name": "Adventure",
-            },
-            Object {
-              "id": 16,
-              "name": "Animation",
-            },
-          ],
-          "filmDescription": "name",
-          "filmGenres": Array [
-            1,
-            2,
-            3,
-          ],
-          "filmId": 23355,
-          "filmName": "name",
-          "filmRate": 5,
-        },
-      ]
     }
     genres={
       Array [
@@ -87,39 +80,32 @@ exports[`Header render correctly if film empty  1`] = `
 >
   <Connect(HeaderTop) />
   <Unknown
-    bg={
+    film={
       Object {
-        "backgroundImage": "url(//image.tmdb.org/t/p/w1280undefined)",
+        "allGenres": Array [
+          Object {
+            "id": 28,
+            "name": "Action",
+          },
+          Object {
+            "id": 12,
+            "name": "Adventure",
+          },
+          Object {
+            "id": 16,
+            "name": "Animation",
+          },
+        ],
+        "filmDescription": "name",
+        "filmGenres": Array [
+          1,
+          2,
+          3,
+        ],
+        "filmId": 23355,
+        "filmName": "name",
+        "filmRate": 5,
       }
-    }
-    films={
-      Array [
-        Object {
-          "allGenres": Array [
-            Object {
-              "id": 28,
-              "name": "Action",
-            },
-            Object {
-              "id": 12,
-              "name": "Adventure",
-            },
-            Object {
-              "id": 16,
-              "name": "Animation",
-            },
-          ],
-          "filmDescription": "name",
-          "filmGenres": Array [
-            1,
-            2,
-            3,
-          ],
-          "filmId": 23355,
-          "filmName": "name",
-          "filmRate": 5,
-        },
-      ]
     }
     genres={
       Array [

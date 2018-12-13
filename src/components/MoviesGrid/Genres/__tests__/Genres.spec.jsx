@@ -134,7 +134,6 @@ describe('Genres logic', () => {
       { type: actionsGenres.FETCH_GENRES_SUCCESS, payload: getGenresMock.genres },
     ];
     return store.dispatch(actionsGenres.fetchGenres()).then(() => {
-      // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

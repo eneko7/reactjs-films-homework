@@ -47,16 +47,19 @@
 
     .bottom_right_buttons_box_button_watch {
       background-color: #3bb3df;
-      border-style: none;
+      border-style: solid;
+      border: none;
     }
 
     .bottom_right_buttons_box_button_view {
       background: none;
+      border-style: solid;
     }
 
     .bottom_right_buttons_box_button_view:hover {
       background: #3bb3df;
-      border-style: none;
+      border-style: solid;
+      border: none;
     }
   }
 

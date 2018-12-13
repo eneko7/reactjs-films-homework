@@ -6,7 +6,6 @@ import HeaderTop from './HeaderTop';
 
 const Header = (props) => {
   const { films, genres } = props;
-  let data = {};
   if (films.length < 1) {
     return (
       <header id="app_header" className={`${style.app_header} ${style.error}`}>
@@ -14,13 +13,13 @@ const Header = (props) => {
       </header>
     );
   }
-  data = {
-    films,
+  const data = {
+    film: films[0],
     genres,
-    bg: { backgroundImage: `url(//image.tmdb.org/t/p/w1280${films[0].backdrop_path})` },
   };
+  const bg = { backgroundImage: `url(//image.tmdb.org/t/p/w1280${films[0].backdrop_path})` };
   return (
-    <header id="app_header" className={style.app_header} style={data.bg}>
+    <header id="app_header" className={style.app_header} style={bg}>
       <HeaderTop />
       <HeaderBottom {...data} />
     </header>

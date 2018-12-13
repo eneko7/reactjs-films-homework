@@ -11,7 +11,7 @@ const Header = (props) => {
   data = {
     films,
     genres,
-    bg: { backgroundImage: `url(http://image.tmdb.org/t/p/w1280${films[0].backdrop_path})` },
+    bg: { backgroundImage: `url(//image.tmdb.org/t/p/w1280${films[0].backdrop_path})` },
   };
   return (
     <header id="app_header" className={style.app_header} style={data.bg}>

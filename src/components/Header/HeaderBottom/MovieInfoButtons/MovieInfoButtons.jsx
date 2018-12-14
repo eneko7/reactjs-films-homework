@@ -24,6 +24,12 @@ class MovieInfoButtons extends React.Component {
     this.setState(prevState => ({
       isShownFilm: !prevState.isShownFilm,
     }));
+    const { isShownFilm } = this.state;
+    if (isShownFilm) {
+      global.document.getElementsByTagName('body')[0].style.overflow = 'auto';
+    } else {
+      global.document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+    }
   }
 
   render() {
@@ -31,7 +37,7 @@ class MovieInfoButtons extends React.Component {
     const { isOpen, isShownFilm } = this.state;
     const active = isOpen ? `${style.active}` : '';
     return (
-      <div>
+      <React.Fragment>
         <div className={style.bottom_right}>
           <div className={`${active} ${style.bottom_right_text_descr}`}>
             <p className={style.bottom_right_text_descr_p}>
@@ -44,7 +50,7 @@ class MovieInfoButtons extends React.Component {
           </div>
         </div>
         {isShownFilm && <ModalWindowFilm onChange={this.watchNow} filmId={filmId} />}
-      </div>
+      </React.Fragment>
     );
   }
 }

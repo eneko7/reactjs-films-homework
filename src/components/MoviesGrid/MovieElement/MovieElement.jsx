@@ -26,6 +26,12 @@ class MovieElement extends React.Component {
     this.setState(prevState => ({
       isShownFilm: !prevState.isShownFilm,
     }));
+    const { isShownFilm } = this.state;
+    if (isShownFilm) {
+      global.document.getElementsByTagName('body')[0].style.overflow = 'auto';
+    } else {
+      global.document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+    }
   }
 
   render() {

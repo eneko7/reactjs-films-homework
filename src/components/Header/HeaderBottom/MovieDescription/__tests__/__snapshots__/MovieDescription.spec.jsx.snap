@@ -14,13 +14,19 @@ exports[`MovieDescription renders correctly 1`] = `
   >
     <span
       className="full_description_filmDescr_item"
-    />
+    >
+      Action
+    </span>
     <span
       className="full_description_filmDescr_item"
-    />
+    >
+      Animation
+    </span>
     <span
       className="full_description_filmDescr_item"
-    />
+    >
+      Comedy
+    </span>
     <span
       className="full_description_filmDescr_item"
     >
@@ -29,7 +35,7 @@ exports[`MovieDescription renders correctly 1`] = `
     <span
       className="full_description_filmDescr_item"
     >
-      NaNh NaNm
+      0h 10m
     </span>
   </div>
 </div>

@@ -29,10 +29,14 @@ const MovieDescription = (props) => {
   );
 };
 
+MovieDescription.defaultProps = {
+  filmDuration: 10,
+};
+
 MovieDescription.propTypes = {
   filmName: PropTypes.string.isRequired,
   filmGenres: PropTypes.arrayOf(PropTypes.object).isRequired,
-  filmDuration: PropTypes.number.isRequired,
+  filmDuration: PropTypes.number,
 };
 
 export default MovieDescription;

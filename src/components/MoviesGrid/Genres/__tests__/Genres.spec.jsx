@@ -1,5 +1,4 @@
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
 import TestRenderer from 'react-test-renderer';
 import configureMockStore from 'redux-mock-store';
 import { MemoryRouter } from 'react-router';
@@ -43,29 +42,24 @@ const store = mockStore({
   },
 });
 
-const location = {
-  location: {
-    pathname: '/genres',
-    search: '/genres?genreName=Action&genreId=1',
-  },
-};
-
-const shallow = new ShallowRenderer();
 describe('GenresNavLink Snapshot', () => {
   test('renders', () => {
-    const component = shallow.render(
+    const component = TestRenderer.create(
       <Provider store={store}>
-        <MemoryRouter {...location}>
+        <MemoryRouter>
           <Genres title="Genres" activeCategory="Trending" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
         </MemoryRouter>
       </Provider>,
     );
     expect(component).toMatchSnapshot();
   });
+
   test('renders', () => {
-    const component = shallow.render(
+    const component = TestRenderer.create(
       <Provider store={store}>
-        <Genres title="Genres" activeCategory="Genres" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        <MemoryRouter initialEntries={['/genres?genreName=Action&genreId=1']}>
+          <Genres title="Genres" activeCategory="Genres" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
+        </MemoryRouter>
       </Provider>,
     );
     expect(component).toMatchSnapshot();
@@ -80,7 +74,7 @@ describe('Genres logic', () => {
   it('renders genres dropdown open', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <MemoryRouter {...location}>
+        <MemoryRouter>
           <Genres title="Genres" activeCategory="Genres" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
         </MemoryRouter>
       </Provider>,
@@ -92,7 +86,7 @@ describe('Genres logic', () => {
   it('renders genres dropdown close', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <MemoryRouter {...location}>
+        <MemoryRouter>
           <Genres title="Genres" activeCategory="Trending" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
         </MemoryRouter>
       </Provider>,
@@ -105,28 +99,26 @@ describe('Genres logic', () => {
   it('renders genres dropdown chose 1', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <MemoryRouter {...location}>
+        <MemoryRouter>
           <Genres title="Genres" activeCategory="Genres" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
         </MemoryRouter>
       </Provider>,
     );
     const { root } = component;
     root.findByProps({ className: 'moviesGrid_categories_item_button' }).props.onClick();
-    // root.findByProps({ id: 'genres_list' }).children[0].props.onClick();
     expect(component).toMatchSnapshot();
   });
 
   it('renders genres dropdown chose 2', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <MemoryRouter {...location}>
+        <MemoryRouter>
           <Genres title="Genres" activeCategory="Trending" fetchChange={() => ('Hello')} fetchFilmsByGenre={() => ('Hello')} />
         </MemoryRouter>
       </Provider>,
     );
     const { root } = component;
     root.findByProps({ className: 'moviesGrid_categories_item_button' }).props.onClick();
-    // root.findByProps({ id: 'genres_list' }).children[0].props.onClick();
     expect(component).toMatchSnapshot();
   });
 
@@ -152,7 +144,6 @@ describe('Genres logic', () => {
       { type: actionsGenres.FETCH_GENRES_SUCCESS, payload: getGenresMock.genres },
     ];
     return store.dispatch(actionsGenres.fetchGenres()).then(() => {
-      // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

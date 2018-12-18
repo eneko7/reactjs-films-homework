@@ -1,25 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header render correctly  1`] = `
-<Route>
-  [Function]
-</Route>
+<header
+  className="app_header"
+  id="app_header"
+  style={
+    Object {
+      "backgroundImage": "url(//image.tmdb.org/t/p/w1280/5A2bMlLfJrAfX9bqAibOL2gCruF.jpg)",
+    }
+  }
+>
+  <div>
+    test
+  </div>
+  <div>
+    test
+  </div>
+</header>
 `;
 
 exports[`Header render correctly  2`] = `
-<Route>
-  [Function]
-</Route>
-`;
-
-exports[`Header render correctly if film empty  1`] = `
-<Route>
-  [Function]
-</Route>
-`;
-
-exports[`Header render correctly if film empty  2`] = `
-<Route>
-  [Function]
-</Route>
+<header
+  className="app_header error"
+  id="app_header"
+>
+  <div>
+    test
+  </div>
+</header>
 `;

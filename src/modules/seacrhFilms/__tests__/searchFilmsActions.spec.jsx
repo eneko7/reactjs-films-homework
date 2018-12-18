@@ -3,8 +3,13 @@ import thunk from 'redux-thunk';
 import moxios from 'moxios'; // eslint-disable-line import/no-extraneous-dependencies
 import * as actions from '../searchFilmsActions';
 import * as filmsActions from '../../films/filmsActions';
+import * as actionsFilm from '../../film/filmActions';
 import getFilmsMock from '../../mocks/getFilmsMock';
 
+jest.mock('../../film/filmActions', () => ({
+  receiveMainFilmInfo: jest.fn(() => ({ type: 'FETCH_FILM_REQUEST' })),
+  FETCH_FILM_REQUEST: 'FETCH_FILM_REQUEST',
+}));
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
@@ -43,6 +48,7 @@ describe('searchFilms actions', () => {
           url: `${filmsActions.urlBySearchFilms}&query=${mockWord}`,
         },
       },
+      { type: actionsFilm.FETCH_FILM_REQUEST },
     ];
 
     const store = mockStore({});

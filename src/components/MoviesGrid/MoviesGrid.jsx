@@ -11,8 +11,6 @@ class MoviesGrid extends React.Component {
   }
 
   componentDidMount() {
-    // const { fetchFilmsPopular } = this.props;
-    // fetchFilmsPopular();
     global.document.addEventListener('scroll', this.onScrollHandler);
   }
 

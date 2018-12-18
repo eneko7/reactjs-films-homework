@@ -1,5 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeaderBottom renders correctly 1`] = `null`;
+exports[`HeaderBottom renders correctly 1`] = `
+<div
+  className="header_bottom"
+>
+  <div
+    className="active header_bottom_left"
+  >
+    <MovieDescription
+      filmDuration={10}
+      filmGenres={
+        Array [
+          Object {
+            "id": 28,
+            "name": "Action",
+          },
+          Object {
+            "id": 14,
+            "name": "Fantasy",
+          },
+          Object {
+            "id": 878,
+            "name": "Science Fiction",
+          },
+          Object {
+            "id": 12,
+            "name": "Adventure",
+          },
+          Object {
+            "id": 10749,
+            "name": "Romance",
+          },
+        ]
+      }
+      filmName="Aquaman"
+    />
+    <MovieRate
+      rate={7}
+    />
+  </div>
+  <MovieInfoButtons
+    annotation="The film reveals the origin story of half-human, half-Atlantean Arthur Curry and takes him on the journey of his lifetime—one that will not only force him to face who he really is, but to discover if he is worthy of who he was born to be… a king."
+    filmId={297802}
+  />
+</div>
+`;
 
 exports[`HeaderBottom renders correctly bad 1`] = `null`;

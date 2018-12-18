@@ -7,11 +7,8 @@ import HeaderContainer from '../index';
 
 const mockStore = configureMockStore();
 const store = mockStore({
-  films: {
-    allFilms: ['filmA', 'filmB'],
-  },
-  genres: {
-    allGenres: ['genreA', 'genreB'],
+  film: {
+    selectedFilm: ['prop1', 'prop12'],
   },
 });
 
@@ -25,7 +22,6 @@ describe('Header', () => {
       </Provider>,
     );
     expect(HeaderContainer).toBeCalledTimes(1);
-    expect(HeaderContainer.mock.calls[0][0]).toHaveProperty('films', ['filmA', 'filmB']);
-    expect(HeaderContainer.mock.calls[0][0]).toHaveProperty('genres', ['genreA', 'genreB']);
+    expect(HeaderContainer.mock.calls[0][0]).toHaveProperty('selectedFilm', ['prop1', 'prop12']);
   });
 });

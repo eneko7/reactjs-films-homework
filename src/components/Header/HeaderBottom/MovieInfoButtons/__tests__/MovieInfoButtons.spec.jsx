@@ -26,8 +26,22 @@ describe('MovieInfoButtons', () => {
     expect(output).toMatchSnapshot();
   });
 
+  it('MovieInfoButtons -> Click (close info) ', () => {
+    const output = renderer.create(<MovieInfoButtons {...data} />);
+    output.root.findByProps({ className: 'bottom_right_buttons_box_button_view bottom_right_buttons_box_button' }).props.onClick();
+    output.root.findByProps({ className: 'bottom_right_buttons_box_button_view bottom_right_buttons_box_button' }).props.onClick();
+    expect(output).toMatchSnapshot();
+  });
+
   it('MovieInfoButtons -> Click (watch film) ', () => {
     const output = renderer.create(<MovieInfoButtons {...data} />);
+    output.root.findByProps({ className: 'bottom_right_buttons_box_button_watch bottom_right_buttons_box_button' }).props.onClick();
+    expect(output).toMatchSnapshot();
+  });
+
+  it('MovieInfoButtons -> Click (close film) ', () => {
+    const output = renderer.create(<MovieInfoButtons {...data} />);
+    output.root.findByProps({ className: 'bottom_right_buttons_box_button_watch bottom_right_buttons_box_button' }).props.onClick();
     output.root.findByProps({ className: 'bottom_right_buttons_box_button_watch bottom_right_buttons_box_button' }).props.onClick();
     expect(output).toMatchSnapshot();
   });

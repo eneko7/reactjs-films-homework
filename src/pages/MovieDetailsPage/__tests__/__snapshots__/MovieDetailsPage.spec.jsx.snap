@@ -4,7 +4,7 @@ exports[`MovieDetailsPage Snapshot renders 1`] = `
 <div
   className="main_container"
 >
-  <Connect(withRouter(Header)) />
+  <Connect(Header) />
   <Connect(MoviesGrid) />
   <Footer />
 </div>

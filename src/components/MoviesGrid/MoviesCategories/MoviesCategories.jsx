@@ -73,38 +73,28 @@ class MoviesCategories extends React.Component {
       if (category === '') {
         this.fetchFilmsByCategory('Trending');
         pushNavigationLink('Trending');
-        setTimeout(() => {
-          receiveMainFilmInfo(filmId);
-        }, 0);
+        setTimeout(receiveMainFilmInfo(filmId), 0);
       }
       if (category === 'search') {
         fetchFilmsBySearch(q);
-        setTimeout(() => {
-          receiveMainFilmInfo(filmId);
-        }, 0);
+        setTimeout(receiveMainFilmInfo(filmId), 0);
       }
       if (category === 'genres') {
         this.setState(() => ({
           activeCategory: 'Genres',
         }));
         fetchFilmsByGenre(genreId);
-        setTimeout(() => {
-          receiveMainFilmInfo(filmId);
-        }, 0);
+        setTimeout(receiveMainFilmInfo(filmId), 0);
       }
       if (category === 'categories') {
         this.fetchFilmsByCategory(sort);
         pushNavigationLink(sort);
-        setTimeout(() => {
-          receiveMainFilmInfo(filmId);
-        }, 0);
+        setTimeout(receiveMainFilmInfo(filmId), 0);
       }
       if (!category && !sort) {
         this.fetchFilmsByCategory('Trending');
         pushNavigationLink('Trending');
-        setTimeout(() => {
-          receiveMainFilmInfo(filmId);
-        }, 0);
+        setTimeout(receiveMainFilmInfo(filmId), 0);
       }
     }
   }

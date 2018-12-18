@@ -6,13 +6,12 @@ import ModalWindowFilmContainer from './ModalWindowFilm/ModalWindowFilmContainer
 
 const errorImg = '../../../images/error_video.jpg';
 
-class MovieElement extends React.Component {
+class MovieElement extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       isShownInfo: false,
       isShownFilm: false,
-      isShownMainScreen: false,
     };
     this.showInfo = this.showInfo.bind(this);
     this.watchFilm = this.watchFilm.bind(this);
@@ -26,9 +25,6 @@ class MovieElement extends React.Component {
   }
 
   showMainScreen(filmId) {
-    this.setState(prevState => ({
-      isShownMainScreen: !prevState.isShownMainScreen,
-    }));
     const { history, receiveMainFilmInfo, location: { pathname, search } } = this.props;
     receiveMainFilmInfo(filmId);
     const parsed = queryString.parse(search);
@@ -59,6 +55,12 @@ class MovieElement extends React.Component {
     this.setState(prevState => ({
       isShownFilm: !prevState.isShownFilm,
     }));
+    const { isShownFilm } = this.state;
+    if (isShownFilm) {
+      document.getElementsByTagName('body')[0].style.overflow = 'auto';
+    } else {
+      document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+    }
   }
 
   render() {

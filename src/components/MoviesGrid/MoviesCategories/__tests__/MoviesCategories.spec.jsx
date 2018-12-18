@@ -132,6 +132,38 @@ describe('MoviesCategories Snapshot', () => {
   it('renders', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
+        <MemoryRouter initialEntries={['/film?filmId=278&category=categories&sort=Trending']}>
+          <MoviesCategories
+            fetchFilmsBySearch={() => ('Hello!')}
+            location={{ pathname: '/film', search: 'filmId=278&category=categories&sort=Trending' }}
+            history={{ push: () => ('Hello') }}
+            receiveMainFilmInfo={() => ('Hello')}
+          />
+        </MemoryRouter>
+      </Provider>,
+    );
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders', () => {
+    const component = TestRenderer.create(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/film?filmId=278&category=categories&sort=Coming%20Soon']}>
+          <MoviesCategories
+            fetchFilmsBySearch={() => ('Hello!')}
+            location={{ pathname: '/film', search: 'filmId=278&category=categories&sort=Coming%20Soon' }}
+            history={{ push: () => ('Hello') }}
+            receiveMainFilmInfo={() => ('Hello')}
+          />
+        </MemoryRouter>
+      </Provider>,
+    );
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders', () => {
+    const component = TestRenderer.create(
+      <Provider store={store}>
         <MemoryRouter initialEntries={['/film?filmId=416786&category=']}>
           <MoviesCategories
             fetchFilmsBySearch={() => ('Hello!')}

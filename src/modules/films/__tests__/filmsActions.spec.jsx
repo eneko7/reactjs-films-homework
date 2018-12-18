@@ -4,6 +4,13 @@ import moxios from 'moxios'; // eslint-disable-line import/no-extraneous-depende
 import * as actions from '../filmsActions';
 import * as actionsFilm from '../../film/filmActions';
 import getFilmMock from '../../mocks/getFilmMock';
+import {
+  urlPopularFilms,
+  urlTopRatedFilms,
+  urlComingSoonFilms,
+  urlByGenreFilms,
+  urlBySearchFilms,
+} from '../../utils/constants';
 
 
 jest.mock('../../film/filmActions', () => ({
@@ -29,13 +36,46 @@ describe('getFilms actions', () => {
 
     const expectedActions = [
       { type: actions.FETCH_FILMS_REQUEST },
-      { type: actions.FETCH_FILMS_SUCCESS, payload: { films: [{ data: 'getFilmMock' }], url: 'https://api.themoviedb.org/', page: 1 } },
+      {
+        type: actions.FETCH_FILMS_SUCCESS,
+        payload: {
+          films: [{ data: 'getFilmMock' }], url: 'https://api.themoviedb.org/', page: 1,
+        },
+      },
       { type: actionsFilm.FETCH_FILM_REQUEST },
     ];
 
     const store = mockStore({});
 
     store.dispatch(actions.fetchFilms('https://api.themoviedb.org/'));
+    moxios.wait(() => {
+      expect(store.getActions()).toEqual(expectedActions);
+      done();
+    });
+  });
+
+  it('success FETCH_FILMS width filmID', (done) => {
+    moxios.stubRequest(/api.themoviedb.org/, {
+      status: 200,
+      response: {
+        results: [{ data: 'getFilmMock' }],
+      },
+    });
+
+    const expectedActions = [
+      { type: actions.FETCH_FILMS_REQUEST },
+      {
+        type: actions.FETCH_FILMS_SUCCESS,
+        payload: {
+          films: [{ data: 'getFilmMock' }], url: 'https://api.themoviedb.org/', page: 1,
+        },
+      },
+      { type: actionsFilm.FETCH_FILM_REQUEST },
+    ];
+
+    const store = mockStore({});
+
+    store.dispatch(actions.fetchFilms('https://api.themoviedb.org/', 297802));
     moxios.wait(() => {
       expect(store.getActions()).toEqual(expectedActions);
       done();
@@ -55,7 +95,7 @@ describe('getFilms actions', () => {
       {
         type: actions.FETCH_FILMS_SUCCESS,
         payload: {
-          films: [getFilmMock], url: actions.urlPopularFilms, page: 1,
+          films: [getFilmMock], url: urlPopularFilms, page: 1,
         },
       },
       { type: actionsFilm.FETCH_FILM_REQUEST },
@@ -82,7 +122,7 @@ describe('getFilms actions', () => {
       {
         type: actions.FETCH_FILMS_SUCCESS,
         payload: {
-          films: [getFilmMock], url: actions.urlTopRatedFilms, page: 1,
+          films: [getFilmMock], url: urlTopRatedFilms, page: 1,
         },
       },
       { type: actionsFilm.FETCH_FILM_REQUEST },
@@ -109,7 +149,7 @@ describe('getFilms actions', () => {
       {
         type: actions.FETCH_FILMS_SUCCESS,
         payload: {
-          films: [getFilmMock], url: actions.urlComingSoonFilms, page: 1,
+          films: [getFilmMock], url: urlComingSoonFilms, page: 1,
         },
       },
       { type: actionsFilm.FETCH_FILM_REQUEST },
@@ -136,7 +176,7 @@ describe('getFilms actions', () => {
       {
         type: actions.FETCH_FILMS_SUCCESS,
         payload: {
-          films: [getFilmMock], url: `${actions.urlByGenreFilms}&with_genres=${28}`, page: 1,
+          films: [getFilmMock], url: `${urlByGenreFilms}&with_genres=${28}`, page: 1,
         },
       },
       { type: actionsFilm.FETCH_FILM_REQUEST },
@@ -163,7 +203,7 @@ describe('getFilms actions', () => {
       {
         type: actions.FETCH_FILMS_SUCCESS,
         payload: {
-          films: [getFilmMock], url: `${actions.urlBySearchFilms}&query=word`, page: 1,
+          films: [getFilmMock], url: `${urlBySearchFilms}&query=word`, page: 1,
         },
       },
       { type: actionsFilm.FETCH_FILM_REQUEST },
@@ -190,13 +230,13 @@ describe('getFilms actions', () => {
       {
         type: actions.FETCH_FILMS_SUCCESS,
         payload: {
-          films: [getFilmMock], url: actions.urlBySearchFilms, page: 2,
+          films: [getFilmMock], url: urlBySearchFilms, page: 1,
         },
       },
       { type: actionsFilm.FETCH_FILM_REQUEST },
     ];
 
-    const store = mockStore({ films: { url: actions.urlBySearchFilms, lastPage: 1 } });
+    const store = mockStore({ films: { url: urlBySearchFilms, lastPage: 1 } });
 
     store.dispatch(actions.fetchNextFilms());
     moxios.wait(() => {
@@ -219,7 +259,7 @@ describe('getFilms actions', () => {
 
     const expectedActions = [];
 
-    const store = mockStore({ films: { url: actions.urlBySearchFilms, lastPage: -1 } });
+    const store = mockStore({ films: { url: urlBySearchFilms, lastPage: -1 } });
 
     store.dispatch(actions.fetchNextFilms());
     moxios.wait(() => {

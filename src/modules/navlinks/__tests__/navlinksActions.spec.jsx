@@ -5,6 +5,9 @@ import * as actions from '../navlinksActions';
 import * as filmsActions from '../../films/filmsActions';
 import * as actionsFilm from '../../film/filmActions';
 import getFilmsMock from '../../mocks/getFilmsMock';
+import {
+  urlPopularFilms,
+} from '../../utils/constants';
 
 jest.mock('../../film/filmActions', () => ({
   receiveMainFilmInfo: jest.fn(() => ({ type: 'FETCH_FILM_REQUEST' })),
@@ -30,7 +33,7 @@ describe('navLink actions', () => {
       {
         type: filmsActions.FETCH_FILMS_SUCCESS,
         payload: {
-          films: getFilmsMock.results, url: filmsActions.urlPopularFilms, page: 1,
+          films: getFilmsMock.results, url: urlPopularFilms, page: 1,
         },
       },
       { type: actionsFilm.FETCH_FILM_REQUEST },

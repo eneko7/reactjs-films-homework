@@ -1,16 +1,17 @@
 /* eslint-disable max-len */
 import axios from 'axios';
 import { receiveMainFilmInfo } from '../film/filmActions';
+import {
+  urlPopularFilms,
+  urlTopRatedFilms,
+  urlComingSoonFilms,
+  urlByGenreFilms,
+  urlBySearchFilms,
+} from '../utils/constants';
 
 export const FETCH_FILMS_REQUEST = 'FETCH_FILMS_REQUEST';
 export const FETCH_FILMS_SUCCESS = 'FETCH_FILMS_SUCCESS';
 export const FETCH_FILMS_ERROR = 'FETCH_FILMS_ERROR';
-
-export const urlPopularFilms = 'https://api.themoviedb.org/3/movie/popular?language=en-US&api_key=6a08c0def237c5910708279c9ee78cc5';
-export const urlTopRatedFilms = 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&api_key=6a08c0def237c5910708279c9ee78cc5';
-export const urlComingSoonFilms = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&api_key=6a08c0def237c5910708279c9ee78cc5';
-export const urlByGenreFilms = 'https://api.themoviedb.org/3/discover/movie?language=en-US&api_key=6a08c0def237c5910708279c9ee78cc5&sort_by=vote_average.desc&vote_count.gte=100';
-export const urlBySearchFilms = 'https://api.themoviedb.org/3/search/movie?language=en-US&api_key=6a08c0def237c5910708279c9ee78cc5&include_adult=false';
 
 export const receiveFilmsSuccess = payload => ({
   type: FETCH_FILMS_SUCCESS,
@@ -26,13 +27,18 @@ export const receiveFilmsError = payload => ({
   payload,
 });
 
-export function fetchFilms(url, page = 1) {
+export function fetchFilms(url, filmId, page = 1) {
   return (dispatch) => {
     dispatch(receiveFilmsRequest());
     return axios.get(`${url}&page=${page}`)
       .then((response) => {
-        dispatch(receiveFilmsSuccess({ films: response.data.results, url, page }));
-        dispatch(receiveMainFilmInfo(response.data.results[0].id));
+        if (filmId) {
+          dispatch(receiveFilmsSuccess({ films: response.data.results, url, page }));
+          dispatch(receiveMainFilmInfo(filmId));
+        } else {
+          dispatch(receiveFilmsSuccess({ films: response.data.results, url, page }));
+          dispatch(receiveMainFilmInfo(response.data.results[0].id));
+        }
       })
       .catch(error => dispatch(receiveFilmsError(error.message)));
   };
@@ -56,15 +62,15 @@ export function fetchFilmsComingSoon() {
   };
 }
 
-export function fetchFilmsByGenre(genreID) {
+export function fetchFilmsByGenre(genreID, filmId) {
   return (dispatch) => {
-    dispatch(fetchFilms(`${urlByGenreFilms}&with_genres=${genreID}`));
+    dispatch(fetchFilms(`${urlByGenreFilms}&with_genres=${genreID}`, filmId));
   };
 }
 
-export function fetchFilmsBySearch(word) {
+export function fetchFilmsBySearch(word, filmId) {
   return (dispatch) => {
-    dispatch(fetchFilms(`${urlBySearchFilms}&query=${word}`));
+    dispatch(fetchFilms(`${urlBySearchFilms}&query=${word}`, filmId));
   };
 }
 

@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import MoviesCategories from './MoviesCategories';
 import { pushNavigationLink } from '../../../modules/navlinks/navlinksActions';
 import getClickedLink from '../../../modules/navlinks/navlinksSelectors';
-import { fetchFilmsBySearch, fetchFilmsByGenre } from '../../../modules/films/filmsActions';
+import { fetchFilmsBySearch, fetchFilmsByGenre, fetchFilms } from '../../../modules/films/filmsActions';
 import { receiveMainFilmInfo } from '../../../modules/film/filmActions';
 
 const mapStateToProps = state => ({
@@ -15,5 +15,6 @@ const mapDispatchToProps = {
   fetchFilmsBySearch,
   receiveMainFilmInfo,
   fetchFilmsByGenre,
+  fetchFilms,
 };
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MoviesCategories));

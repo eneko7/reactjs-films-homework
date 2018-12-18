@@ -4,8 +4,13 @@ import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 import style from './MoviesCategories.scss';
 import Genres from '../Genres';
+import {
+  urlPopularFilms,
+  urlTopRatedFilms,
+  urlComingSoonFilms,
+} from '../../../modules/utils/constants';
 
-class MoviesCategories extends React.Component {
+class MoviesCategories extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,6 +49,7 @@ class MoviesCategories extends React.Component {
       fetchFilmsBySearch,
       fetchFilmsByGenre,
       receiveMainFilmInfo,
+      fetchFilms,
     } = this.props;
     const parsed = queryString.parse(search);
     const {
@@ -70,31 +76,31 @@ class MoviesCategories extends React.Component {
       }));
     }
     if (pathname === '/film') {
-      if (category === '') {
+      if (category === '' || (!category && !sort)) {
         this.fetchFilmsByCategory('Trending');
-        pushNavigationLink('Trending');
-        setTimeout(receiveMainFilmInfo(filmId), 0);
+        fetchFilms(urlPopularFilms, filmId);
+        receiveMainFilmInfo(filmId);
       }
       if (category === 'search') {
-        fetchFilmsBySearch(q);
-        setTimeout(receiveMainFilmInfo(filmId), 0);
+        fetchFilmsBySearch(q, filmId);
       }
       if (category === 'genres') {
         this.setState(() => ({
           activeCategory: 'Genres',
         }));
-        fetchFilmsByGenre(genreId);
-        setTimeout(receiveMainFilmInfo(filmId), 0);
+        fetchFilmsByGenre(genreId, filmId);
       }
-      if (category === 'categories') {
+      if (category === 'categories' && sort === 'Trending') {
         this.fetchFilmsByCategory(sort);
-        pushNavigationLink(sort);
-        setTimeout(receiveMainFilmInfo(filmId), 0);
+        fetchFilms(urlPopularFilms, filmId);
       }
-      if (!category && !sort) {
-        this.fetchFilmsByCategory('Trending');
-        pushNavigationLink('Trending');
-        setTimeout(receiveMainFilmInfo(filmId), 0);
+      if (category === 'categories' && sort === 'Top Rated') {
+        this.fetchFilmsByCategory(sort);
+        fetchFilms(urlTopRatedFilms, filmId);
+      }
+      if (category === 'categories' && sort === 'Coming Soon') {
+        this.fetchFilmsByCategory(sort);
+        fetchFilms(urlComingSoonFilms, filmId);
       }
     }
   }
@@ -133,6 +139,7 @@ MoviesCategories.propTypes = {
   fetchFilmsBySearch: PropTypes.func.isRequired,
   fetchFilmsByGenre: PropTypes.func.isRequired,
   receiveMainFilmInfo: PropTypes.func.isRequired,
+  fetchFilms: PropTypes.func.isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string,
     search: PropTypes.string,

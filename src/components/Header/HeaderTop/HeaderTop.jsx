@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 import style from './HeaderTop.scss';
 
@@ -37,7 +38,11 @@ class HeaderTop extends React.Component {
     const { q } = parsed;
     return (
       <div className={style.header_top}>
-        <span className={style.header_top_span}><a href="/" className={style.header_top_span_a}>FILMS</a></span>
+        <span className={style.header_top_span}>
+          <Link to="/" className={style.header_top_span_a}>
+            FILMS
+          </Link>
+        </span>
         <form className={style.header_top_search} onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -58,6 +63,7 @@ HeaderTop.propTypes = {
   fetchFilmsPopular: PropTypes.func.isRequired,
   searchFilm: PropTypes.func.isRequired,
   saveSearchingWord: PropTypes.func.isRequired,
+  // pushNavigationLink: PropTypes.func.isRequired,
   history: PropTypes.objectOf(PropTypes.any).isRequired,
   location: PropTypes.shape({
     params: PropTypes.object,

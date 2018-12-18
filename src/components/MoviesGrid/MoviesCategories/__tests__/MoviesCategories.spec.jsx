@@ -1,5 +1,4 @@
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
 import { MemoryRouter } from 'react-router';
 import TestRenderer from 'react-test-renderer';
 import configureMockStore from 'redux-mock-store';
@@ -38,7 +37,6 @@ const location = {
   },
 };
 jest.mock('../../Genres/GenresContainer', () => () => <div>test</div>);
-const shallow = new ShallowRenderer();
 describe('MoviesCategories Snapshot', () => {
   it('renders', () => {
     const component = TestRenderer.create(

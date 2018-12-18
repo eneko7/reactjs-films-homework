@@ -1,5 +1,4 @@
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router';
 import MovieElement from '../MovieElement';

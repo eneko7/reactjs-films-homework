@@ -1,1 +1,3 @@
-export { default } from './HeaderTop';
+import HeaderTop from './HeaderTopContainer';
+
+export default HeaderTop;

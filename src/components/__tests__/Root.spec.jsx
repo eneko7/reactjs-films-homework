@@ -1,11 +1,12 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-
+import ShallowRenderer from 'react-test-renderer/shallow';
 import Root from '../Root';
 
+const renderer = new ShallowRenderer();
+renderer.render(<Root />);
 describe('Root', () => {
-  it('Root renders correctly', () => {
-    const renderedRoot = renderer.create(<Root />).toJSON();
-    expect(renderedRoot).toMatchSnapshot();
+  it('renders correctly', () => {
+    const result = renderer.getRenderOutput();
+    expect(result).toMatchSnapshot();
   });
 });

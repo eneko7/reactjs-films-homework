@@ -1,6 +1,6 @@
 .app_header {
   width: 100%;
-  height: 80vh;
+  height: 88vh;
   padding-top: 20px;
   background-image: url(../../images/cover-image.jpg);
   background-position: center;
@@ -8,6 +8,11 @@
   background-repeat: no-repeat;
   position: relative;
   z-index: 3;
+}
+
+.app_header.error {
+  height: 7vh;
+  background: none !important;
 }
 
 .app_header::after {
@@ -24,5 +29,12 @@
 @media (max-width: 767px) {
   .app_header {
     height: 100vh;
+  }
+}
+
+@media (max-width: 621px) {
+  .app_header.error {
+    height: 15vh;
+    background: none !important;
   }
 }

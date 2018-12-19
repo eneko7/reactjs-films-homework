@@ -1,17 +1,45 @@
 import React from 'react';
-import MovieDescription from './MovieDescription/MovieDescription';
-import MovieRate from './MovieRate/MovieRate';
-import MovieInfoButtons from './MovieInfoButtons/MovieInfoButtons';
+import PropTypes from 'prop-types';
+import MovieDescription from './MovieDescription';
+import MovieRate from './MovieRate';
+import MovieInfoButtons from './MovieInfoButtons';
 import style from './HeaderBottom.scss';
 
-const HeaderBottom = () => (
-  <div className={style.header_bottom}>
-    <div className={`${style.active} ${style.header_bottom_left}`}>
-      <MovieDescription filmName="THE JUNGLE BOOK" filmDescrProps="Adventure, Drama, Family, Fantasy, |, 1h 46m" />
-      <MovieRate rate={4.8} />
-    </div>
-    <MovieInfoButtons annotation="There are growing dangers in the wizarding world og 1926 New York. Something mysterious is leaving a path of destruction in the streets, threatening to expose the wizarding" />
-  </div>
-);
+const HeaderBottom = (props) => {
+  const {
+    film, genres,
+  } = props;
+  if (Object.keys(film).length !== 0) {
+    const genresCol = [];
+    const genresOfFilm = film.genre_ids;
+    genresOfFilm.forEach((elem) => {
+      genres.forEach((el) => {
+        if (elem === el.id) genresCol.push(el.name);
+      });
+    });
+    return (
+      <div className={style.header_bottom}>
+        <div className={`${style.active} ${style.header_bottom_left}`}>
+          <MovieDescription filmName={film.title} filmGenres={genresCol} />
+          <MovieRate rate={film.vote_average} />
+        </div>
+        <MovieInfoButtons annotation={film.overview} filmId={film.id} />
+      </div>
+    );
+  }
+  return null;
+};
+
+HeaderBottom.propTypes = {
+  genres: PropTypes.arrayOf(PropTypes.object).isRequired,
+  film: PropTypes.objectOf(
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.array,
+      PropTypes.bool,
+    ]),
+  ).isRequired,
+};
 
 export default HeaderBottom;

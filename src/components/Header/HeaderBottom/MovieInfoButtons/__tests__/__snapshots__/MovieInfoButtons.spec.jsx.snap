@@ -1,5 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`MovieInfoButtons MovieInfoButtons -> Click (close film)  1`] = `
+<div
+  className="bottom_right"
+>
+  <div
+    className=" bottom_right_text_descr"
+  >
+    <p
+      className="bottom_right_text_descr_p"
+    >
+      film description
+    </p>
+  </div>
+  <div
+    className=" bottom_right_buttons_box"
+  >
+    <button
+      className="bottom_right_buttons_box_button_watch bottom_right_buttons_box_button"
+      onClick={[Function]}
+      type="button"
+    >
+      Watch Now
+    </button>
+    <button
+      className="bottom_right_buttons_box_button_view bottom_right_buttons_box_button"
+      onClick={[Function]}
+      type="button"
+    >
+      View Info
+    </button>
+  </div>
+</div>
+`;
+
 exports[`MovieInfoButtons MovieInfoButtons -> Click (show info)  1`] = `
 <div
   className="bottom_right"
@@ -10,7 +44,7 @@ exports[`MovieInfoButtons MovieInfoButtons -> Click (show info)  1`] = `
     <p
       className="bottom_right_text_descr_p"
     >
-      There are growing dangers in the wizarding world og 1926 New York. Something mysterious is leaving a path of destruction in the streets, threatening to expose the wizarding
+      film description
     </p>
   </div>
   <div
@@ -18,6 +52,7 @@ exports[`MovieInfoButtons MovieInfoButtons -> Click (show info)  1`] = `
   >
     <button
       className="bottom_right_buttons_box_button_watch bottom_right_buttons_box_button"
+      onClick={[Function]}
       type="button"
     >
       Watch Now
@@ -33,35 +68,77 @@ exports[`MovieInfoButtons MovieInfoButtons -> Click (show info)  1`] = `
 </div>
 `;
 
+exports[`MovieInfoButtons MovieInfoButtons -> Click (watch film)  1`] = `
+Array [
+  <div
+    className="bottom_right"
+  >
+    <div
+      className=" bottom_right_text_descr"
+    >
+      <p
+        className="bottom_right_text_descr_p"
+      >
+        film description
+      </p>
+    </div>
+    <div
+      className=" bottom_right_buttons_box"
+    >
+      <button
+        className="bottom_right_buttons_box_button_watch bottom_right_buttons_box_button"
+        onClick={[Function]}
+        type="button"
+      >
+        Watch Now
+      </button>
+      <button
+        className="bottom_right_buttons_box_button_view bottom_right_buttons_box_button"
+        onClick={[Function]}
+        type="button"
+      >
+        View Info
+      </button>
+    </div>
+  </div>,
+  <div>
+    test
+  </div>,
+]
+`;
+
 exports[`MovieInfoButtons renders correctly 1`] = `
-<div
-  className="bottom_right"
->
+<React.Fragment>
   <div
-    className=" bottom_right_text_descr"
+    className="bottom_right"
   >
-    <p
-      className="bottom_right_text_descr_p"
+    <div
+      className=" bottom_right_text_descr"
     >
-      There are growing dangers in the wizarding world og 1926 New York. Something mysterious is leaving a path of destruction in the streets, threatening to expose the wizarding
-    </p>
+      <p
+        className="bottom_right_text_descr_p"
+      >
+        film description
+      </p>
+    </div>
+    <div
+      className=" bottom_right_buttons_box"
+    >
+      <button
+        className="bottom_right_buttons_box_button_watch bottom_right_buttons_box_button"
+        onClick={[Function]}
+        type="button"
+      >
+        Watch Now
+      </button>
+      <button
+        className="bottom_right_buttons_box_button_view bottom_right_buttons_box_button"
+        onClick={[Function]}
+        type="button"
+      >
+        View Info
+      </button>
+    </div>
   </div>
-  <div
-    className=" bottom_right_buttons_box"
-  >
-    <button
-      className="bottom_right_buttons_box_button_watch bottom_right_buttons_box_button"
-      type="button"
-    >
-      Watch Now
-    </button>
-    <button
-      className="bottom_right_buttons_box_button_view bottom_right_buttons_box_button"
-      onClick={[Function]}
-      type="button"
-    >
-      View Info
-    </button>
-  </div>
-</div>
+</React.Fragment>
 `;

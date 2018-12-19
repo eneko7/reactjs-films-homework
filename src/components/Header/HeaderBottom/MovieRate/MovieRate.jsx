@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import style from './MovieRate.scss';
 
 const MovieRate = (props) => {
-  const { rate } = props;
+  const {
+    rate,
+  } = props;
   const rateStyle = {
-    width: `${(parseFloat(rate) - 0.1) / 5 * 100}%`,
+    width: `${(parseFloat(rate) + 0.1) / 10 * 100}%`,
   };
   return (
     <div className={style.bottom_left_filmRate}>

@@ -1,4 +1,6 @@
 .full_description {
+  width: 100%;
+
   .full_description_filmName {
     font-size: 45px;
     letter-spacing: 1px;
@@ -12,7 +14,7 @@
   .full_description_filmDescr {
     margin-top: 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
 
     .full_description_filmDescr_item {
       display: flex;

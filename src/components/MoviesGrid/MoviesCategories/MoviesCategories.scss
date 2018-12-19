@@ -1,0 +1,58 @@
+.moviesGrid_categories {
+  margin: 70px 7%;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  justify-content: flex-start;
+
+  .moviesGrid_categories_item {
+    display: inline-block;
+
+    .moviesGrid_categories_item_button {
+      cursor: pointer;
+      font-size: 25px;
+      line-height: 30px;
+      color: #0aaee4;
+      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+      margin-right: 30px;
+      padding-bottom: 5px;
+      text-align: center;
+      background: none;
+      border: none;
+    }
+
+    .moviesGrid_categories_item_button:focus {
+      outline: none;
+    }
+
+    .moviesGrid_categories_item_button.active {
+      border-bottom: 4px solid #0aaee4;
+    }
+  }
+}
+
+.underLine {
+  margin: 0 7%;
+  margin-bottom: 30px;
+  height: 2px;
+  background-color: #e0e0e1;
+  position: relative;
+  top: -2px;
+}
+
+@media (max-width: 767px) {
+  .moviesGrid_categories {
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    .moviesGrid_categories_item {
+      .moviesGrid_categories_item_button {
+        font-size: 15px;
+        line-height: 18px;
+        margin-right: 5px;
+      }
+    }
+  }
+}

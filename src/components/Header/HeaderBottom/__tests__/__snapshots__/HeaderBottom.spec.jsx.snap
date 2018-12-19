@@ -8,15 +8,24 @@ exports[`HeaderBottom renders correctly 1`] = `
     className="active header_bottom_left"
   >
     <MovieDescription
-      filmDescrProps="Adventure, Drama, Family, Fantasy, |, 1h 46m"
-      filmName="THE JUNGLE BOOK"
+      filmGenres={
+        Array [
+          "Drama",
+          "Family",
+          "Fantasy",
+        ]
+      }
+      filmName="name"
     />
     <MovieRate
-      rate={4.8}
+      rate={5}
     />
   </div>
   <MovieInfoButtons
-    annotation="There are growing dangers in the wizarding world og 1926 New York. Something mysterious is leaving a path of destruction in the streets, threatening to expose the wizarding"
+    annotation="name"
+    filmId={23355}
   />
 </div>
 `;
+
+exports[`HeaderBottom renders correctly bad 1`] = `null`;

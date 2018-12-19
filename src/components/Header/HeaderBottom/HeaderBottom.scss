@@ -16,6 +16,11 @@
   .header_bottom_left.active {
     position: static;
     padding-top: 204px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: flex-end;
+    justify-content: center;
   }
 }
 
@@ -24,6 +29,7 @@
     display: block;
     width: 94%;
     margin-left: 6%;
+    margin-bottom: 50px;
 
     .header_bottom_left.active {
       padding-top: 0;

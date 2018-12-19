@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalWindowFilm Snapshot renders with trailer 1`] = `
+<Connect(ModalWindowFilm)
+  filmId={1}
+  filmTrailerKey="key"
+  onChange={[Function]}
+/>
+`;
+
+exports[`ModalWindowFilm Snapshot renders with trailer 2`] = `
+<Connect(ModalWindowFilm)
+  filmId={-1}
+  filmTrailerKey="key"
+  onChange={[Function]}
+/>
+`;
+
+exports[`fetchFilm actions renders with trailer 1`] = `
+<div
+  className="ModalWindowFilm"
+>
+  <button
+    className="ModalWindowFilm_close"
+    onClick={[Function]}
+    type="button"
+  />
+  <button
+    className="ModalWindowFilm_close_button"
+    onClick={[Function]}
+    type="button"
+  >
+    ×
+  </button>
+  <iframe
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen={true}
+    className="ModalWindowFilm_film_iframe"
+    frameBorder="0"
+    src="https://www.youtube.com/embed/key?autoplay=1&modestbranding=1&showinfo=0&rel=0"
+    title="title"
+  />
+</div>
+`;
+
+exports[`fetchFilm actions renders with trailer 2`] = `
+<div
+  className="ModalWindowFilm_film_error"
+/>
+`;

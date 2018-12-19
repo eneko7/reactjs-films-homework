@@ -1,0 +1,135 @@
+.moviesGrid {
+  width: 100%;
+  position: relative;
+  z-index: 4;
+  background-color: #f5f5f5;
+  padding-top: 50px;
+
+  .moviesGrid_categories {
+    margin: 70px 7%;
+    margin-top: 0;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .moviesGrid_wrapper {
+    .moviesGrid_wrapper_MovieElement_ul {
+      margin: 0 7%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0;
+      list-style-type: none;
+
+      .moviesGrid_wrapper_MovieElement_ul_item {
+        width: 23.3%;
+        height: 500px;
+        margin-bottom: 60px;
+        border-radius: 6px;
+      }
+    }
+
+    .moviesGrid_wrapper_loading {
+      display: flex;
+      justify-content: space-between;
+      width: 70px;
+      margin: 20px auto 5px auto;
+
+      .moviesGrid_wrapper_loading {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background-color: #0aaee4;
+        animation-name: loading;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+      }
+
+      .moviesGrid_wrapper_loading:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .moviesGrid_wrapper_loading:last-child {
+        animation-delay: 0.4s;
+      }
+    }
+
+    .moviesGrid_wrapper_loading_text {
+      display: block;
+      margin: 5px auto 0 auto;
+      padding-bottom: 50px;
+      font-size: 20px;
+      color: #969797;
+      text-align: center;
+      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+    }
+
+    @keyframes loading {
+      30% { transform: scale(1.3, 1.3); }
+      70% { transform: scale(0.9, 0.9); }
+    }
+  }
+}
+
+.error_search {
+  width: 100%;
+  text-align: center;
+  color: #0aaee4;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 1440px) {
+  .moviesGrid {
+    .moviesGrid_wrapper {
+      .moviesGrid_wrapper_MovieElement_ul {
+        .moviesGrid_wrapper_MovieElement_ul_item {
+          width: 31.6%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .moviesGrid {
+    .moviesGrid_wrapper {
+      .moviesGrid_wrapper_MovieElement_ul {
+        .moviesGrid_wrapper_MovieElement_ul_item {
+          width: 48.3%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 766px) {
+  .moviesGrid {
+    .moviesGrid_wrapper {
+      .moviesGrid_wrapper_MovieElement_ul {
+        justify-content: space-between;
+
+        .moviesGrid_wrapper_MovieElement_ul_item {
+          width: 100%;
+          height: 600px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 767px) and (max-width: 769px) {
+  .moviesGrid {
+    .moviesGrid_wrapper {
+      .moviesGrid_wrapper_MovieElement_ul {
+        justify-content: space-between;
+
+        .moviesGrid_wrapper_MovieElement_ul_item {
+          width: 48%;
+          height: 600px;
+        }
+      }
+    }
+  }
+}

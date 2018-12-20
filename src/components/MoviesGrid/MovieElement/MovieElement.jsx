@@ -93,7 +93,7 @@ class MovieElement extends React.PureComponent {
     let topPicture = {};
     if (film.backdrop_path !== null) {
       topPicture = {
-        backgroundImage: `url(http://image.tmdb.org/t/p/w1280${film.backdrop_path})`,
+        backgroundImage: `url(//image.tmdb.org/t/p/w1280${film.backdrop_path})`,
       };
     } else {
       topPicture = {
@@ -103,7 +103,7 @@ class MovieElement extends React.PureComponent {
     let posterPicture = {};
     if (film.poster_path !== null) {
       posterPicture = {
-        backgroundImage: `url(http://image.tmdb.org/t/p/w1280${film.poster_path})`,
+        backgroundImage: `url(//image.tmdb.org/t/p/w1280${film.poster_path})`,
       };
     } else {
       posterPicture = {

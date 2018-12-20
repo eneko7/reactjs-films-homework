@@ -78,7 +78,6 @@ class MoviesGrid extends React.Component {
 }
 
 MoviesGrid.propTypes = {
-  // fetchFilmsPopular: PropTypes.func.isRequired,
   fetchNextFilms: PropTypes.func.isRequired,
   isFetchingFilms: PropTypes.bool.isRequired,
   films: PropTypes.arrayOf(PropTypes.object).isRequired,

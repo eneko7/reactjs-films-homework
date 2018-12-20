@@ -114,7 +114,6 @@ describe('Header top save word -> click', () => {
       {
         createNodeMock: (element) => {
           if (element.type === 'input') {
-            // mock a focus function
             return {
               value: 'word',
             };
@@ -161,7 +160,6 @@ describe('Header top save word without word', () => {
       {
         createNodeMock: (element) => {
           if (element.type === 'input') {
-            // mock a focus function
             return {
               value: '',
             };

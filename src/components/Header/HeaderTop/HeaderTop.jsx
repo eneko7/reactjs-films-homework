@@ -63,7 +63,6 @@ HeaderTop.propTypes = {
   fetchFilmsPopular: PropTypes.func.isRequired,
   searchFilm: PropTypes.func.isRequired,
   saveSearchingWord: PropTypes.func.isRequired,
-  // pushNavigationLink: PropTypes.func.isRequired,
   history: PropTypes.objectOf(PropTypes.any).isRequired,
   location: PropTypes.shape({
     params: PropTypes.object,

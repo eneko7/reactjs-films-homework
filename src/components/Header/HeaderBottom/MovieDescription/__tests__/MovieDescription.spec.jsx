@@ -1,5 +1,6 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
+
 import MovieDescription from '../index';
 
 const data = {

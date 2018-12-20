@@ -1,5 +1,4 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import TestRenderer from 'react-test-renderer';
 import configureMockStore from 'redux-mock-store';
 import moxios from 'moxios';
@@ -78,7 +77,6 @@ describe('fetchFilm actions', () => {
       { type: actions.FETCH_FILM_SUCCESS, payload: getFilmMock.results[0].key },
     ];
     return store.dispatch(actions.fetchFilm()).then(() => {
-      // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
@@ -115,7 +113,6 @@ describe('fetchFilm actions', () => {
     ];
 
     return store.dispatch(actions.fetchFilm()).then(() => {
-      // return of async actions
       expect(store.getActions()).toEqual(expectedActions);
     });
   });

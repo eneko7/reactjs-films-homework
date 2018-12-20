@@ -6,5 +6,6 @@ const mapStateToProps = state => ({
   selectedFilm: getSelectedFilm(state),
 
 });
-
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = {
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

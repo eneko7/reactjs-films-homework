@@ -1,6 +1,6 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
-import HeaderBottom from '../HeaderBottom';
+import HeaderBottom from '../index';
 
 const data = {
   selectedFilm: {

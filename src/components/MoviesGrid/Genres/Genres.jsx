@@ -37,6 +37,7 @@ class Genres extends React.Component {
       headerTitle: el,
       isOpen: false,
     }));
+
     const { fetchFilmsByGenre, fetchChange } = this.props;
     fetchFilmsByGenre(id);
     fetchChange('Genres');

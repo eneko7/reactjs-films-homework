@@ -1,6 +1,6 @@
-import configureMockStore from 'redux-mock-store'; // eslint-disable-line import/no-extraneous-dependencies
+import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import moxios from 'moxios'; // eslint-disable-line import/no-extraneous-dependencies
+import moxios from 'moxios';
 import * as actions from '../genresActions';
 import getGenresMock from '../../mocks/getGenresMock';
 

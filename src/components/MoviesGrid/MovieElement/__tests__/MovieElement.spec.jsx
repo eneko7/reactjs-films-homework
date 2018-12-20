@@ -15,10 +15,6 @@ const data = {
   },
   genresList: [
     {
-      id: 28,
-      name: 'Action',
-    },
-    {
       id: 18,
       name: 'Drama',
     },
@@ -44,10 +40,6 @@ const dataBadPictures = {
     id: 338952,
   },
   genresList: [
-    {
-      id: 28,
-      name: 'Action',
-    },
     {
       id: 18,
       name: 'Drama',
@@ -105,9 +97,31 @@ const dataBadPictureTop = {
   },
   genresList: [
     {
-      id: 28,
-      name: 'Action',
+      id: 18,
+      name: 'Drama',
     },
+    {
+      id: 10751,
+      name: 'Family',
+    },
+    {
+      id: 14,
+      name: 'Fantasy',
+    },
+  ],
+};
+
+const dataBadPictureTop = {
+  film: {
+    backdrop_path: null,
+    genre_ids: [18, 10751, 14],
+    title: 'original_title',
+    poster_path: '/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg',
+    overview: 'overview',
+    vote_average: 8,
+    id: 338952,
+  },
+  genresList: [
     {
       id: 18,
       name: 'Drama',
@@ -126,7 +140,6 @@ const dataBadPictureTop = {
 jest.mock('../ModalWindowFilm/ModalWindowFilmContainer', () => () => <div>test</div>);
 
 describe('MovieElement', () => {
-  // const rendererShallow = new ShallowRenderer();
   it('renders correctly', () => {
     const output = renderer.create(
       <MemoryRouter initialEntries={['/films?sort=Top%20Rated']}>

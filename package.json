@@ -64,6 +64,7 @@
     "jest": "^23.6.0",
     "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.9.4",
+    "now": "^12.1.14",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "prop-types": "^15.6.2",
     "query-string": "^6.2.0",

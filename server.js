@@ -1,27 +1,28 @@
-/* eslint-disable no-console */
 const express = require('express');
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
 const path = require('path');
-const config = require('./webpack.config');
+const webpack = require('webpack');
+const config = require('./config/webpack.development.config');
 
-const port = process.env.PORT || 3000;
 const app = express();
 
-app.use('/build', express.static(path.resolve(__dirname, './build')));
-
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'build')));
+  app.use('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
+} else {
+  const webpackDevMiddleware = require('webpack-dev-middleware'); // eslint-disable-line global-require
+  const webpackHotMiddleware = require('webpack-hot-middleware'); // eslint-disable-line global-require
   const compiler = webpack(config);
-  console.log(process.env.NODE_ENV);
+  // Tell express to use the webpack-dev-middleware and use the webpack.config.js
+  // configuration file as a base.
   app.use(webpackDevMiddleware(compiler, {
+    noInfo: true,
     publicPath: config.output.publicPath,
   }));
-  app.use(webpackHotMiddleware(compiler, {
-    log: false,
-    path: '/__webpack_hmr',
-    heartbeat: 2000,
-  }));
+  app.use(webpackHotMiddleware(compiler));
+  // Serve the files on port 5000.
+
   app.use('*', (req, res, next) => {
     const filename = path.join(compiler.outputPath, '/index.html');
     compiler.outputFileSystem.readFile(filename, (err, result) => {
@@ -33,25 +34,8 @@ if (process.env.NODE_ENV === 'development') {
       return res.end();
     });
   });
-} else {
-  // app.use(express.static(path.join(__dirname, '/build')));
-
-  // app.get('*', (req, res) => {
-  //   res.sendFile(path.join(`${__dirname}/build/index.html`));
-  // });
-  app.use(express.static(path.join(__dirname, 'build')));
-  app.use('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  });
 }
 
-app.get('/', (req, res) => {
-  res.sendFile('index.html', {
-    root: path.join(__dirname, 'src'),
-  });
-});
-
-// app.listen(port, () => console.log(`Listening on port ${port}`));
-app.listen(process.env.PORT || port, () => {
-  console.log(`Example app listening on port ${port}!\n`); // eslint-disable-line no-console
+app.listen(process.env.PORT || 5000, () => {
+  console.log('Example app listening on port 5000!\n'); // eslint-disable-line no-console
 });

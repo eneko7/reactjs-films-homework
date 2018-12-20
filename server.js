@@ -47,4 +47,7 @@ app.get('/', (req, res) => {
   });
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+// app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(process.env.PORT || port, () => {
+  console.log(`Example app listening on port ${port}!\n`); // eslint-disable-line no-console
+});

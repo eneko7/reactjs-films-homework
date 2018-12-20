@@ -267,7 +267,7 @@ Array [
     onClick={[Function]}
     style={
       Object {
-        "borderBottom": "none",
+        "borderBottom": "4px solid",
       }
     }
     type="button"

@@ -226,7 +226,9 @@ describe('MoviesGrid logics', () => {
     });
     TestRenderer.create(
       <Provider store={store3}>
-        <MoviesGrid />
+        <MemoryRouter>
+          <MoviesGrid fetchFilmsByGenre={() => ('Hello')} fetchFilmsBySearch={() => ('hello')} />
+        </MemoryRouter>
       </Provider>,
     );
     eventMap.scroll();

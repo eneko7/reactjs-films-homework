@@ -2,7 +2,7 @@
 
 exports[`MoviesList Snapshot snapshot 1`] = `
 <MemoryRouter>
-  <Connect(MoviesGrid)
+  <withRouter(Connect(MoviesGrid))
     fetchFilmsByGenre={[Function]}
     fetchFilmsBySearch={[Function]}
   />

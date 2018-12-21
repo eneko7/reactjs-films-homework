@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import queryString from 'query-string';
 import style from './MoviesGrid.scss';
 import MovieElement from './MovieElement';
 import MoviesCategories from './MoviesCategories';
@@ -19,10 +20,14 @@ class MoviesGrid extends React.Component {
   }
 
   onScrollHandler() {
-    const { fetchNextFilms, isFetchingFilms } = this.props;
+    const { fetchNextFilms, isFetchingFilms, location: { search } } = this.props;
+    const parsed = queryString.parse(search);
+    const {
+      filmId,
+    } = parsed;
     if ((global.window.innerHeight + global.window.pageYOffset)
     >= global.document.body.offsetHeight && !isFetchingFilms) {
-      fetchNextFilms();
+      fetchNextFilms(filmId);
     }
   }
 
@@ -82,6 +87,10 @@ MoviesGrid.propTypes = {
   isFetchingFilms: PropTypes.bool.isRequired,
   films: PropTypes.arrayOf(PropTypes.object).isRequired,
   genres: PropTypes.arrayOf(PropTypes.object).isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+    search: PropTypes.string,
+  }).isRequired,
 };
 
 export default MoviesGrid;

@@ -230,7 +230,7 @@ describe('getFilms actions', () => {
       {
         type: actions.FETCH_FILMS_SUCCESS,
         payload: {
-          films: [getFilmMock], url: urlBySearchFilms, page: 1,
+          films: [getFilmMock], url: urlBySearchFilms, page: 2,
         },
       },
       { type: actionsFilm.FETCH_FILM_REQUEST },

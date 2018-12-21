@@ -74,12 +74,13 @@ export function fetchFilmsBySearch(word, filmId) {
   };
 }
 
-export function fetchNextFilms() {
+export function fetchNextFilms(filmId) {
   return (dispatch, getState) => {
     const state = getState();
     if (state.films.lastPage !== -1) {
       dispatch(fetchFilms(
         state.films.url,
+        filmId,
         state.films.lastPage + 1,
       ));
     }

@@ -25,12 +25,12 @@
   },
   "homepage": "https://github.com/eneko7/reactjs-films-homework#readme",
   "devDependencies": {
-    "stylelint": "^9.6.0",
-    "stylelint-config-standard": "^18.2.0",
     "webpack-dev-middleware": "^3.4.0",
     "webpack-hot-middleware": "^2.24.3"
   },
   "dependencies": {
+    "stylelint": "^9.6.0",
+    "stylelint-config-standard": "^18.2.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "redux-mock-store": "^1.5.3",
     "axios": "^0.18.0",

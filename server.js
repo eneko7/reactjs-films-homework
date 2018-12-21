@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable global-require */
 const express = require('express');
 const path = require('path');
 const webpack = require('webpack');
@@ -11,8 +13,8 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
 } else {
-  const webpackDevMiddleware = require('webpack-dev-middleware'); // eslint-disable-line global-require
-  const webpackHotMiddleware = require('webpack-hot-middleware'); // eslint-disable-line global-require
+  const webpackDevMiddleware = require('webpack-dev-middleware');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
   const compiler = webpack(config);
   // Tell express to use the webpack-dev-middleware and use the webpack.config.js
   // configuration file as a base.

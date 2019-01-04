@@ -65,6 +65,7 @@ class Genres extends React.Component {
         <div className={`${active} ${style.moviesGrid_categories_item_block}`} id="genres_list">
           {genresCol}
         </div>
+        <button className={`${active} ${style.moviesGrid_categories_background_wraper}`} onClick={this.openGenresClick} type="button" />
       </React.Fragment>
     );
   }

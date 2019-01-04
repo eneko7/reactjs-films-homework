@@ -25,7 +25,7 @@ class MoviesGrid extends React.Component {
     const {
       filmId,
     } = parsed;
-    if ((global.window.innerHeight + global.window.pageYOffset)
+    if ((global.innerHeight + global.pageYOffset)
     >= global.document.body.offsetHeight && !isFetchingFilms) {
       fetchNextFilms(filmId);
     }

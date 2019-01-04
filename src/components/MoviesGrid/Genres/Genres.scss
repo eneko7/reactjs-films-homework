@@ -31,6 +31,27 @@
   outline: none;
 }
 
+.moviesGrid_categories_background_wraper {
+  display: none;
+}
+
+.moviesGrid_categories_background_wraper.active {
+  display: block;
+  position: absolute;
+  z-index: 5;
+  opacity: 1;
+  width: 100vw;
+  height: 200vh;
+  background: none;
+  border: none;
+  top: -95vh;
+  left: -8.3vw;
+}
+
+.moviesGrid_categories_background_wraper.active:focus {
+  outline: none;
+}
+
 .moviesGrid_categories_item_block {
   list-style-type: none;
   display: none;

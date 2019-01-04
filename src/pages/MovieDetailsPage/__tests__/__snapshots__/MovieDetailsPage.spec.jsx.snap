@@ -1,11 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MovieDetailsPage Snapshot renders 1`] = `
-<div
-  className="main_container"
->
-  <Connect(Header) />
-  <withRouter(Connect(MoviesGrid)) />
-  <Footer />
-</div>
-`;
+exports[`MovieDetailsPage Snapshot renders 1`] = `<withRouter(Connect(MoviesGrid)) />`;

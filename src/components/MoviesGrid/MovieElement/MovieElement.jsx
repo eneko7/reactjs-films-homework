@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 import style from './MovieElement.scss';
 import ModalWindowFilmContainer from './ModalWindowFilm/ModalWindowFilmContainer';
@@ -15,40 +16,12 @@ class MovieElement extends React.PureComponent {
     };
     this.showInfo = this.showInfo.bind(this);
     this.watchFilm = this.watchFilm.bind(this);
-    this.showMainScreen = this.showMainScreen.bind(this);
   }
 
   showInfo() {
     this.setState(prevState => ({
       isShownInfo: !prevState.isShownInfo,
     }));
-  }
-
-  showMainScreen(filmId) {
-    const { history, receiveMainFilmInfo, location: { pathname, search } } = this.props;
-    receiveMainFilmInfo(filmId);
-    const parsed = queryString.parse(search);
-    const {
-      genreName,
-      genreId,
-      sort,
-      q,
-    } = parsed;
-    if (pathname === '/') {
-      history.push(`/film?filmId=${filmId}&category=`);
-    }
-    if (pathname === '/films' && sort) {
-      history.push(`/film?filmId=${filmId}&category=categories&sort=${sort}`);
-    }
-    if (pathname === '/search' && q) {
-      history.push(`/film?filmId=${filmId}&category=search&q=${q}`);
-    }
-    if (pathname === '/genres' && genreId) {
-      history.push(`/film?filmId=${filmId}&category=genres&genreName=${genreName}&genreId=${genreId}`);
-    }
-    if (pathname === '/film') {
-      history.push(`/film?filmId=${filmId}`);
-    }
   }
 
   watchFilm() {
@@ -64,7 +37,7 @@ class MovieElement extends React.PureComponent {
   }
 
   render() {
-    const { film, genresList } = this.props;
+    const { film, genresList, location: { search } } = this.props;
     const { isShownInfo, isShownFilm } = this.state;
     let title = '';
     if (film.title.length > 15) {
@@ -110,8 +83,11 @@ class MovieElement extends React.PureComponent {
         backgroundImage: `url(${errorImg})`,
       };
     }
+    const parsed = queryString.parse(search);
+    parsed.filmId = film.id;
+    const newSearch = queryString.stringify(parsed);
     return (
-      <div className={`${style.moviesGrid_wrapper_MovieElement_ul_item_wrap}`} onClick={() => this.showMainScreen(film.id)} role="presentation">
+      <Link to={`/film?${newSearch}`} className={`${style.moviesGrid_wrapper_MovieElement_ul_item_wrap}`}>
         <div style={topPicture} className={style.moviesGrid_wrapper_MovieElement_top_picture} />
         <div className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description}>
           <div className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_n_r}>
@@ -181,7 +157,7 @@ class MovieElement extends React.PureComponent {
           ? <ModalWindowFilmContainer onChange={this.watchFilm} filmId={film.id} />
           : ''
         }
-      </div>
+      </Link>
     );
   }
 }
@@ -196,8 +172,6 @@ MovieElement.propTypes = {
     ]),
   ).isRequired,
   genresList: PropTypes.arrayOf(PropTypes.object).isRequired,
-  history: PropTypes.objectOf(PropTypes.any).isRequired,
-  receiveMainFilmInfo: PropTypes.func.isRequired,
   location: PropTypes.shape({
     params: PropTypes.object,
     pathname: PropTypes.string,

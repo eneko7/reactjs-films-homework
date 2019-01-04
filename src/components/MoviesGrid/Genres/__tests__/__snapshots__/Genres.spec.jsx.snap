@@ -83,6 +83,11 @@ Array [
       </button>
     </a>
   </div>,
+  <button
+    className="active moviesGrid_categories_background_wraper"
+    onClick={[Function]}
+    type="button"
+  />,
 ]
 `;
 
@@ -169,6 +174,11 @@ Array [
       </button>
     </a>
   </div>,
+  <button
+    className="active moviesGrid_categories_background_wraper"
+    onClick={[Function]}
+    type="button"
+  />,
 ]
 `;
 
@@ -255,6 +265,11 @@ Array [
       </button>
     </a>
   </div>,
+  <button
+    className=" moviesGrid_categories_background_wraper"
+    onClick={[Function]}
+    type="button"
+  />,
 ]
 `;
 
@@ -341,6 +356,11 @@ Array [
       </button>
     </a>
   </div>,
+  <button
+    className="active moviesGrid_categories_background_wraper"
+    onClick={[Function]}
+    type="button"
+  />,
 ]
 `;
 
@@ -427,6 +447,11 @@ Array [
       </button>
     </a>
   </div>,
+  <button
+    className=" moviesGrid_categories_background_wraper"
+    onClick={[Function]}
+    type="button"
+  />,
 ]
 `;
 
@@ -513,5 +538,10 @@ Array [
       </button>
     </a>
   </div>,
+  <button
+    className=" moviesGrid_categories_background_wraper"
+    onClick={[Function]}
+    type="button"
+  />,
 ]
 `;

@@ -16,16 +16,14 @@ class HeaderTop extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const {
-      searchFilm, fetchFilmsPopular, saveSearchingWord, history, location: { search },
+      searchFilm, fetchFilmsPopular, saveSearchingWord, history,
     } = this.props;
-    const parsed = queryString.parse(search);
-    const { q } = parsed;
     if (this.input.current.value !== '') {
       history.push(`/search?q=${this.input.current.value}`);
       searchFilm(this.input.current.value);
       saveSearchingWord(this.input.current.value);
     } else {
-      history.push(`/search?q=${q}`);
+      history.push('/');
       fetchFilmsPopular();
     }
   }

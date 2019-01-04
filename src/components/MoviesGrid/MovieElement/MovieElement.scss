@@ -1,8 +1,10 @@
 .moviesGrid_wrapper_MovieElement_ul_item_wrap {
+  display: block;
   background-color: white;
   cursor: pointer;
   position: relative;
   border-radius: 6px;
+  text-decoration: none;
 
   .descriptionFilmLayer {
     width: 100%;

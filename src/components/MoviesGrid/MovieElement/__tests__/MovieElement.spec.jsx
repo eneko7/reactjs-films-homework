@@ -120,8 +120,6 @@ describe('MovieElement', () => {
         <MovieElement
           {...data}
           location={{ pathname: '/films', search: 'sort=Top%20Rated' }}
-          history={{ push: () => ('Hello') }}
-          receiveMainFilmInfo={() => ('Hello')}
         />
       </MemoryRouter>,
     );
@@ -134,8 +132,6 @@ describe('MovieElement', () => {
         <MovieElement
           {...dataBadPictures}
           location={{ pathname: '/films', search: 'sort=Top%20Rated' }}
-          history={{ push: () => ('Hello') }}
-          receiveMainFilmInfo={() => ('Hello')}
         />
       </MemoryRouter>,
     );
@@ -148,8 +144,6 @@ describe('MovieElement', () => {
         <MovieElement
           {...dataBadPicturePoster}
           location={{ pathname: '/films', search: 'sort=Top%20Rated' }}
-          history={{ push: () => ('Hello') }}
-          receiveMainFilmInfo={() => ('Hello')}
         />
       </MemoryRouter>,
     );
@@ -162,8 +156,6 @@ describe('MovieElement', () => {
         <MovieElement
           {...dataBadPictureTop}
           location={{ pathname: '/films', search: 'sort=Top%20Rated' }}
-          history={{ push: () => ('Hello') }}
-          receiveMainFilmInfo={() => ('Hello')}
         />
       </MemoryRouter>,
     );
@@ -176,8 +168,6 @@ describe('MovieElement', () => {
         <MovieElement
           {...data}
           location={{ pathname: '/films', search: 'sort=Top%20Rated' }}
-          history={{ push: () => ('Hello') }}
-          receiveMainFilmInfo={() => ('Hello')}
         />
       </MemoryRouter>,
     );
@@ -191,8 +181,6 @@ describe('MovieElement', () => {
         <MovieElement
           {...data}
           location={{ pathname: '/films', search: 'sort=Top%20Rated' }}
-          history={{ push: () => ('Hello') }}
-          receiveMainFilmInfo={() => ('Hello')}
         />
       </MemoryRouter>,
     );
@@ -207,8 +195,6 @@ describe('MovieElement', () => {
         <MovieElement
           {...data}
           location={{ pathname: '/films', search: 'sort=Top%20Rated' }}
-          history={{ push: () => ('Hello') }}
-          receiveMainFilmInfo={() => ('Hello')}
         />
       </MemoryRouter>,
     );
@@ -222,88 +208,11 @@ describe('MovieElement', () => {
         <MovieElement
           {...data}
           location={{ pathname: '/films', search: 'sort=Top%20Rated' }}
-          history={{ push: () => ('Hello') }}
-          receiveMainFilmInfo={() => ('Hello')}
         />
       </MemoryRouter>,
     );
     output.root.findByProps({ className: 'descriptionFilmLayer_overlay_description_play circle_blue' }).props.onClick();
     output.root.findByProps({ className: 'descriptionFilmLayer_overlay_description_play circle_blue' }).props.onClick();
-    expect(output).toMatchSnapshot();
-  });
-
-  it('MovieElement -> from films ', () => {
-    const output = renderer.create(
-      <MemoryRouter initialEntries={['/films?sort=Top%20Rated']}>
-        <MovieElement
-          {...data}
-          location={{ pathname: '/films', search: 'sort=Top%20Rated' }}
-          history={{ push: () => ('Hello') }}
-          receiveMainFilmInfo={() => ('Hello')}
-        />
-      </MemoryRouter>,
-    );
-    output.root.findByProps({ className: 'moviesGrid_wrapper_MovieElement_ul_item_wrap' }).props.onClick();
-    expect(output).toMatchSnapshot();
-  });
-
-  it('MovieElement -> from search ', () => {
-    const output = renderer.create(
-      <MemoryRouter initialEntries={['/search?q=Test']}>
-        <MovieElement
-          {...data}
-          location={{ pathname: '/search', search: 'q=Test' }}
-          history={{ push: () => ('Hello') }}
-          receiveMainFilmInfo={() => ('Hello')}
-        />
-      </MemoryRouter>,
-    );
-    output.root.findByProps({ className: 'moviesGrid_wrapper_MovieElement_ul_item_wrap' }).props.onClick();
-    expect(output).toMatchSnapshot();
-  });
-
-  it('MovieElement -> from film ', () => {
-    const output = renderer.create(
-      <MemoryRouter initialEntries={['/film?filmId=278']}>
-        <MovieElement
-          {...data}
-          location={{ pathname: '/film', search: 'filmId=278' }}
-          history={{ push: () => ('Hello') }}
-          receiveMainFilmInfo={() => ('Hello')}
-        />
-      </MemoryRouter>,
-    );
-    output.root.findByProps({ className: 'moviesGrid_wrapper_MovieElement_ul_item_wrap' }).props.onClick();
-    expect(output).toMatchSnapshot();
-  });
-
-  it('MovieElement -> from index ', () => {
-    const output = renderer.create(
-      <MemoryRouter initialEntries={['/']}>
-        <MovieElement
-          {...data}
-          location={{ pathname: '/', search: '' }}
-          history={{ push: () => ('Hello') }}
-          receiveMainFilmInfo={() => ('Hello')}
-        />
-      </MemoryRouter>,
-    );
-    output.root.findByProps({ className: 'moviesGrid_wrapper_MovieElement_ul_item_wrap' }).props.onClick();
-    expect(output).toMatchSnapshot();
-  });
-
-  it('MovieElement -> from genres ', () => {
-    const output = renderer.create(
-      <MemoryRouter initialEntries={['/genres?genreName=Action&genreId=1']}>
-        <MovieElement
-          {...data}
-          location={{ pathname: '/genres', search: 'genreName=Action&genreId=1' }}
-          history={{ push: () => ('Hello') }}
-          receiveMainFilmInfo={() => ('Hello')}
-        />
-      </MemoryRouter>,
-    );
-    output.root.findByProps({ className: 'moviesGrid_wrapper_MovieElement_ul_item_wrap' }).props.onClick();
     expect(output).toMatchSnapshot();
   });
 });

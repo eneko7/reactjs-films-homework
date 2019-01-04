@@ -1,5 +1,7 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Renderer from 'react-test-renderer';
+import { MemoryRouter } from 'react-router';
 import Header from '../Header';
 
 jest.mock('../HeaderBottom', () => () => <div>test</div>);
@@ -50,14 +52,41 @@ const badData = {
 describe('Header', () => {
   it('render correctly ', () => {
     const component = Renderer.create(
-      <Header {...data} />,
+      <MemoryRouter initialEntries={['/film?filmId=278']}>
+        <Header {...data} location={{ pathname: '/film', search: 'filmId=278' }} receiveMainFilmInfo={() => ('Hello')} />
+      </MemoryRouter>,
     );
     expect(component).toMatchSnapshot();
   });
 
+  it('render correctly componentDidMount', () => {
+    const node = document.createElement('div');
+    const receiveMainFilmInfo = jest.fn();
+    ReactDOM.render(<Header {...data} location={{ pathname: '/film', search: '' }} receiveMainFilmInfo={receiveMainFilmInfo} />, node);
+    expect(receiveMainFilmInfo).toHaveBeenCalledTimes(0);
+  });
+
+  it('render correctly componentDidUpdate filmId !== filmId', () => {
+    const node = document.createElement('div');
+    const receiveMainFilmInfo = jest.fn();
+    ReactDOM.render(<Header {...data} location={{ pathname: '/film', search: 'filmId=278' }} receiveMainFilmInfo={receiveMainFilmInfo} />, node);
+    ReactDOM.render(<Header {...data} location={{ pathname: '/film', search: 'filmId=504589' }} receiveMainFilmInfo={receiveMainFilmInfo} />, node);
+    expect(receiveMainFilmInfo).toHaveBeenCalledTimes(2);
+  });
+
+  it('render correctly componentDidUpdate filmId === filmId', () => {
+    const node = document.createElement('div');
+    const receiveMainFilmInfo = jest.fn();
+    ReactDOM.render(<Header {...data} location={{ pathname: '/film', search: 'filmId=278' }} receiveMainFilmInfo={receiveMainFilmInfo} />, node);
+    ReactDOM.render(<Header {...data} location={{ pathname: '/film', search: 'filmId=278' }} receiveMainFilmInfo={receiveMainFilmInfo} />, node);
+    expect(receiveMainFilmInfo).toHaveBeenCalledTimes(1);
+  });
+
   it('render correctly ', () => {
     const component = Renderer.create(
-      <Header {...badData} />,
+      <MemoryRouter initialEntries={['/film?filmId=278']}>
+        <Header {...badData} location={{ pathname: '/film', search: 'filmId=278' }} receiveMainFilmInfo={() => ('Hello')} />
+      </MemoryRouter>,
     );
     expect(component).toMatchSnapshot();
   });

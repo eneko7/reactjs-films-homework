@@ -1,36 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App renders correctly 1`] = `
-<Switch>
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/films/:film"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/films"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/search"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/:sort"
-  />
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/genre"
-  />
-</Switch>
+<div
+  className="main_container"
+>
+  <withRouter(Connect(Header)) />
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/films"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/film"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/search"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/genres"
+    />
+    <Route
+      component={[Function]}
+      path="*"
+    />
+  </Switch>
+  <Footer />
+</div>
 `;

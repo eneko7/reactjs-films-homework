@@ -1,6 +1,7 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import configureMockStore from 'redux-mock-store';
+import { MemoryRouter } from 'react-router';
 import { Provider } from 'react-redux';
 
 import HeaderContainer from '../index';
@@ -18,7 +19,9 @@ describe('Header', () => {
   it('HeaderContainer.spec ', () => {
     TestRenderer.create(
       <Provider store={store}>
-        <HeaderContainer />
+        <MemoryRouter>
+          <HeaderContainer />
+        </MemoryRouter>
       </Provider>,
     );
     expect(HeaderContainer).toBeCalledTimes(1);

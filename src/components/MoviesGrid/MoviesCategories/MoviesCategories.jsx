@@ -71,9 +71,7 @@ class MoviesCategories extends React.PureComponent {
       fetchFilmsBySearch(q);
     }
     if (pathname === '/genres') {
-      this.setState(() => ({
-        activeCategory: 'Genres',
-      }));
+      this.fetchFilmsByCategory('Genres');
     }
     if (pathname === '/film') {
       if (category === '' || (!category && !sort)) {
@@ -85,20 +83,18 @@ class MoviesCategories extends React.PureComponent {
         fetchFilmsBySearch(q, filmId);
       }
       if (category === 'genres') {
-        this.setState(() => ({
-          activeCategory: 'Genres',
-        }));
+        this.fetchFilmsByCategory('Genres');
         fetchFilmsByGenre(genreId, filmId);
       }
-      if (category === 'categories' && sort === 'Trending') {
+      if (sort === 'Trending') {
         this.fetchFilmsByCategory(sort);
         fetchFilms(urlPopularFilms, filmId);
       }
-      if (category === 'categories' && sort === 'Top Rated') {
+      if (sort === 'Top Rated') {
         this.fetchFilmsByCategory(sort);
         fetchFilms(urlTopRatedFilms, filmId);
       }
-      if (category === 'categories' && sort === 'Coming Soon') {
+      if (sort === 'Coming Soon') {
         this.fetchFilmsByCategory(sort);
         fetchFilms(urlComingSoonFilms, filmId);
       }

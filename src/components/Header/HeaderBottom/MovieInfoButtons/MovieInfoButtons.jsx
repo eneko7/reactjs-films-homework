@@ -39,7 +39,7 @@ class MovieInfoButtons extends React.Component {
     const active = isOpen ? `${style.active}` : '';
     return (
       <React.Fragment>
-        <div className={style.bottom_right}>
+        <div className={`${active} ${style.bottom_right}`}>
           <div className={`${active} ${style.bottom_right_text_descr}`}>
             <p className={style.bottom_right_text_descr_p}>
               {annotation}

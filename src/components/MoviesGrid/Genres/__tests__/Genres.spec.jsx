@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import TestRenderer from 'react-test-renderer';
 import configureMockStore from 'redux-mock-store';
 import { MemoryRouter } from 'react-router';
@@ -9,6 +10,7 @@ import getGenresMock from '../../../../modules/mocks/getGenresMock';
 import getFilmsMock from '../../../../modules/mocks/getFilmsMock';
 import * as actionsGenres from '../../../../modules/genres/genresActions';
 import Genres from '../index';
+import GenresComponent from '../Genres';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -146,5 +148,64 @@ describe('Genres logic', () => {
     return store.dispatch(actionsGenres.fetchGenres()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
     });
+  });
+
+  it('render correctly componentDidUpdate', () => {
+    const node = document.createElement('div');
+    const data = {
+      fetchGenres: () => {},
+      fetchChange: () => {},
+      fetchFilmsByGenre: () => {},
+      genres: [
+        {
+          id: 1,
+          name: 'adventure',
+        },
+        {
+          id: 2,
+          name: 'action',
+        },
+        {
+          id: 3,
+          name: 'drama',
+        },
+      ],
+      title: 'Comedy',
+      activeCategory: 'Genres',
+    };
+    const instance = React.createRef();
+    ReactDOM.render(<MemoryRouter><GenresComponent ref={instance} location={{ pathname: '/genres', search: 'genreName=Comedy&genreId=35' }} {...data} /></MemoryRouter>, node);
+    const changeTitle = jest.spyOn(instance.current, 'changeTitle');
+    ReactDOM.render(<MemoryRouter><GenresComponent location={{ pathname: '/genres', search: 'genreName=Documentary&genreId=99' }} {...data} /></MemoryRouter>, node);
+    expect(changeTitle).toHaveBeenCalledTimes(1);
+  });
+  it('render correctly componentDidUpdate', () => {
+    const node = document.createElement('div');
+    const data = {
+      fetchGenres: () => {},
+      fetchChange: () => {},
+      fetchFilmsByGenre: () => {},
+      genres: [
+        {
+          id: 1,
+          name: 'adventure',
+        },
+        {
+          id: 2,
+          name: 'action',
+        },
+        {
+          id: 3,
+          name: 'drama',
+        },
+      ],
+      title: 'Comedy',
+      activeCategory: 'Genres',
+    };
+    const instance = React.createRef();
+    ReactDOM.render(<MemoryRouter><GenresComponent ref={instance} location={{ pathname: '/genres', search: 'genreName=Comedy&genreId=35' }} {...data} /></MemoryRouter>, node);
+    const changeTitle = jest.spyOn(instance.current, 'changeTitle');
+    ReactDOM.render(<MemoryRouter><GenresComponent location={{ pathname: '/films', search: 'sort=Top%20Rated' }} {...data} /></MemoryRouter>, node);
+    expect(changeTitle).toHaveBeenCalledTimes(0);
   });
 });

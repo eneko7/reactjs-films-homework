@@ -26,6 +26,17 @@ class Genres extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    const { location: { search, pathname } } = this.props;
+    const parsed = queryString.parse(search);
+    const { genreId, genreName } = parsed;
+    if (prevProps.location.search !== search) {
+      if (pathname === '/genres' || pathname === 'film') {
+        this.changeTitle(genreName, genreId);
+      }
+    }
+  }
+
   openGenresClick() {
     this.setState(prevState => ({
       isOpen: !prevState.isOpen,

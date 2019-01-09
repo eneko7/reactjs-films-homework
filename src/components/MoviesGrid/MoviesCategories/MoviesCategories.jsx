@@ -17,6 +17,7 @@ class MoviesCategories extends React.PureComponent {
       activeCategory: 'Trending',
     };
     this.fetchFilmsByCategory = this.fetchFilmsByCategory.bind(this);
+    this.loadRightGrid = this.loadRightGrid.bind(this);
     this.categories = [
       {
         route: '/films?sort=Trending',
@@ -43,6 +44,19 @@ class MoviesCategories extends React.PureComponent {
   }
 
   componentDidMount() {
+    this.loadRightGrid();
+  }
+
+  componentDidUpdate(prevProps) {
+    const {
+      location: { search },
+    } = this.props;
+    if (prevProps.location.search !== search) {
+      this.loadRightGrid();
+    }
+  }
+
+  loadRightGrid() {
     const {
       location: { search, pathname },
       pushNavigationLink,

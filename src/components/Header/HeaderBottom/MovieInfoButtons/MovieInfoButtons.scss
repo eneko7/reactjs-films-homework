@@ -38,6 +38,7 @@
       width: 150px;
       height: 40px;
       border-radius: 6px;
+      border-style: solid;
       cursor: pointer;
     }
 
@@ -57,14 +58,19 @@
     .bottom_right_buttons_box_button_view:hover {
       background: #3bb3df;
       border-style: solid;
+      border: none;
     }
   }
 
   .bottom_right_buttons_box.active {
     position: relative;
-    border-style: none;
+    border-style: solid;
     top: -4px;
   }
+}
+
+.bottom_right.active {
+  margin-top: 154px;
 }
 
 @media (min-width: 767px) and (max-width: 1450px) {

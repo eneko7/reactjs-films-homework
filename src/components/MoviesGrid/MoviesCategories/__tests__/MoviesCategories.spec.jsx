@@ -1,10 +1,12 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { MemoryRouter } from 'react-router';
 import TestRenderer from 'react-test-renderer';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import MoviesCategories from '../index';
+import MoviesCategoriesComponent from '../MoviesCategories';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -42,7 +44,7 @@ describe('MoviesCategories Snapshot', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
         <MemoryRouter initialEntries={['/']}>
-          <MoviesCategories fetchFilmsBySearch={() => ('Hello!')} />
+          <MoviesCategories />
         </MemoryRouter>
       </Provider>,
     );
@@ -213,7 +215,7 @@ describe('MoviesCategories Snapshot', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
         <MemoryRouter {...location}>
-          <MoviesCategories fetchFilmsBySearch={() => ('Hello!')} />
+          <MoviesCategories />
         </MemoryRouter>
       </Provider>,
     );
@@ -226,7 +228,7 @@ describe('MoviesCategories Snapshot', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
         <MemoryRouter {...location}>
-          <MoviesCategories fetchFilmsBySearch={() => ('Hello!')} />
+          <MoviesCategories />
         </MemoryRouter>
       </Provider>,
     );
@@ -236,5 +238,21 @@ describe('MoviesCategories Snapshot', () => {
       activeCategory: el,
     }));
     expect(component).toMatchSnapshot();
+  });
+
+  it('render correctly componentDidUpdate', () => {
+    const node = document.createElement('div');
+    const data = {
+      fetchFilms: () => {},
+      pushNavigationLink: () => {},
+      fetchFilmsBySearch: () => {},
+      fetchFilmsByGenre: () => {},
+      receiveMainFilmInfo: () => {},
+    };
+    const instance = React.createRef();
+    ReactDOM.render(<MemoryRouter><MoviesCategoriesComponent ref={instance} location={{ pathname: '/film', search: 'filmId=424783&sort=Trending' }} {...data} /></MemoryRouter>, node);
+    const loadRightGrid = jest.spyOn(instance.current, 'loadRightGrid');
+    ReactDOM.render(<MemoryRouter><MoviesCategoriesComponent location={{ pathname: '/film', search: 'filmId=480530&sort=Top%20Rated' }} {...data} /></MemoryRouter>, node);
+    expect(loadRightGrid).toHaveBeenCalledTimes(1);
   });
 });

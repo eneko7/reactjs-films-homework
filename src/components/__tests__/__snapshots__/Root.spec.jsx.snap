@@ -4,8 +4,38 @@ exports[`Root renders correctly 1`] = `
 <div
   className="main_container"
 >
-  <Connect(Header) />
-  <Connect(MoviesGrid) />
+  <withRouter(Connect(Header)) />
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/films"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/film"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/search"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/genres"
+    />
+    <Route
+      component={[Function]}
+      path="*"
+    />
+  </Switch>
   <Footer />
 </div>
 `;

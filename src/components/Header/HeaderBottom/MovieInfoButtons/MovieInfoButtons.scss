@@ -38,6 +38,7 @@
       width: 150px;
       height: 40px;
       border-radius: 6px;
+      border-style: solid;
       cursor: pointer;
     }
 
@@ -47,13 +48,11 @@
 
     .bottom_right_buttons_box_button_watch {
       background-color: #3bb3df;
-      border-style: solid;
-      border: none;
+      border-style: none;
     }
 
     .bottom_right_buttons_box_button_view {
       background: none;
-      border-style: solid;
     }
 
     .bottom_right_buttons_box_button_view:hover {
@@ -65,8 +64,36 @@
 
   .bottom_right_buttons_box.active {
     position: relative;
-    border-style: none;
+    border-style: solid;
     top: -4px;
+  }
+}
+
+.bottom_right.active {
+  margin-top: 154px;
+}
+
+@media (min-width: 767px) and (max-width: 1450px) {
+  .bottom_right {
+    .bottom_right_buttons_box {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      top: inherit;
+      margin-right: 0;
+
+      .bottom_right_buttons_box_button_watch {
+        margin-right: 70px;
+      }
+    }
+
+    .bottom_right_text_descr.active {
+      left: 10px;
+    }
+
+    .bottom_right_buttons_box.active {
+      top: 0;
+    }
   }
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import TestRenderer from 'react-test-renderer';
-import moxios from 'moxios';
+import { MemoryRouter } from 'react-router';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
@@ -11,7 +11,7 @@ import mockGenres from '../../../modules/mocks/getGenresMock';
 import * as filmsActions from '../../../modules/films/filmsActions';
 
 jest.mock('../Genres', () => () => 'Genres');
-
+jest.mock('../MoviesCategories', () => () => 'MoviesCategories');
 const shallow = new ShallowRenderer();
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -33,12 +33,13 @@ const store = mockStore({
     errorFilm: false,
   },
 });
-
 describe('MoviesList Snapshot', () => {
   test('snapshot', () => {
     const component = shallow.render(
       <Provider store={store}>
-        <MoviesGrid fetchFilmsByGenre={() => ('Hello')} />
+        <MemoryRouter>
+          <MoviesGrid fetchFilmsByGenre={() => ('Hello')} fetchFilmsBySearch={() => ('hello')} />
+        </MemoryRouter>
       </Provider>,
     );
     expect(component).toMatchSnapshot();
@@ -50,6 +51,10 @@ jest.mock('../../../modules/films/filmsActions',
     fetchGenres: jest.fn(() => ({ type: 'FETCH_GENRES_REQUEST' })),
     fetchFilmsPopular: jest.fn(() => ({ type: 'FETCH_FILMS_REQUEST' })),
   }));
+jest.mock('../../../modules/navlinks/navlinksActions',
+  () => ({
+    pushNavigationLink: jest.fn(() => ({ type: 'PUSH_NAVIGATION_LINK' })),
+  }));
 
 describe('MoviesGrid logics', () => {
   afterEach(() => {
@@ -58,25 +63,6 @@ describe('MoviesGrid logics', () => {
 
   afterAll(() => {
     jest.resetAllMocks();
-  });
-  test('dispatch genres and films loading after componentDidMount', (done) => {
-    TestRenderer.create(
-      <Provider store={store}>
-        <MoviesGrid />
-      </Provider>,
-    );
-    moxios.stubRequest(/api.themoviedb.org/, {
-      status: 200,
-      response: { genres: mockGenres },
-    });
-    const expectedActions = [
-      { type: 'FETCH_FILMS_REQUEST' },
-    ];
-
-    moxios.wait(() => {
-      expect(store.getActions()).toEqual(expectedActions);
-      done();
-    });
   });
   test('function for fetch next films should be called after scrolling', () => {
     const eventMap = {
@@ -99,7 +85,9 @@ describe('MoviesGrid logics', () => {
     });
     TestRenderer.create(
       <Provider store={store}>
-        <MoviesGrid />
+        <MemoryRouter>
+          <MoviesGrid fetchFilmsByGenre={() => ('Hello')} fetchFilmsBySearch={() => ('hello')} />
+        </MemoryRouter>
       </Provider>,
     );
     eventMap.scroll();
@@ -144,7 +132,9 @@ describe('MoviesGrid logics', () => {
     });
     TestRenderer.create(
       <Provider store={store2}>
-        <MoviesGrid />
+        <MemoryRouter>
+          <MoviesGrid fetchFilmsByGenre={() => ('Hello')} fetchFilmsBySearch={() => ('hello')} />
+        </MemoryRouter>
       </Provider>,
     );
     eventMap.scroll();
@@ -189,7 +179,56 @@ describe('MoviesGrid logics', () => {
     });
     TestRenderer.create(
       <Provider store={store3}>
-        <MoviesGrid />
+        <MemoryRouter>
+          <MoviesGrid fetchFilmsByGenre={() => ('Hello')} fetchFilmsBySearch={() => ('hello')} />
+        </MemoryRouter>
+      </Provider>,
+    );
+    eventMap.scroll();
+    expect(filmsActions.fetchNextFilms).not.toBeCalled();
+  });
+  test("function for fetch next films shouldn't be called when films are fetching", () => {
+    const store3 = mockStore({
+      films: {
+        allFilms: [],
+        isFetchingFilms: true,
+      },
+      genres: {
+        allGenres: mockGenres.genres,
+        lastGenreID: 0,
+      },
+      film: {
+        filmTrailer: 'trailer',
+        isFetchingFilm: true,
+        errorFilm: false,
+      },
+      navlinks: {
+        clickedLink: 'Trending',
+      },
+    });
+    const eventMap = {
+      scroll: null,
+    };
+    global.document.addEventListener = jest.fn((event, cb) => {
+      eventMap[event] = cb;
+    });
+    Object.defineProperty(global.window, 'innerHeight', {
+      writable: true,
+      value: 1000,
+    });
+    Object.defineProperty(global.window, 'pageYOffset', {
+      writable: true,
+      value: 1000,
+    });
+    Object.defineProperty(global.document.body, 'offsetHeight', {
+      writable: true,
+      value: 1,
+    });
+    TestRenderer.create(
+      <Provider store={store3}>
+        <MemoryRouter>
+          <MoviesGrid fetchFilmsByGenre={() => ('Hello')} fetchFilmsBySearch={() => ('hello')} />
+        </MemoryRouter>
       </Provider>,
     );
     eventMap.scroll();
@@ -198,7 +237,9 @@ describe('MoviesGrid logics', () => {
   test('lifecycle method should have been called', () => {
     const component = TestRenderer.create(
       <Provider store={store}>
-        <MoviesGrid />
+        <MemoryRouter>
+          <MoviesGrid fetchFilmsByGenre={() => ('Hello')} fetchFilmsBySearch={() => ('hello')} />
+        </MemoryRouter>
       </Provider>,
     );
     component.unmount();

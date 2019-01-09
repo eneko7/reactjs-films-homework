@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import queryString from 'query-string';
 import style from './MovieElement.scss';
 import ModalWindowFilmContainer from './ModalWindowFilm/ModalWindowFilmContainer';
 
 const errorImg = '../../../images/error_video.jpg';
 
-class MovieElement extends React.Component {
+class MovieElement extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,14 +30,14 @@ class MovieElement extends React.Component {
     }));
     const { isShownFilm } = this.state;
     if (isShownFilm) {
-      global.document.getElementsByTagName('body')[0].style.overflow = 'auto';
+      document.getElementsByTagName('body')[0].style.overflow = 'auto';
     } else {
-      global.document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+      document.getElementsByTagName('body')[0].style.overflow = 'hidden';
     }
   }
 
   render() {
-    const { film, genresList } = this.props;
+    const { film, genresList, location: { search } } = this.props;
     const { isShownInfo, isShownFilm } = this.state;
     let title = '';
     if (film.title.length > 15) {
@@ -81,8 +83,11 @@ class MovieElement extends React.Component {
         backgroundImage: `url(${errorImg})`,
       };
     }
+    const parsed = queryString.parse(search);
+    parsed.filmId = film.id;
+    const newSearch = queryString.stringify(parsed);
     return (
-      <div className={`${style.moviesGrid_wrapper_MovieElement_ul_item_wrap}`}>
+      <Link to={`/film?${newSearch}`} className={`${style.moviesGrid_wrapper_MovieElement_ul_item_wrap}`}>
         <div style={topPicture} className={style.moviesGrid_wrapper_MovieElement_top_picture} />
         <div className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description}>
           <div className={style.moviesGrid_wrapper_MovieElement_ul_item_wrap_description_n_r}>
@@ -152,7 +157,7 @@ class MovieElement extends React.Component {
           ? <ModalWindowFilmContainer onChange={this.watchFilm} filmId={film.id} />
           : ''
         }
-      </div>
+      </Link>
     );
   }
 }
@@ -167,6 +172,11 @@ MovieElement.propTypes = {
     ]),
   ).isRequired,
   genresList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  location: PropTypes.shape({
+    params: PropTypes.object,
+    pathname: PropTypes.string,
+    search: PropTypes.string,
+  }).isRequired,
 };
 
 export default MovieElement;

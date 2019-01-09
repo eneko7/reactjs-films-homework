@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import Genres from './Genres';
 import { fetchGenres } from '../../../modules/genres/genresActions';
 import { getGenres, getGenresId } from '../../../modules/genres/genresSelectors';
@@ -13,4 +14,4 @@ const mapDispatchToProps = {
   fetchGenres,
   fetchFilmsByGenre,
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Genres);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Genres));

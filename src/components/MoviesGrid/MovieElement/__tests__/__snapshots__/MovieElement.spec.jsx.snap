@@ -1,8 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MovieElement MovieElement -> Click (close film)  1`] = `
-<div
+<a
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  href="/film?filmId=338952&sort=Top%20Rated"
+  onClick={[Function]}
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -152,12 +154,14 @@ exports[`MovieElement MovieElement -> Click (close film)  1`] = `
     </div>
   </div>
   
-</div>
+</a>
 `;
 
 exports[`MovieElement MovieElement -> Click (close info)  1`] = `
-<div
+<a
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  href="/film?filmId=338952&sort=Top%20Rated"
+  onClick={[Function]}
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -307,12 +311,14 @@ exports[`MovieElement MovieElement -> Click (close info)  1`] = `
     </div>
   </div>
   
-</div>
+</a>
 `;
 
 exports[`MovieElement MovieElement -> Click (show info)  1`] = `
-<div
+<a
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  href="/film?filmId=338952&sort=Top%20Rated"
+  onClick={[Function]}
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -462,12 +468,14 @@ exports[`MovieElement MovieElement -> Click (show info)  1`] = `
     </div>
   </div>
   
-</div>
+</a>
 `;
 
 exports[`MovieElement MovieElement -> Click (watch film)  1`] = `
-<div
+<a
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  href="/film?filmId=338952&sort=Top%20Rated"
+  onClick={[Function]}
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -619,12 +627,14 @@ exports[`MovieElement MovieElement -> Click (watch film)  1`] = `
   <div>
     test
   </div>
-</div>
+</a>
 `;
 
 exports[`MovieElement renders correctly 1`] = `
-<div
+<a
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  href="/film?filmId=338952&sort=Top%20Rated"
+  onClick={[Function]}
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -774,12 +784,14 @@ exports[`MovieElement renders correctly 1`] = `
     </div>
   </div>
   
-</div>
+</a>
 `;
 
 exports[`MovieElement renders correctly without all pictures 1`] = `
-<div
+<a
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  href="/film?filmId=338952&sort=Top%20Rated"
+  onClick={[Function]}
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -929,12 +941,14 @@ exports[`MovieElement renders correctly without all pictures 1`] = `
     </div>
   </div>
   
-</div>
+</a>
 `;
 
 exports[`MovieElement renders correctly without poster 1`] = `
-<div
+<a
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  href="/film?filmId=338952&sort=Top%20Rated"
+  onClick={[Function]}
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -1084,12 +1098,14 @@ exports[`MovieElement renders correctly without poster 1`] = `
     </div>
   </div>
   
-</div>
+</a>
 `;
 
 exports[`MovieElement renders correctly without top picture 1`] = `
-<div
+<a
   className="moviesGrid_wrapper_MovieElement_ul_item_wrap"
+  href="/film?filmId=338952&sort=Top%20Rated"
+  onClick={[Function]}
 >
   <div
     className="moviesGrid_wrapper_MovieElement_top_picture"
@@ -1239,5 +1255,5 @@ exports[`MovieElement renders correctly without top picture 1`] = `
     </div>
   </div>
   
-</div>
+</a>
 `;

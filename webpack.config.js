@@ -1,9 +1,10 @@
-// eslint-disable-next-line no-console
+/* eslint-disable global-require */
+/* eslint-disable no-console */
 console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'production') {
-  // eslint-disable-next-line global-require
+  console.log(`prod + ${process.env.NODE_ENV}`);
   module.exports = require('./config/webpack.production.config');
 } else {
-  // eslint-disable-next-line global-require
+  console.log(`dev + ${process.env.NODE_ENV}`);
   module.exports = require('./config/webpack.development.config');
 }

@@ -1,0 +1,1 @@
+web: npm i --production&&npm run build&&npm run prod

@@ -1,17 +1,15 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import configureMockStore from 'redux-mock-store';
+import { MemoryRouter } from 'react-router';
 import { Provider } from 'react-redux';
 
 import HeaderContainer from '../index';
 
 const mockStore = configureMockStore();
 const store = mockStore({
-  films: {
-    allFilms: ['filmA', 'filmB'],
-  },
-  genres: {
-    allGenres: ['genreA', 'genreB'],
+  film: {
+    selectedFilm: ['prop1', 'prop12'],
   },
 });
 
@@ -21,11 +19,12 @@ describe('Header', () => {
   it('HeaderContainer.spec ', () => {
     TestRenderer.create(
       <Provider store={store}>
-        <HeaderContainer />
+        <MemoryRouter>
+          <HeaderContainer />
+        </MemoryRouter>
       </Provider>,
     );
     expect(HeaderContainer).toBeCalledTimes(1);
-    expect(HeaderContainer.mock.calls[0][0]).toHaveProperty('films', ['filmA', 'filmB']);
-    expect(HeaderContainer.mock.calls[0][0]).toHaveProperty('genres', ['genreA', 'genreB']);
+    expect(HeaderContainer.mock.calls[0][0]).toHaveProperty('selectedFilm', ['prop1', 'prop12']);
   });
 });

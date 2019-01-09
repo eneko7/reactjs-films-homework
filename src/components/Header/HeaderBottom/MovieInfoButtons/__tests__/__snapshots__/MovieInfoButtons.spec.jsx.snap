@@ -2,7 +2,41 @@
 
 exports[`MovieInfoButtons MovieInfoButtons -> Click (close film)  1`] = `
 <div
-  className="bottom_right"
+  className=" bottom_right"
+>
+  <div
+    className=" bottom_right_text_descr"
+  >
+    <p
+      className="bottom_right_text_descr_p"
+    >
+      film description
+    </p>
+  </div>
+  <div
+    className=" bottom_right_buttons_box"
+  >
+    <button
+      className="bottom_right_buttons_box_button_watch bottom_right_buttons_box_button"
+      onClick={[Function]}
+      type="button"
+    >
+      Watch Now
+    </button>
+    <button
+      className="bottom_right_buttons_box_button_view bottom_right_buttons_box_button"
+      onClick={[Function]}
+      type="button"
+    >
+      View Info
+    </button>
+  </div>
+</div>
+`;
+
+exports[`MovieInfoButtons MovieInfoButtons -> Click (close info)  1`] = `
+<div
+  className=" bottom_right"
 >
   <div
     className=" bottom_right_text_descr"
@@ -36,7 +70,7 @@ exports[`MovieInfoButtons MovieInfoButtons -> Click (close film)  1`] = `
 
 exports[`MovieInfoButtons MovieInfoButtons -> Click (show info)  1`] = `
 <div
-  className="bottom_right"
+  className="active bottom_right"
 >
   <div
     className="active bottom_right_text_descr"
@@ -71,7 +105,7 @@ exports[`MovieInfoButtons MovieInfoButtons -> Click (show info)  1`] = `
 exports[`MovieInfoButtons MovieInfoButtons -> Click (watch film)  1`] = `
 Array [
   <div
-    className="bottom_right"
+    className=" bottom_right"
   >
     <div
       className=" bottom_right_text_descr"
@@ -110,7 +144,7 @@ Array [
 exports[`MovieInfoButtons renders correctly 1`] = `
 <React.Fragment>
   <div
-    className="bottom_right"
+    className=" bottom_right"
   >
     <div
       className=" bottom_right_text_descr"

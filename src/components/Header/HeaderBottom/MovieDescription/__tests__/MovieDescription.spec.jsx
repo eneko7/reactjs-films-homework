@@ -5,7 +5,20 @@ import MovieDescription from '../index';
 
 const data = {
   filmName: 'name',
-  filmGenres: ['genre 1', 'genre 2', 'genre 3'],
+  filmGenres: [
+    {
+      name: 'Action',
+      id: 28,
+    },
+    {
+      name: 'Animation',
+      id: 16,
+    },
+    {
+      name: 'Comedy',
+      id: 35,
+    },
+  ],
 };
 
 describe('MovieDescription', () => {

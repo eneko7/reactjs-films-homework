@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Genres logic renders genres dropdown chose 1`] = `
+exports[`Genres logic renders genres dropdown chose 1 1`] = `
 Array [
   <button
     className="moviesGrid_categories_item_button"
@@ -15,48 +15,83 @@ Array [
     type="button"
   >
     <span>
-      adventure
+      Genres
     </span>
     <span
-      className=" moviesGrid_categories_item_span_arrow"
+      className="active moviesGrid_categories_item_span_arrow"
     />
   </button>,
   <div
-    className=" moviesGrid_categories_item_block"
+    className="active moviesGrid_categories_item_block"
     id="genres_list"
   >
-    <button
-      className="moviesGrid_categories_item_block_button"
-      elem="adventure"
-      id="adventure"
+    <a
+      href="/genres?genreName=adventure&genreId=1"
       onClick={[Function]}
-      type="button"
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
     >
-      adventure
-    </button>
-    <button
-      className="moviesGrid_categories_item_block_button"
-      elem="action"
-      id="action"
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="adventure"
+        id="adventure"
+        onClick={[Function]}
+        type="button"
+      >
+        adventure
+      </button>
+    </a>
+    <a
+      href="/genres?genreName=action&genreId=2"
       onClick={[Function]}
-      type="button"
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
     >
-      action
-    </button>
-    <button
-      className="moviesGrid_categories_item_block_button"
-      elem="drama"
-      id="drama"
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="action"
+        id="action"
+        onClick={[Function]}
+        type="button"
+      >
+        action
+      </button>
+    </a>
+    <a
+      href="/genres?genreName=drama&genreId=3"
       onClick={[Function]}
-      type="button"
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
     >
-      drama
-    </button>
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="drama"
+        id="drama"
+        onClick={[Function]}
+        type="button"
+      >
+        drama
+      </button>
+    </a>
   </div>,
+  <button
+    className="active moviesGrid_categories_background_wraper"
+    onClick={[Function]}
+    type="button"
+  />,
 ]
 `;
 
-exports[`Genres logic renders genres dropdown chose 2`] = `
+exports[`Genres logic renders genres dropdown chose 2 1`] = `
 Array [
   <button
     className="moviesGrid_categories_item_button"
@@ -71,44 +106,79 @@ Array [
     type="button"
   >
     <span>
-      adventure
+      Genres
     </span>
     <span
-      className=" moviesGrid_categories_item_span_arrow"
+      className="active moviesGrid_categories_item_span_arrow"
     />
   </button>,
   <div
-    className=" moviesGrid_categories_item_block"
+    className="active moviesGrid_categories_item_block"
     id="genres_list"
   >
-    <button
-      className="moviesGrid_categories_item_block_button"
-      elem="adventure"
-      id="adventure"
+    <a
+      href="/genres?genreName=adventure&genreId=1"
       onClick={[Function]}
-      type="button"
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
     >
-      adventure
-    </button>
-    <button
-      className="moviesGrid_categories_item_block_button"
-      elem="action"
-      id="action"
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="adventure"
+        id="adventure"
+        onClick={[Function]}
+        type="button"
+      >
+        adventure
+      </button>
+    </a>
+    <a
+      href="/genres?genreName=action&genreId=2"
       onClick={[Function]}
-      type="button"
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
     >
-      action
-    </button>
-    <button
-      className="moviesGrid_categories_item_block_button"
-      elem="drama"
-      id="drama"
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="action"
+        id="action"
+        onClick={[Function]}
+        type="button"
+      >
+        action
+      </button>
+    </a>
+    <a
+      href="/genres?genreName=drama&genreId=3"
       onClick={[Function]}
-      type="button"
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
     >
-      drama
-    </button>
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="drama"
+        id="drama"
+        onClick={[Function]}
+        type="button"
+      >
+        drama
+      </button>
+    </a>
   </div>,
+  <button
+    className="active moviesGrid_categories_background_wraper"
+    onClick={[Function]}
+    type="button"
+  />,
 ]
 `;
 
@@ -137,38 +207,164 @@ Array [
     className=" moviesGrid_categories_item_block"
     id="genres_list"
   >
-    <button
-      className="moviesGrid_categories_item_block_button"
-      elem="adventure"
-      id="adventure"
+    <a
+      href="/genres?genreName=adventure&genreId=1"
       onClick={[Function]}
-      type="button"
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
     >
-      adventure
-    </button>
-    <button
-      className="moviesGrid_categories_item_block_button"
-      elem="action"
-      id="action"
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="adventure"
+        id="adventure"
+        onClick={[Function]}
+        type="button"
+      >
+        adventure
+      </button>
+    </a>
+    <a
+      href="/genres?genreName=action&genreId=2"
       onClick={[Function]}
-      type="button"
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
     >
-      action
-    </button>
-    <button
-      className="moviesGrid_categories_item_block_button"
-      elem="drama"
-      id="drama"
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="action"
+        id="action"
+        onClick={[Function]}
+        type="button"
+      >
+        action
+      </button>
+    </a>
+    <a
+      href="/genres?genreName=drama&genreId=3"
       onClick={[Function]}
-      type="button"
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
     >
-      drama
-    </button>
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="drama"
+        id="drama"
+        onClick={[Function]}
+        type="button"
+      >
+        drama
+      </button>
+    </a>
   </div>,
+  <button
+    className=" moviesGrid_categories_background_wraper"
+    onClick={[Function]}
+    type="button"
+  />,
 ]
 `;
 
 exports[`Genres logic renders genres dropdown open 1`] = `
+Array [
+  <button
+    className="moviesGrid_categories_item_button"
+    data-filter="Genres"
+    id="Genres"
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottom": "4px solid",
+      }
+    }
+    type="button"
+  >
+    <span>
+      Genres
+    </span>
+    <span
+      className="active moviesGrid_categories_item_span_arrow"
+    />
+  </button>,
+  <div
+    className="active moviesGrid_categories_item_block"
+    id="genres_list"
+  >
+    <a
+      href="/genres?genreName=adventure&genreId=1"
+      onClick={[Function]}
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="adventure"
+        id="adventure"
+        onClick={[Function]}
+        type="button"
+      >
+        adventure
+      </button>
+    </a>
+    <a
+      href="/genres?genreName=action&genreId=2"
+      onClick={[Function]}
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="action"
+        id="action"
+        onClick={[Function]}
+        type="button"
+      >
+        action
+      </button>
+    </a>
+    <a
+      href="/genres?genreName=drama&genreId=3"
+      onClick={[Function]}
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="drama"
+        id="drama"
+        onClick={[Function]}
+        type="button"
+      >
+        drama
+      </button>
+    </a>
+  </div>,
+  <button
+    className="active moviesGrid_categories_background_wraper"
+    onClick={[Function]}
+    type="button"
+  />,
+]
+`;
+
+exports[`GenresNavLink Snapshot renders 1`] = `
 Array [
   <button
     className="moviesGrid_categories_item_button"
@@ -186,56 +382,166 @@ Array [
       Genres
     </span>
     <span
-      className="active moviesGrid_categories_item_span_arrow"
+      className=" moviesGrid_categories_item_span_arrow"
     />
   </button>,
   <div
-    className="active moviesGrid_categories_item_block"
+    className=" moviesGrid_categories_item_block"
     id="genres_list"
   >
-    <button
-      className="moviesGrid_categories_item_block_button"
-      elem="adventure"
-      id="adventure"
+    <a
+      href="/genres?genreName=adventure&genreId=1"
       onClick={[Function]}
-      type="button"
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
     >
-      adventure
-    </button>
-    <button
-      className="moviesGrid_categories_item_block_button"
-      elem="action"
-      id="action"
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="adventure"
+        id="adventure"
+        onClick={[Function]}
+        type="button"
+      >
+        adventure
+      </button>
+    </a>
+    <a
+      href="/genres?genreName=action&genreId=2"
       onClick={[Function]}
-      type="button"
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
     >
-      action
-    </button>
-    <button
-      className="moviesGrid_categories_item_block_button"
-      elem="drama"
-      id="drama"
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="action"
+        id="action"
+        onClick={[Function]}
+        type="button"
+      >
+        action
+      </button>
+    </a>
+    <a
+      href="/genres?genreName=drama&genreId=3"
       onClick={[Function]}
-      type="button"
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
     >
-      drama
-    </button>
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="drama"
+        id="drama"
+        onClick={[Function]}
+        type="button"
+      >
+        drama
+      </button>
+    </a>
   </div>,
+  <button
+    className=" moviesGrid_categories_background_wraper"
+    onClick={[Function]}
+    type="button"
+  />,
 ]
 `;
 
-exports[`GenresNavLink Snapshot renders 1`] = `
-<Connect(Genres)
-  activeCategory="Trending"
-  fetchChange={[Function]}
-  title="Genres"
-/>
-`;
-
 exports[`GenresNavLink Snapshot renders 2`] = `
-<Connect(Genres)
-  activeCategory="Genres"
-  fetchChange={[Function]}
-  title="Genres"
-/>
+Array [
+  <button
+    className="moviesGrid_categories_item_button"
+    data-filter="Genres"
+    id="Genres"
+    onClick={[Function]}
+    style={
+      Object {
+        "borderBottom": "4px solid",
+      }
+    }
+    type="button"
+  >
+    <span>
+      Action
+    </span>
+    <span
+      className=" moviesGrid_categories_item_span_arrow"
+    />
+  </button>,
+  <div
+    className=" moviesGrid_categories_item_block"
+    id="genres_list"
+  >
+    <a
+      href="/genres?genreName=adventure&genreId=1"
+      onClick={[Function]}
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="adventure"
+        id="adventure"
+        onClick={[Function]}
+        type="button"
+      >
+        adventure
+      </button>
+    </a>
+    <a
+      href="/genres?genreName=action&genreId=2"
+      onClick={[Function]}
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="action"
+        id="action"
+        onClick={[Function]}
+        type="button"
+      >
+        action
+      </button>
+    </a>
+    <a
+      href="/genres?genreName=drama&genreId=3"
+      onClick={[Function]}
+      style={
+        Object {
+          "textDecoration": "none",
+        }
+      }
+    >
+      <button
+        className="moviesGrid_categories_item_block_button"
+        elem="drama"
+        id="drama"
+        onClick={[Function]}
+        type="button"
+      >
+        drama
+      </button>
+    </a>
+  </div>,
+  <button
+    className=" moviesGrid_categories_background_wraper"
+    onClick={[Function]}
+    type="button"
+  />,
+]
 `;

@@ -7,39 +7,43 @@ import style from './HeaderBottom.scss';
 
 const HeaderBottom = (props) => {
   const {
-    film, genres,
+    selectedFilm, duration,
   } = props;
-  if (Object.keys(film).length !== 0) {
-    const genresCol = [];
-    const genresOfFilm = film.genre_ids;
-    genresOfFilm.forEach((elem) => {
-      genres.forEach((el) => {
-        if (elem === el.id) genresCol.push(el.name);
-      });
-    });
+  if (selectedFilm && duration) {
     return (
       <div className={style.header_bottom}>
         <div className={`${style.active} ${style.header_bottom_left}`}>
-          <MovieDescription filmName={film.title} filmGenres={genresCol} />
-          <MovieRate rate={film.vote_average} />
+          <MovieDescription
+            filmName={selectedFilm.title}
+            filmGenres={selectedFilm.genres}
+            filmDuration={duration}
+          />
+          <MovieRate rate={selectedFilm.vote_average} />
         </div>
-        <MovieInfoButtons annotation={film.overview} filmId={film.id} />
+        <MovieInfoButtons annotation={selectedFilm.overview} filmId={selectedFilm.id} />
       </div>
     );
   }
   return null;
 };
 
+HeaderBottom.defaultProps = {
+  duration: 0,
+  selectedFilm: {
+  },
+};
+
 HeaderBottom.propTypes = {
-  genres: PropTypes.arrayOf(PropTypes.object).isRequired,
-  film: PropTypes.objectOf(
+  selectedFilm: PropTypes.objectOf(
     PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
       PropTypes.array,
       PropTypes.bool,
+      PropTypes.object,
     ]),
-  ).isRequired,
+  ),
+  duration: PropTypes.number,
 };
 
 export default HeaderBottom;

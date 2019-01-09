@@ -27,6 +27,7 @@ const conf = {
       title: 'Homework part 1',
       filename: 'index.html',
       template: './src/index.html',
+      favicon: 'src/favicon.ico',
     }),
     new CleanWebpackPlugin(['build'], {
       root: process.cwd(),

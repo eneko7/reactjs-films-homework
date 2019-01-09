@@ -26,9 +26,10 @@ class MovieInfoButtons extends React.Component {
     }));
     const { isShownFilm } = this.state;
     if (isShownFilm) {
-      global.document.getElementsByTagName('body')[0].style.overflow = 'auto';
+      document.getElementsByTagName('body')[0].style.overflow = 'auto';
     } else {
-      global.document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+      document.body.scrollTop = 0;
+      document.getElementsByTagName('body')[0].style.overflow = 'hidden';
     }
   }
 
@@ -38,7 +39,7 @@ class MovieInfoButtons extends React.Component {
     const active = isOpen ? `${style.active}` : '';
     return (
       <React.Fragment>
-        <div className={style.bottom_right}>
+        <div className={`${active} ${style.bottom_right}`}>
           <div className={`${active} ${style.bottom_right_text_descr}`}>
             <p className={style.bottom_right_text_descr_p}>
               {annotation}

@@ -1,23 +1,118 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import queryString from 'query-string';
 import style from './MoviesCategories.scss';
 import Genres from '../Genres';
+import {
+  urlPopularFilms,
+  urlTopRatedFilms,
+  urlComingSoonFilms,
+} from '../../../modules/utils/constants';
 
-class MoviesCategories extends React.Component {
+class MoviesCategories extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
       activeCategory: 'Trending',
     };
     this.fetchFilmsByCategory = this.fetchFilmsByCategory.bind(this);
-    this.categories = ['Trending', 'Top Rated', 'Coming Soon']
-      .map(x => ({
-        el: x,
-        method: () => {
-          this.fetchFilmsByCategory(x);
-          props.pushNavigationLink(x);
-        },
-      }));
+    this.loadRightGrid = this.loadRightGrid.bind(this);
+    this.categories = [
+      {
+        route: '/films?sort=Trending',
+        query: 'trending',
+        name: 'Trending',
+      },
+      {
+        route: '/films?sort=Top Rated',
+        query: 'top-rated',
+        name: 'Top Rated',
+      },
+      {
+        route: '/films?sort=Coming Soon',
+        query: 'coming-soon',
+        name: 'Coming Soon',
+      },
+    ].map(x => ({
+      el: x,
+      method: () => {
+        this.fetchFilmsByCategory(x.name);
+        props.pushNavigationLink(x.name);
+      },
+    }));
+  }
+
+  componentDidMount() {
+    this.loadRightGrid();
+  }
+
+  componentDidUpdate(prevProps) {
+    const {
+      location: { search },
+    } = this.props;
+    if (prevProps.location.search !== search) {
+      this.loadRightGrid();
+    }
+  }
+
+  loadRightGrid() {
+    const {
+      location: { search, pathname },
+      pushNavigationLink,
+      fetchFilmsBySearch,
+      fetchFilmsByGenre,
+      receiveMainFilmInfo,
+      fetchFilms,
+    } = this.props;
+    const parsed = queryString.parse(search);
+    const {
+      sort,
+      q,
+      filmId,
+      genreId,
+      category,
+    } = parsed;
+    if (pathname === '/') {
+      this.fetchFilmsByCategory('Trending');
+      pushNavigationLink('Trending');
+    }
+    if (pathname === '/films') {
+      this.fetchFilmsByCategory(sort);
+      pushNavigationLink(sort);
+    }
+    if (pathname === '/search') {
+      fetchFilmsBySearch(q);
+    }
+    if (pathname === '/genres') {
+      this.fetchFilmsByCategory('Genres');
+    }
+    if (pathname === '/film') {
+      if (category === '' || (!category && !sort)) {
+        this.fetchFilmsByCategory('Trending');
+        fetchFilms(urlPopularFilms, filmId);
+        receiveMainFilmInfo(filmId);
+      }
+      if (category === 'search') {
+        fetchFilmsBySearch(q, filmId);
+      }
+      if (category === 'genres') {
+        this.fetchFilmsByCategory('Genres');
+        fetchFilmsByGenre(genreId, filmId);
+      }
+      if (sort === 'Trending') {
+        this.fetchFilmsByCategory(sort);
+        fetchFilms(urlPopularFilms, filmId);
+      }
+      if (sort === 'Top Rated') {
+        this.fetchFilmsByCategory(sort);
+        fetchFilms(urlTopRatedFilms, filmId);
+      }
+      if (sort === 'Coming Soon') {
+        this.fetchFilmsByCategory(sort);
+        fetchFilms(urlComingSoonFilms, filmId);
+      }
+    }
   }
 
   fetchFilmsByCategory(el) {
@@ -30,8 +125,10 @@ class MoviesCategories extends React.Component {
     const { activeCategory } = this.state;
     const active = `${style.active}`;
     const categoritesBlock = this.categories.map(({ el, method }) => (
-      <div key={el} className={style.moviesGrid_categories_item}>
-        <button type="button" data-filter={el} className={`${el !== activeCategory ? '' : active} ${style.moviesGrid_categories_item_button}`} onClick={method}>{el}</button>
+      <div key={el.name} className={style.moviesGrid_categories_item}>
+        <Link to={el.route}>
+          <button type="button" data-filter={el.name} className={`${el.name !== activeCategory ? '' : active} ${style.moviesGrid_categories_item_button}`} onClick={method}>{el.name}</button>
+        </Link>
       </div>
     ));
     return (
@@ -49,5 +146,13 @@ class MoviesCategories extends React.Component {
 }
 MoviesCategories.propTypes = {
   pushNavigationLink: PropTypes.func.isRequired,
+  fetchFilmsBySearch: PropTypes.func.isRequired,
+  fetchFilmsByGenre: PropTypes.func.isRequired,
+  receiveMainFilmInfo: PropTypes.func.isRequired,
+  fetchFilms: PropTypes.func.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+    search: PropTypes.string,
+  }).isRequired,
 };
 export default MoviesCategories;

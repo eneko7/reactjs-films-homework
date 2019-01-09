@@ -29,11 +29,7 @@ class MovieElement extends React.PureComponent {
       isShownFilm: !prevState.isShownFilm,
     }));
     const { isShownFilm } = this.state;
-    if (isShownFilm) {
-      document.getElementsByTagName('body')[0].style.overflow = 'auto';
-    } else {
-      document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-    }
+    document.getElementsByTagName('body')[0].style.overflow = isShownFilm ? 'auto' : 'hidden';
   }
 
   render() {

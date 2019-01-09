@@ -25,12 +25,7 @@ class MovieInfoButtons extends React.Component {
       isShownFilm: !prevState.isShownFilm,
     }));
     const { isShownFilm } = this.state;
-    if (isShownFilm) {
-      document.getElementsByTagName('body')[0].style.overflow = 'auto';
-    } else {
-      document.body.scrollTop = 0;
-      document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-    }
+    document.getElementsByTagName('body')[0].style.overflow = isShownFilm ? 'auto' : 'hidden';
   }
 
   render() {
